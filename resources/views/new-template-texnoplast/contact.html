@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/bootstrap3.grid.css" />
+		<link rel="stylesheet" href="css/font.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<!-- JQuery -->
+		<script src="vendor/jquery/3.5.1/jquery.min.js"></script>
+
+		<!-- Tiny Slider -->
+		<link rel="stylesheet" href="vendor/tiny-slider/tiny-slider.css">
+		<script src="vendor/tiny-slider/tiny-slider.js"></script>
+
+		<script src="js/contacts.js"></script>
+	</head>
+	<body>
+
+
+
+
+
+
+		<div class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-2 col-md-2 col-sm-3 col-xs-5"><a href="/" class="header__logo"><img class="header__logo_image" src="img/logo.png" alt="" /></a></div>
+			<div class="col-lg-10 col-md-10 col-sm-9">
+				<div class="header__row-top">
+					<div class="header__block header__block__name_menu">
+						<a href="" class="header__menu-link">О компании</a><a href="" class="header__menu-link">Самовывоз</a>
+						<a href="" class="header__menu-link">Доставка</a><a href="" class="header__menu-link">Оплата</a>
+						<a href="" class="header__menu-link">Контакты</a>
+					</div>
+					<div class="header__block header__block__name_profile">
+						<a href="personal.php" class="header__profile-link">Личный кабинет</a>
+					</div>
+				</div>
+				<div class="header__row-bottom">
+					<div class="header__block header__block__name_search">
+						<form class="header__search">
+							<input type="text" class="header__search-input" placeholder="Поиск"/>
+							<input type="submit" class="header__search-button" value=""/>
+						</form>
+					</div>
+
+					<div class="header__block header__block__name_actions mobile_menu">
+						<div class="header__block header__actions-block">
+							<a href="javascript:void(0)" class="header__actions-block header__actions-block__name_burger-menu"></a>
+						</div>
+
+						<div class="header__block header__actions-block">
+							<a href="contacts.php" class="header__actions-block header__actions-block__name_contacts">Контакты</a>
+						</div>
+					</div>
+
+					<div class="header__block header__block__name_contacts">
+						<div class="header__block header__block__name_contact1">
+							<div class="header__contact1 header__contact1__name_email"><a href="mailto:info@loftbox.ru" class="header__contact-email-link">
+								info@loftbox.ru
+							</a></div>
+							<div class="header__contact2 header__contact2__name_address">г.Белгород, ул.Гоголя, д.8а, оф.1</div>
+						</div>
+						<div class="header__block header__block__name_contact2">
+							<div class="header__contact3 header__contact3__name_phone1">
+								<a href="tel:+74722808080" class="header__contact-phone header__contact-phone__name_phone1">+7 (4722) 80-80-80</a>
+							</div>
+							<div class="header__contact4 header__contact4__name_phone2">
+								<a href="tel:+74722808080" class="header__contact-phone header__contact-phone__name_phone2">+7 (4722) 80-80-80</a>
+							</div>
+						</div>
+					</div>
+					<div class="header__block header__block__name_actions">
+						<div class="header__block header__actions-block mobile_search">
+							<a href="javascript:void(0)" class="header__actions-block header__actions-block__name_search"></a>
+							<div class="modal__modal-box">
+							    <div class="search-modal" id="Search">
+							    	<form class="header__search header__search-mobile">
+							    		<input autofocus type="text" class="header__search-input" placeholder="Поиск"/>
+							    		<input type="submit" class="header__search-button" value=""/>
+							    	</form>
+							    </div>
+							</div>
+						</div>
+
+						<div class="header__block header__actions-block mobile_profile">
+							<a href="personal.php" class="header__actions-block header__actions-block__name_profile"></a>
+						</div>
+
+						<div class="header__block header__actions-block">
+							<a href="favorites.php" class="header__actions-block header__actions-block__name_favorites"><span class="favorites_msg">2</span></a>
+						</div>
+
+						<div class="header__block header__actions-block">
+							<a href="basket.php" class="header__actions-block header__actions-block__name_basket"><span class="basket_msg">2</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="second-menu">
+	<div class="container second-item__name_dropdown__relative">
+		<div class="second-menu__item second-item__name_dropdown">
+			<a class="second-menu__link burger" href="#">каталог товаров</a>
+		</div>
+
+		<div class="second-item__name_dropdown-menu">
+			<div class="second-item__name_dropdown__left">
+				<a class="second-item__name_dropdown-left__item active" href="#">Столы</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Стулья, табуреты</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Стеллажи</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Комоды, консоли</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Навесные полочки</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Вешала</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Диваны, кресла</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Каркасы, подстолья</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Светильники</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Для бизнеса</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Фурнитура</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Аксессуары и предметы интерьера</a>
+			</div>
+
+			<div class="second-item__name_dropdown__right">
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Барные столы</p>
+					</a>
+				</div>
+
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Обеденные столы</p>
+					</a>
+				</div>
+				
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Письменные столы</p>
+					</a>
+				</div>
+				
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Журнальные столы</p>
+					</a>
+				</div>
+				
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Столики для кафе и баров</p>
+					</a>
+				</div>
+				
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
+					</a>
+				</div>
+
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
+					</a>
+				</div>
+
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
+					</a>
+				</div>
+
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
+					</a>
+				</div>
+
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
+					</a>
+				</div>
+
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="second-menu__item responsive_width">
+			<a class="second-menu__link armchair" href="#">индивидуальный заказ</a>
+		</div>
+		
+		<div class="second-menu__item">
+			<a class="second-menu__link calc" href="#">онлайн калькулятор</a>
+		</div>
+		
+		<div class="second-menu__item">
+			<a class="second-menu__link cart" href="#">мебель в наличии</a>
+		</div>
+		
+		<div class="second-menu__item">
+			<a class="second-menu__link sale" href="#">распродажа</a>
+		</div>
+	</div>
+</div>
+
+
+
+	<div class="contacts container">
+		<div class="title">
+			<h1 class="title__name">Контакты</h1>	
+		</div>
+
+
+		<div class="contacts__address">
+			<ul class="contacts__address-address">
+				<li class="contacts__address-block location">Белгород, ул. Гоголя , д. 15а, оф. 1</li>
+				<li class="contacts__address-block phone"><a href="#">+7 (4722) 80-30-30</a></li>
+				<li class="contacts__address-block whatsapp"><a href="#">+7 (4722) 80-30-30</a></li>
+				<li class="contacts__address-block email"><a class="contacts__address-block-bordered" href="#">info@loftbox.ru</a></li>
+				<li class="contacts__address-block site"><a class="contacts__address-block-bordered" href="#">loftbox.com</a></li>
+			</ul>
+
+			<div class="contacts__address-timetable">
+				<h2 class="contacts__address-title">График работы:</h2>
+
+				<p class="contacts__address-block">ПН по ПТ: с 10:00 до 19:00</p>
+				<p class="contacts__address-block">Сб: с 12:00 до 17:00</p>
+				<p class="contacts__address-block">Воскресенье выходной</p>
+			</div>
+
+			<div class="contacts__address-map">
+				<div class="contacts__map-block">
+					<iframe class="contacts__map-frame" src="https://yandex.ru/map-widget/v1/?um=constructor%3A7a28163885b57467610f17a1c809ddcbe8a3b84c239c5645c5e56eec1e712d93&amp;source=constructor" width="480" height="280" frameborder="0"></iframe>
+				</div>
+
+				<a target="_blank" href="https://yandex.ru/maps/4/belgorod/?rtext=~50.638359%2C36.560633&rtt=auto" class="contacts__map-nav">Проложить маршрут в навигаторе</a>
+			</div>
+		</div>
+
+
+		<div class="contacts__requisites">
+			<h2 class="contacts__requisites-title">Реквизиты</h2>
+
+			<p class="contacts__requisites-block">ИП “ЛофтБокс”</p>
+			<p class="contacts__requisites-block">ИННИКПП 7725332190192091390</p>
+			<p class="contacts__requisites-block">ОГРН 3029301203124</p>
+
+			<a href="#" class="contacts__requisites-download">Скачать карточку компании</a>
+		</div>
+
+
+
+		<div class="contacts__feedback">
+			<h2 class="contacts__feedback-title">Обратная связь:</h2>
+                                               
+			<a href="#" class="contacts__feedback-link">Поблагодарить</a>
+			<a href="#" class="contacts__feedback-link">Дать совет</a>
+			<a href="#" class="contacts__feedback-link">Составить жалобу</a>
+			<a href="#" class="contacts__feedback-link">По вопросам сотрудничества</a>
+		</div>
+
+		<div class="title">
+			<h1 class="title__name">Как добраться</h1>	
+		</div>
+
+		<div class="contacts__feedback-player">
+			
+			<div class="contacts__feedback-player-video"></div>
+
+			<div class="contacts__feedback-player-wrapper">
+				<p class="contacts__feedback-player-desc">In laoreet pharetra libero. Vestibulum quis posuere lorem. Nam cursus eros non mi egestas rutrum. Etiam fringilla consectetur nisl. Integer accumsan nulla ut est pellentesque porta. Fusce at hendrerit est, id consectetur nisl. Donec sagittis nunc eget nisl porttitor, dignissim laoreet massa aliquet. Curabitur vulputate sodales erat vel accumsan. Nullam ultrices nisi cursus odio egestas accumsan. In laoreet pharetra libero. Vestibulum quis posuere lorem. Nam cursus eros non mi egestas rutrum.</p>
+
+				<a target="_blank" href="https://yandex.ru/maps/4/belgorod/?rtext=~50.638359%2C36.560633&rtt=auto" class="contacts__map-nav">Проложить маршрут в навигаторе</a>
+			</div>
+
+		</div>
+
+
+		<div class="contacts__address">
+
+			<div class="news-and-articles__header">
+				<div class="news-and-articles__header-text">
+					<h1 class="news-and-articles__header-title">LoftBox в других городах России</h1>
+				</div>
+
+				<div class="news-and-articles__header-slider">
+					<div class="news-and-articles__sliders">
+						<a href="javascript:void(0)" class="news-and-articles__sliders-arrow news-and-articles__sliders-arrow-left"></a>
+						<a href="javascript:void(0)" class="news-and-articles__sliders-arrow news-and-articles__sliders-arrow-right"></a>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="contacts__address-wrapper">
+				<div class="contacts__address-slide">
+					<ul class="contacts__address-address">
+						<li class="contacts__address-block location">Белгород, ул. Гоголя , д. 15а, оф. 1</li>
+						<li class="contacts__address-block phone"><a href="#">+7 (4722) 80-30-30</a></li>
+						<li class="contacts__address-block whatsapp"><a href="#">+7 (4722) 80-30-30</a></li>
+						<li class="contacts__address-block email"><a class="contacts__address-block-bordered" href="#">info@loftbox.ru</a></li>
+						<li class="contacts__address-block site"><a class="contacts__address-block-bordered" href="#">loftbox.com</a></li>
+					</ul>
+
+					<div class="contacts__address-timetable">
+						<h2 class="contacts__address-title">График работы:</h2>
+
+						<p class="contacts__address-block">ПН по ПТ: с 10:00 до 19:00</p>
+						<p class="contacts__address-block">Сб: с 12:00 до 17:00</p>
+						<p class="contacts__address-block">Воскресенье выходной</p>
+					</div>
+
+					<div class="contacts__address-map">
+						<div class="contacts__map-block">
+							<iframe class="contacts__map-frame" src="https://yandex.ru/map-widget/v1/?um=constructor%3A7a28163885b57467610f17a1c809ddcbe8a3b84c239c5645c5e56eec1e712d93&amp;source=constructor" width="480" height="280" frameborder="0"></iframe>
+						</div>
+					</div>
+				</div>
+
+				<div class="contacts__address-slide">
+					<ul class="contacts__address-address">
+						<li class="contacts__address-block location">Белгород, ул. Гоголя , д. 15а, оф. 1</li>
+						<li class="contacts__address-block phone"><a href="#">+7 (4722) 80-30-30</a></li>
+						<li class="contacts__address-block whatsapp"><a href="#">+7 (4722) 80-30-30</a></li>
+						<li class="contacts__address-block email"><a class="contacts__address-block-bordered" href="#">info@loftbox.ru</a></li>
+						<li class="contacts__address-block site"><a class="contacts__address-block-bordered" href="#">loftbox.com</a></li>
+					</ul>
+
+					<div class="contacts__address-timetable">
+						<h2 class="contacts__address-title">График работы:</h2>
+
+						<p class="contacts__address-block">ПН по ПТ: с 10:00 до 19:00</p>
+						<p class="contacts__address-block">Сб: с 12:00 до 17:00</p>
+						<p class="contacts__address-block">Воскресенье выходной</p>
+					</div>
+
+					<div class="contacts__address-map">
+						<div class="contacts__map-block">
+							<iframe class="contacts__map-frame" src="https://yandex.ru/map-widget/v1/?um=constructor%3A7a28163885b57467610f17a1c809ddcbe8a3b84c239c5645c5e56eec1e712d93&amp;source=constructor" width="480" height="280" frameborder="0"></iframe>
+						</div>
+					</div>
+				</div>
+
+				<div class="contacts__address-slide">
+					<ul class="contacts__address-address">
+						<li class="contacts__address-block location">Белгород, ул. Гоголя , д. 15а, оф. 1</li>
+						<li class="contacts__address-block phone"><a href="#">+7 (4722) 80-30-30</a></li>
+						<li class="contacts__address-block whatsapp"><a href="#">+7 (4722) 80-30-30</a></li>
+						<li class="contacts__address-block email"><a class="contacts__address-block-bordered" href="#">info@loftbox.ru</a></li>
+						<li class="contacts__address-block site"><a class="contacts__address-block-bordered" href="#">loftbox.com</a></li>
+					</ul>
+
+					<div class="contacts__address-timetable">
+						<h2 class="contacts__address-title">График работы:</h2>
+
+						<p class="contacts__address-block">ПН по ПТ: с 10:00 до 19:00</p>
+						<p class="contacts__address-block">Сб: с 12:00 до 17:00</p>
+						<p class="contacts__address-block">Воскресенье выходной</p>
+					</div>
+
+					<div class="contacts__address-map">
+						<div class="contacts__map-block">
+							<iframe class="contacts__map-frame" src="https://yandex.ru/map-widget/v1/?um=constructor%3A7a28163885b57467610f17a1c809ddcbe8a3b84c239c5645c5e56eec1e712d93&amp;source=constructor" width="480" height="280" frameborder="0"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+
+
+<div class="footer">
+	<div class="container">
+		<div class="footer__block">
+			<div class="footer__logo">
+				<a href="/"><img class="footer__logo-img" src="img/icons/loftlogo__white 1.svg" alt="footer logo"></a>
+				
+				<p class="footer__copyright">© Интернет-магазин лофт-мебели, 2018-2020</p>
+				
+				<div class="footer__pay-system">
+					<div class="footer__pay-system_name_mcard"></div>
+					<div class="footer__pay-system_name_mir"></div>
+					<div class="footer__pay-system_name_visa"></div>
+					<div class="footer__pay-system_name_ya-money"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer__block footer__block-margin">
+			<div class="footer__menu">
+				<ul class="footer__vertical-menu">
+					<li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="#">Доставка</a></li>
+					<li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="#">Оплата</a></li>
+					<li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="#">Гарантия</a></li>
+					<li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="#">Обмен и возврат</a></li>
+				</ul>
+
+				<ul class="footer__vertical-menu">
+					<li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="#">Контакты и шоурумы</a></li>
+					<li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="#">О компании</a></li>
+					<li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="#">Карьера</a></li>
+					<li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="#">Помощь</a></li>
+				</ul>
+
+				<div class="footer__contacts">
+					<a href="tel:+74722808080" class="footer__contacts-phone">+7 (4722) 80-80-80</a>
+					<p class="footer__contacts_desc">Для звонков с любой точки мира</p>
+
+					<a href="javascript:void(0)" class="footer__contacts_button">Заказать звонок</a>
+
+					<div class="footer__contacts_socials">
+						<a class="footer__contacts-social footer__contacts-social_name__facebook" href="#"></a>
+						<a class="footer__contacts-social footer__contacts-social_name__instagram" href="#"></a>
+						<a class="footer__contacts-social footer__contacts-social_name__twitter" href="#"></a>
+						<a class="footer__contacts-social footer__contacts-social_name__pinterest" href="#"></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer__offerts">
+				<a class="footer__offerts-link" href="#">Политика безопастности платежей</a>
+				<a class="footer__offerts-link" href="#">Данные публичной оферты</a>
+				<a class="footer__offerts-link" href="#">Политка в отношении обработки перссональных данных</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+	</body>
+</html>

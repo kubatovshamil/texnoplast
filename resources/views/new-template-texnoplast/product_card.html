@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap3.grid.css" />
+	<link rel="stylesheet" href="css/font.css" />
+	<link rel="stylesheet" href="css/style.css" /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- JQuery -->
+	<script src="vendor/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- arcticModal -->
+	<script src="vendor/arcticmodal/jquery.arcticmodal-0.3.min.js"></script>
+	<link rel="stylesheet" href="vendor/arcticmodal/jquery.arcticmodal-0.3.css">
+
+	<!-- Tiny Slider -->
+	<link rel="stylesheet" href="vendor/tiny-slider/tiny-slider.css">
+	<script src="vendor/tiny-slider/tiny-slider.js"></script>
+
+	<script src="js/product_card.js"></script>
+</head>
+<body>
+
+
+
+
+	<div class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-2 col-md-2 col-sm-3 col-xs-5"><a href="/" class="header__logo"><img class="header__logo_image" src="img/logo.png" alt="" /></a></div>
+			<div class="col-lg-10 col-md-10 col-sm-9">
+				<div class="header__row-top">
+					<div class="header__block header__block__name_menu">
+						<a href="" class="header__menu-link">О компании</a><a href="" class="header__menu-link">Самовывоз</a>
+						<a href="" class="header__menu-link">Доставка</a><a href="" class="header__menu-link">Оплата</a>
+						<a href="" class="header__menu-link">Контакты</a>
+					</div>
+					<div class="header__block header__block__name_profile">
+						<a href="personal.php" class="header__profile-link">Личный кабинет</a>
+					</div>
+				</div>
+				<div class="header__row-bottom">
+					<div class="header__block header__block__name_search">
+						<form class="header__search">
+							<input type="text" class="header__search-input" placeholder="Поиск"/>
+							<input type="submit" class="header__search-button" value=""/>
+						</form>
+					</div>
+
+					<div class="header__block header__block__name_actions mobile_menu">
+						<div class="header__block header__actions-block">
+							<a href="javascript:void(0)" class="header__actions-block header__actions-block__name_burger-menu"></a>
+						</div>
+
+						<div class="header__block header__actions-block">
+							<a href="contacts.php" class="header__actions-block header__actions-block__name_contacts">Контакты</a>
+						</div>
+					</div>
+
+					<div class="header__block header__block__name_contacts">
+						<div class="header__block header__block__name_contact1">
+							<div class="header__contact1 header__contact1__name_email"><a href="mailto:info@loftbox.ru" class="header__contact-email-link">
+								info@loftbox.ru
+							</a></div>
+							<div class="header__contact2 header__contact2__name_address">г.Белгород, ул.Гоголя, д.8а, оф.1</div>
+						</div>
+						<div class="header__block header__block__name_contact2">
+							<div class="header__contact3 header__contact3__name_phone1">
+								<a href="tel:+74722808080" class="header__contact-phone header__contact-phone__name_phone1">+7 (4722) 80-80-80</a>
+							</div>
+							<div class="header__contact4 header__contact4__name_phone2">
+								<a href="tel:+74722808080" class="header__contact-phone header__contact-phone__name_phone2">+7 (4722) 80-80-80</a>
+							</div>
+						</div>
+					</div>
+					<div class="header__block header__block__name_actions">
+						<div class="header__block header__actions-block mobile_search">
+							<a href="javascript:void(0)" class="header__actions-block header__actions-block__name_search"></a>
+							<div class="modal__modal-box">
+							    <div class="search-modal" id="Search">
+							    	<form class="header__search header__search-mobile">
+							    		<input autofocus type="text" class="header__search-input" placeholder="Поиск"/>
+							    		<input type="submit" class="header__search-button" value=""/>
+							    	</form>
+							    </div>
+							</div>
+						</div>
+
+						<div class="header__block header__actions-block mobile_profile">
+							<a href="personal.php" class="header__actions-block header__actions-block__name_profile"></a>
+						</div>
+
+						<div class="header__block header__actions-block">
+							<a href="favorites.php" class="header__actions-block header__actions-block__name_favorites"><span class="favorites_msg">2</span></a>
+						</div>
+
+						<div class="header__block header__actions-block">
+							<a href="basket.php" class="header__actions-block header__actions-block__name_basket"><span class="basket_msg">2</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="second-menu">
+	<div class="container second-item__name_dropdown__relative">
+		<div class="second-menu__item second-item__name_dropdown">
+			<a class="second-menu__link burger" href="#">каталог товаров</a>
+		</div>
+
+		<div class="second-item__name_dropdown-menu">
+			<div class="second-item__name_dropdown__left">
+				<a class="second-item__name_dropdown-left__item active" href="#">Столы</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Стулья, табуреты</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Стеллажи</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Комоды, консоли</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Навесные полочки</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Вешала</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Диваны, кресла</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Каркасы, подстолья</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Светильники</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Для бизнеса</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Фурнитура</a>
+				<a class="second-item__name_dropdown-left__item" href="#">Аксессуары и предметы интерьера</a>
+			</div>
+
+			<div class="second-item__name_dropdown__right">
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Барные столы</p>
+					</a>
+				</div>
+
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Обеденные столы</p>
+					</a>
+				</div>
+				
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Письменные столы</p>
+					</a>
+				</div>
+				
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Журнальные столы</p>
+					</a>
+				</div>
+				
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Столики для кафе и баров</p>
+					</a>
+				</div>
+				
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
+					</a>
+				</div>
+
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
+					</a>
+				</div>
+
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
+					</a>
+				</div>
+
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
+					</a>
+				</div>
+
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
+					</a>
+				</div>
+
+				<div class="second-item__name_dropdown__block__wrapper">
+					<a href="#" class="second-item__name_dropdown__block">
+						<img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
+						<p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="second-menu__item responsive_width">
+			<a class="second-menu__link armchair" href="#">индивидуальный заказ</a>
+		</div>
+		
+		<div class="second-menu__item">
+			<a class="second-menu__link calc" href="#">онлайн калькулятор</a>
+		</div>
+		
+		<div class="second-menu__item">
+			<a class="second-menu__link cart" href="#">мебель в наличии</a>
+		</div>
+		
+		<div class="second-menu__item">
+			<a class="second-menu__link sale" href="#">распродажа</a>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+	<div class="product-card container">
+		<div class="product-card__characteristics-mobile">
+			<span class="product-card__characteristics-article">Артикул: 460099 - 9012020</span>
+
+			<h1 class="product-card__characteristics-title">Стол Loft 17</h1>
+
+			<div class="product-card__characteristics-functions">
+				<a href="#" class="product-card__functions-favorite">В избранное</a>
+
+				<a href="#" class="product-card__functions-in_stock">В наличии!</a>
+
+				<a href="#" class="product-card__functions-warranty">Гарантия</a>
+			</div>
+		</div>
+
+		<div class="product-card__images">
+			<div class="product_card__big-image-wrapper">
+				<img src="img/product_img.jpg" alt="" class="product_card__big-image">
+			</div>
+
+			<div class="product_card__image-carousel">
+				<div class="product_card__image-carousel__wrapper">
+
+					<div class="product_card__image-wrapper product_card__image-active">
+						<img src="img/product_img.jpg" class="product_card__image" alt="img">
+					</div>
+
+					<div class="product_card__image-wrapper">
+						<img src="img/main-news_bg.jpeg" class="product_card__image" alt="img">
+					</div>
+
+					<div class="product_card__image-wrapper">
+						<img src="img/product_img.jpg" class="product_card__image" alt="img">
+					</div>
+
+					<div class="product_card__image-wrapper">
+						<img src="img/insta-photo1.jpg" class="product_card__image" alt="img">
+					</div>
+
+					<div class="product_card__image-wrapper">
+						<img src="img/product_img.jpg" class="product_card__image" alt="img">
+					</div>
+
+					<div class="product_card__image-wrapper">
+						<img src="img/insta-photo2.jpg" class="product_card__image" alt="img">
+					</div>
+
+					<div class="product_card__image-wrapper">
+						<img src="img/insta-photo3.jpg" class="product_card__image" alt="img">
+					</div>
+
+					<div class="product_card__image-wrapper">
+						<img src="img/product_img.jpg" class="product_card__image" alt="img">
+					</div>
+
+					<div class="product_card__image-wrapper">
+						<img src="img/product_img.jpg" class="product_card__image" alt="img">
+					</div>
+				
+				</div>
+
+				<div class="product_card__model">
+					<a href="javascript:void(0)" class="product_card__image-360"></a>
+				</div>
+			
+				<div class="product_card__image-arrow">
+					<a href="javascript:void(0)" class="product_card__image-carousel__left-arrow"></a>
+					<a href="javascript:void(0)" class="product_card__image-carousel__right-arrow"></a>
+				</div>	
+			</div>
+
+			<a href="#" class="product_card__download">Скачать 3D-модель</a>
+		</div>
+
+		<div class="product-card__characteristics">
+			
+			<div class="product-card__characteristics-desktop">
+				<span class="product-card__characteristics-article">Артикул: 460099 - 9012020</span>
+
+				<h1 class="product-card__characteristics-title">Стол Loft 17</h1>
+
+				<div class="product-card__characteristics-functions">
+					<a href="#" class="product-card__functions-favorite">В избранное</a>
+
+					<a href="#" class="product-card__functions-in_stock">В наличии!</a>
+
+					<a href="#" class="product-card__functions-warranty">Гарантия</a>
+				</div>
+			</div>
+
+
+			<div class="product-card__characteristics-ordering">
+				<div class="product-card__price">
+					<span class="product-card__block-stock">-50%</span>
+					<p class="product-card__prices-old">18 500₽</p>
+					<p class="product-card__prices-new">12 000<span class="price_rub">₽</span></p>
+				</div>
+
+				<div class="product-card__discounting">
+					<span class="product-card__discounting-quest">Нашли дешевле?</span>
+					<a href="#" class="product-card__discounting-discount">Сделаем скидку</a>
+				</div>
+
+
+				<div class="product-card__buttons">
+					<a href="#" class="product-card__buttons-buy">Купить</a>
+					<a href="#" class="product-card__buttons-quick">Быстрый заказ</a>
+				</div>
+			</div>
+
+
+			<input id="show_size" name="characts-tab" class="product-card__characts-open charact_size hide" type="radio">
+			<label for="show_size" class="product-card__characts-title charact_size">Размеры</label>
+
+			<div class="product-card__characteristics-sizes">
+				<div class="product-card__sizes-user_input">
+					<span class="product-card__user_input-title">Укажите размер изделия</span>
+					<input type="text" class="product-card__user_input-height" placeholder="Высота"> x <input type="text" class="product-card__user_input-width" placeholder="Ширина"> см
+				</div>
+
+				<div class="product-card__sizes-other">
+					<p class="product-card__other-title">Или выберите из популярных размеров (см)</p>
+
+					<div class="product-card__other-popular">
+						<a href="#" class="product-card__popular-size">30x40</a>
+						<a href="#" class="product-card__popular-size">40x60</a>
+						<a href="#" class="product-card__popular-size">50x70</a>
+						<a href="#" class="product-card__popular-size">50x80</a>
+						<a href="#" class="product-card__popular-size">50х100</a>
+						<a href="#" class="product-card__popular-size">60х70</a>
+						<a href="#" class="product-card__popular-size">60х80</a>
+						<a href="#" class="product-card__popular-size">60х100</a>
+						<a href="#" class="product-card__popular-size">60х120</a>
+						<a href="#" class="product-card__popular-size">60х150</a>
+						<a href="#" class="product-card__popular-size">60х160</a>
+						<a href="#" class="product-card__popular-size">60х180</a>
+						<a href="#" class="product-card__popular-size">70х90</a>
+						<a href="#" class="product-card__popular-size">70х140</a>
+					</div>
+
+					<div class="product-card__other-all-size size_hide">
+						<a href="#" class="product-card__popular-size">30x40</a>
+						<a href="#" class="product-card__popular-size">40x60</a>
+						<a href="#" class="product-card__popular-size">50x70</a>
+						<a href="#" class="product-card__popular-size">50x80</a>
+						<a href="#" class="product-card__popular-size">50х100</a>
+						<a href="#" class="product-card__popular-size">60х70</a>
+						<a href="#" class="product-card__popular-size">60х80</a>
+						<a href="#" class="product-card__popular-size">60х100</a>
+						<a href="#" class="product-card__popular-size">60х120</a>
+						<a href="#" class="product-card__popular-size">60х150</a>
+						<a href="#" class="product-card__popular-size">60х160</a>
+						<a href="#" class="product-card__popular-size">60х180</a>
+						<a href="#" class="product-card__popular-size">70х90</a>
+						<a href="#" class="product-card__popular-size">70х140</a>
+					</div>
+
+
+					<a href="javascript:void(0)" class="product-card__other-all">Показать все размеры</a>
+				</div>
+			</div>
+
+			<input id="show_material" name="characts-tab" class="product-card__characts-open charact_material hide" type="radio">
+			<label for="show_material" class="product-card__characts-title charact_material">Материал</label>
+
+			<div class="product-card__material-tab">
+				<div class="product-card__material">
+					Столешница:
+					<select name="" class="product-card__materials">
+						<option value="1">ЛДСП 22мм</option>
+						<option value="">ЛДСП 33мм</option>
+						<option value="">ЛДСП 44мм</option>
+					</select>
+				</div>
+			</div>
+
+
+			<input id="show_charact" name="characts-tab" class="product-card__characts-open charact_char hide" type="radio">
+			<label for="show_charact" class="product-card__characts-title charact_char">Характеристики</label>
+
+
+			<div class="product-card__characteristics-characts charact_char">
+
+				<div class="product-card__characts-block">
+					<p class="product-card__characts-thead">Высота (см)</p>
+					<p class="product-card__characts-tbody">1200</p>
+				</div>
+
+				<div class="product-card__characts-block">
+					<p class="product-card__characts-thead">Ширина (см)</p>
+					<p class="product-card__characts-tbody">450</p>
+				</div>
+
+				<div class="product-card__characts-block">
+					<p class="product-card__characts-thead">Стиль</p>
+					<p class="product-card__characts-tbody">Лофт</p>
+				</div>
+
+				<div class="product-card__characts-block">
+					<p class="product-card__characts-thead">Дерево</p>
+					<p class="product-card__characts-tbody">Сосна</p>
+				</div>
+
+				<div class="product-card__characts-block">
+					<p class="product-card__characts-thead">Производитель</p>
+					<p class="product-card__characts-tbody">Россия</p>
+				</div>
+
+				<div class="product-card__characts-block">
+					<p class="product-card__characts-thead">Каркас</p>
+					<p class="product-card__characts-tbody">Профильная труба</p>
+				</div>
+
+				<div class="product-card__characts-block">
+					<p class="product-card__characts-thead">Цвет</p>
+					<p class="product-card__characts-tbody">Порошковая покраска</p>
+				</div>
+
+				<div class="product-card__characts-block">
+					<p class="product-card__characts-thead">Дополнительно</p>
+					<p class="product-card__characts-tbody">Интерьерные, Оригинальное</p>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="product_card__description">
+			<h1 class="product_card__description-title">Описание</h1>
+			<p class="product_card__description-content">Sed sollicitudin arcu et dapibus sollicitudin. Mauris ac nulla et quam consectetur ornare semper id lacus. Curabitur non rhoncus ipsum. Pellentesque ac efficitur sem. Nunc egestas est quis neque laoreet, quis varius purus lobortis. Pellentesque hendrerit nisl quis sapien sollicitudin interdum. Pellentesque vitae vestibulum libero. Praesent semper gravida volutpat. Quisque nisi est, malesuada ac ante nec, maximus fermentum turpis. Fusce at sapien in leo convallis ultricies at non odio.</p>
+
+			<p class="product_card__description-content">Vestibulum purus est, volutpat quis leo a, vehicula tempor elit. Sed efficitur turpis tortor, nec euismod risus pretium in. Morbi vel purus non nisi malesuada sollicitudin non ac tellus. Donec luctus tortor eu augue pretium tristique. Praesent aliquam efficitur sem vitae congue. Curabitur non aliquam ipsum, a aliquam ligula. Maecenas semper velit metus, porttitor rutrum leo rutrum sed. In rutrum tortor felis. Praesent eget maximus ex. Sed laoreet ex quis nunc congue tincidunt.</p>
+		</div>
+
+
+		<div class="product_card__reviews">
+			<div class="product_card__reviews__header-wrapper">
+				<div class="product_card__reviews__header-text">
+					<h1 class="product_card__reviews__header-title">Отзывы</h1>
+				</div>
+
+				<div class="product_card__reviews__header-slider">
+					<div class="product_card__reviews__sliders">
+						<a href="javascript:void(0)" class="product_card__reviews__sliders-arrow product_card__reviews__sliders-arrow-left"></a>
+						<a href="javascript:void(0)" class="product_card__reviews__sliders-arrow product_card__reviews__sliders-arrow-right"></a>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="product_card__reviews-wrapper">
+				<div class="product_card__reviews-slide">
+					<div class="product_card__reviews-block">
+						<img src="img/rewiews_avatar.jpeg" alt="" class="product_card__reviews-img">
+
+						<div class="product_card__reviews-content">
+							<h1 class="product_card__reviews-name">Ольга</h1>
+							<div class="product_card__reviews-stars">
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star"></div>
+							</div>
+
+							<span class="product_card__reviews-date">26 декабря 2019</span>
+
+	               			<p class="product_card__reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="product_card__reviews-slide">
+					<div class="product_card__reviews-block">
+						<img src="img/rewiews_avatar.jpeg" alt="" class="product_card__reviews-img">
+
+						<div class="product_card__reviews-content">
+							<h1 class="product_card__reviews-name">Ольга</h1>
+							<div class="product_card__reviews-stars">
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star"></div>
+							</div>
+
+							<span class="product_card__reviews-date">26 декабря 2019</span>
+
+	               			<p class="product_card__reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="product_card__reviews-slide">
+					<div class="product_card__reviews-block">
+						<img src="img/rewiews_avatar.jpeg" alt="" class="product_card__reviews-img">
+
+						<div class="product_card__reviews-content">
+							<h1 class="product_card__reviews-name">Ольга</h1>
+							<div class="product_card__reviews-stars">
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star"></div>
+							</div>
+
+							<span class="product_card__reviews-date">26 декабря 2019</span>
+
+	               			<p class="product_card__reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="product_card__reviews-slide">
+					<div class="product_card__reviews-block">
+						<img src="img/rewiews_avatar.jpeg" alt="" class="product_card__reviews-img">
+
+						<div class="product_card__reviews-content">
+							<h1 class="product_card__reviews-name">Ольга</h1>
+							<div class="product_card__reviews-stars">
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star"></div>
+							</div>
+
+							<span class="product_card__reviews-date">26 декабря 2019</span>
+
+	               			<p class="product_card__reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="product_card__reviews-slide">
+					<div class="product_card__reviews-block">
+						<img src="img/rewiews_avatar.jpeg" alt="" class="product_card__reviews-img">
+
+						<div class="product_card__reviews-content">
+							<h1 class="product_card__reviews-name">Ольга</h1>
+							<div class="product_card__reviews-stars">
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star-fill"></div>
+								<div class="product_card__star"></div>
+							</div>
+
+							<span class="product_card__reviews-date">26 декабря 2019</span>
+
+	               			<p class="product_card__reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<a href="#" class="product_card__reviews-send-button">Оставить отзыв</a>
+		</div>
+
+
+
+		<div class="product_card__recent">
+			<div class="product_card__recent__header-wrapper">
+				<div class="product_card__recent__header-text">
+					<h1 class="product_card__recent__header-title">Вы смотрели</h1>
+				</div>
+
+				<div class="bestsellers__sliders">
+					<a href="javascript:void(0)" class="bestsellers__slider-arrow bestsellers__slider-arrow-left"></a>
+					<a href="javascript:void(0)" class="bestsellers__slider-arrow bestsellers__slider-arrow-right"></a>
+				</div>
+			</div>
+
+			<div class="bestsellers__blocks-wrapper">
+				<div class="bestsellers__block-slide">
+				<div class="bestsellers__block">
+					<div class="bestsellers__block-wrapper">
+						<img src="img/bestsellers_bg.jpg" alt="" class="bestsellers__block-img">
+						<span class="bestsellers__block-stock">-50%</span>
+						<div class="bestsellers__block-circle-buttons">
+							<a href="javascript:void(0)" class="bestsellers__block-circle-button-favorite"></a>
+						</div>
+
+						<h2 class="bestsellers__block-title">Тумба Loft 2</h2>
+
+						<div class="bestsellers__block-prices">
+							<p class="bestsellers__block-price-old">24 000₽</p>
+							<p class="bestsellers__block-price-new">от <strong class="price-new_strong">12 000</strong><span class="price-new_rub">₽</span></p>
+						</div>
+
+						<div class="bestsellers__block-buttons">
+							<a href="javascript:void(0)" class="bestsellers__block-button-buy-click">Купить в 1 клик</a>
+							<a href="javascript:void(0)" class="bestsellers__block-button-buy">Купить</a>
+						</div>
+
+						<div class="bestsellers__block-characters">
+							<p class="bestsellers__block-character">Ширина: <span class="bestsellers__block-character-black">100 см</span></p>
+							<p class="bestsellers__block-character">Высота: <span class="bestsellers__block-character-black">80 см</span></p>
+							<p class="bestsellers__block-character">Глубина: <span class="bestsellers__block-character-black">50 см</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bestsellers__block-slide">
+				<div class="bestsellers__block">
+					<div class="bestsellers__block-wrapper">
+						<img src="img/bestsellers_bg.jpg" alt="" class="bestsellers__block-img">
+						<span class="bestsellers__block-stock">-50%</span>
+						<div class="bestsellers__block-circle-buttons">
+							<a href="javascript:void(0)" class="bestsellers__block-circle-button-favorite"></a>
+						</div>
+
+						<h2 class="bestsellers__block-title">Тумба Loft 2</h2>
+
+						<div class="bestsellers__block-prices">
+							<p class="bestsellers__block-price-old">24 000₽</p>
+							<p class="bestsellers__block-price-new">от <strong class="price-new_strong">12 000</strong><span class="price-new_rub">₽</span></p>
+						</div>
+
+						<div class="bestsellers__block-buttons">
+							<a href="javascript:void(0)" class="bestsellers__block-button-buy-click">Купить в 1 клик</a>
+							<a href="javascript:void(0)" class="bestsellers__block-button-buy">Купить</a>
+						</div>
+
+						<div class="bestsellers__block-characters">
+							<p class="bestsellers__block-character">Ширина: <span class="bestsellers__block-character-black">100 см</span></p>
+							<p class="bestsellers__block-character">Высота: <span class="bestsellers__block-character-black">80 см</span></p>
+							<p class="bestsellers__block-character">Глубина: <span class="bestsellers__block-character-black">50 см</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bestsellers__block-slide">
+				<div class="bestsellers__block">
+					<div class="bestsellers__block-wrapper">
+						<img src="img/bestsellers_bg.jpg" alt="" class="bestsellers__block-img">
+						<span class="bestsellers__block-stock">-50%</span>
+						<div class="bestsellers__block-circle-buttons">
+							<a href="javascript:void(0)" class="bestsellers__block-circle-button-favorite"></a>
+						</div>
+
+						<h2 class="bestsellers__block-title">Тумба Loft 2</h2>
+
+						<div class="bestsellers__block-prices">
+							<p class="bestsellers__block-price-old">24 000₽</p>
+							<p class="bestsellers__block-price-new">от <strong class="price-new_strong">12 000</strong><span class="price-new_rub">₽</span></p>
+						</div>
+
+						<div class="bestsellers__block-buttons">
+							<a href="javascript:void(0)" class="bestsellers__block-button-buy-click">Купить в 1 клик</a>
+							<a href="javascript:void(0)" class="bestsellers__block-button-buy">Купить</a>
+						</div>
+
+						<div class="bestsellers__block-characters">
+							<p class="bestsellers__block-character">Ширина: <span class="bestsellers__block-character-black">100 см</span></p>
+							<p class="bestsellers__block-character">Высота: <span class="bestsellers__block-character-black">80 см</span></p>
+							<p class="bestsellers__block-character">Глубина: <span class="bestsellers__block-character-black">50 см</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bestsellers__block-slide">
+				<div class="bestsellers__block">
+					<div class="bestsellers__block-wrapper">
+						<img src="img/bestsellers_bg.jpg" alt="" class="bestsellers__block-img">
+						<span class="bestsellers__block-stock">-50%</span>
+						<div class="bestsellers__block-circle-buttons">
+							<a href="javascript:void(0)" class="bestsellers__block-circle-button-favorite"></a>
+						</div>
+
+						<h2 class="bestsellers__block-title">Тумба Loft 2</h2>
+
+						<div class="bestsellers__block-prices">
+							<p class="bestsellers__block-price-old">24 000₽</p>
+							<p class="bestsellers__block-price-new">от <strong class="price-new_strong">12 000</strong><span class="price-new_rub">₽</span></p>
+						</div>
+
+						<div class="bestsellers__block-buttons">
+							<a href="javascript:void(0)" class="bestsellers__block-button-buy-click">Купить в 1 клик</a>
+							<a href="javascript:void(0)" class="bestsellers__block-button-buy">Купить</a>
+						</div>
+
+						<div class="bestsellers__block-characters">
+							<p class="bestsellers__block-character">Ширина: <span class="bestsellers__block-character-black">100 см</span></p>
+							<p class="bestsellers__block-character">Высота: <span class="bestsellers__block-character-black">80 см</span></p>
+							<p class="bestsellers__block-character">Глубина: <span class="bestsellers__block-character-black">50 см</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bestsellers__block-slide">
+				<div class="bestsellers__block">
+					<div class="bestsellers__block-wrapper">
+						<img src="img/bestsellers_bg.jpg" alt="" class="bestsellers__block-img">
+						<span class="bestsellers__block-stock">-50%</span>
+						<div class="bestsellers__block-circle-buttons">
+							<a href="javascript:void(0)" class="bestsellers__block-circle-button-favorite"></a>
+						</div>
+
+						<h2 class="bestsellers__block-title">Тумба Loft 2</h2>
+
+						<div class="bestsellers__block-prices">
+							<p class="bestsellers__block-price-old">24 000₽</p>
+							<p class="bestsellers__block-price-new">от <strong class="price-new_strong">12 000</strong><span class="price-new_rub">₽</span></p>
+						</div>
+
+						<div class="bestsellers__block-buttons">
+							<a href="javascript:void(0)" class="bestsellers__block-button-buy-click">Купить в 1 клик</a>
+							<a href="javascript:void(0)" class="bestsellers__block-button-buy">Купить</a>
+						</div>
+
+						<div class="bestsellers__block-characters">
+							<p class="bestsellers__block-character">Ширина: <span class="bestsellers__block-character-black">100 см</span></p>
+							<p class="bestsellers__block-character">Высота: <span class="bestsellers__block-character-black">80 см</span></p>
+							<p class="bestsellers__block-character">Глубина: <span class="bestsellers__block-character-black">50 см</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bestsellers__block-slide">
+				<div class="bestsellers__block">
+					<div class="bestsellers__block-wrapper">
+						<img src="img/bestsellers_bg.jpg" alt="" class="bestsellers__block-img">
+						<span class="bestsellers__block-stock">-50%</span>
+						<div class="bestsellers__block-circle-buttons">
+							<a href="javascript:void(0)" class="bestsellers__block-circle-button-favorite"></a>
+						</div>
+
+						<h2 class="bestsellers__block-title">Тумба Loft 2</h2>
+
+						<div class="bestsellers__block-prices">
+							<p class="bestsellers__block-price-old">24 000₽</p>
+							<p class="bestsellers__block-price-new">от <strong class="price-new_strong">12 000</strong><span class="price-new_rub">₽</span></p>
+						</div>
+
+						<div class="bestsellers__block-buttons">
+							<a href="javascript:void(0)" class="bestsellers__block-button-buy-click">Купить в 1 клик</a>
+							<a href="javascript:void(0)" class="bestsellers__block-button-buy">Купить</a>
+						</div>
+
+						<div class="bestsellers__block-characters">
+							<p class="bestsellers__block-character">Ширина: <span class="bestsellers__block-character-black">100 см</span></p>
+							<p class="bestsellers__block-character">Высота: <span class="bestsellers__block-character-black">80 см</span></p>
+							<p class="bestsellers__block-character">Глубина: <span class="bestsellers__block-character-black">50 см</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+<div class="footer">
+	<div class="container">
+		<div class="footer__block">
+			<div class="footer__logo">
+				<a href="/"><img class="footer__logo-img" src="img/icons/loftlogo__white 1.svg" alt="footer logo"></a>
+				
+				<p class="footer__copyright">© Интернет-магазин лофт-мебели, 2018-2020</p>
+				
+				<div class="footer__pay-system">
+					<div class="footer__pay-system_name_mcard"></div>
+					<div class="footer__pay-system_name_mir"></div>
+					<div class="footer__pay-system_name_visa"></div>
+					<div class="footer__pay-system_name_ya-money"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer__block footer__block-margin">
+			<div class="footer__menu">
+				<ul class="footer__vertical-menu">
+					<li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="#">Доставка</a></li>
+					<li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="#">Оплата</a></li>
+					<li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="#">Гарантия</a></li>
+					<li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="#">Обмен и возврат</a></li>
+				</ul>
+
+				<ul class="footer__vertical-menu">
+					<li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="#">Контакты и шоурумы</a></li>
+					<li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="#">О компании</a></li>
+					<li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="#">Карьера</a></li>
+					<li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="#">Помощь</a></li>
+				</ul>
+
+				<div class="footer__contacts">
+					<a href="tel:+74722808080" class="footer__contacts-phone">+7 (4722) 80-80-80</a>
+					<p class="footer__contacts_desc">Для звонков с любой точки мира</p>
+
+					<a href="javascript:void(0)" class="footer__contacts_button">Заказать звонок</a>
+
+					<div class="footer__contacts_socials">
+						<a class="footer__contacts-social footer__contacts-social_name__facebook" href="#"></a>
+						<a class="footer__contacts-social footer__contacts-social_name__instagram" href="#"></a>
+						<a class="footer__contacts-social footer__contacts-social_name__twitter" href="#"></a>
+						<a class="footer__contacts-social footer__contacts-social_name__pinterest" href="#"></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer__offerts">
+				<a class="footer__offerts-link" href="#">Политика безопастности платежей</a>
+				<a class="footer__offerts-link" href="#">Данные публичной оферты</a>
+				<a class="footer__offerts-link" href="#">Политка в отношении обработки перссональных данных</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+</body>
+</html>
