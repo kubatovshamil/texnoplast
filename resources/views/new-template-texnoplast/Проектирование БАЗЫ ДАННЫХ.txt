@@ -1,0 +1,19 @@
+Базы данных сайта Texnoplast
+
+1)users - id, first_name, middle_name, last_name, login, password, mobile, email, country, city, role_id;
+
+2)roles - id, role;
+
+3)categories - id, title, slug, parent_id, keywords, descriptions;
+
+5)products - id, category_id, title, price, discount, img, slug, descriptions, keywords;
+
+6)attr_groups - id, title
+
+7)attribute_value - id, value, attr_groups
+
+8)attribute_product - attr_id, product_id
+
+9)order - id, user_id, status, date
+
+10)order_product - id, order_id, product_id, quantity, title, price.
