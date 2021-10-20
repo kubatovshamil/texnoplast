@@ -10,7 +10,7 @@
 
 6)gallery - id, product_id, img;
 
-7)attribute_product - attr_id, product_id, attribute_name;
+7)attribute_name - id, name;
 
 8)attribute_value - attr_id, product_id, value;
 
