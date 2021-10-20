@@ -6,14 +6,16 @@
 
 3)categories - id, title, slug, parent_id, keywords, descriptions;
 
-5)products - id, category_id, title, price, discount, img, slug, descriptions, keywords;
+5)products - id, category_id, title, price, specification, discount, img, slug, descriptions, keywords;
 
-6)attr_groups - id, title
+6)gallery - id, product_id, img;
 
-7)attribute_value - id, value, attr_groups
+7)attribute_value - id, title, value;
 
-8)attribute_product - attr_id, product_id
+8)attribute_product - attr_id, product_id;
 
-9)order - id, user_id, status, date
+9)comments_product - product_id, name, rate, message;
 
-10)order_product - id, order_id, product_id, quantity, title, price.
+10)order - id, user_id, status, date;
+
+11)order_product - id, order_id, product_id, quantity, title, price;
