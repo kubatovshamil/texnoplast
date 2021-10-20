@@ -12,7 +12,7 @@
 
 7)attribute_name - id, name;
 
-8)attribute_value - attr_id, product_id, value;
+8)attribute_value - product_id, attr_id, value;
 
 9)comments_product - product_id, name, rate, message;
 
