@@ -6,7 +6,7 @@
 
 3)categories - id, title, slug, parent_id, keywords, descriptions;
 
-5)products - id, category_id, title, price, specification, discount, img, slug, descriptions, keywords;
+5)products - id, category_id, title, price, specification, discount, img, slug, descriptions, keywords, hit;
 
 6)gallery - id, product_id, img;
 
