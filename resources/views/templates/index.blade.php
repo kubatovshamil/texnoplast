@@ -1,11 +1,10 @@
 @extends('layout')
-
 @section('content')
 
 	<div class="main-slider">
-		
+
 		<div class="main-slider__wrapper">
-			
+
 			<div class="main-slider__wrapper-item">
 				<div class="container">
 					<h1 class="main-slider__title">ОТКРЫВАЕМ СЕЗОН<br>ПОДАРКОВ 1</h1>
@@ -50,11 +49,11 @@
 		</div>
 
 		<div class="popular-category__products">
-			
+
 			<div class="popular-category__products-block popular-category__products-block-tables">
 				<div class="popular-category__products-block-wrapper"></div>
 				<h2 class="popular-category__products-title">Столы</h2>
-				    
+
 				<div class="popular-category__products-categories">
 					<a href="#" class="popular-category__products-category">Барные</a>
 					<a href="#" class="popular-category__products-category">Рабочие</a>
@@ -70,7 +69,7 @@
 			<div class="popular-category__products-block popular-category__products-block-chairs">
 				<div class="popular-category__products-block-wrapper"></div>
 				<h2 class="popular-category__products-title">Стулья</h2>
-				    
+
 				<div class="popular-category__products-categories">
 					<a href="#" class="popular-category__products-category">Барные</a>
 					<a href="#" class="popular-category__products-category">Рабочие</a>
@@ -86,7 +85,7 @@
 			<div class="popular-category__products-block popular-category__products-block-stellages">
 				<div class="popular-category__products-block-wrapper"></div>
 				<h2 class="popular-category__products-title">Стеллажи</h2>
-				    
+
 				<div class="popular-category__products-categories">
 					<a href="#" class="popular-category__products-category">Барные</a>
 					<a href="#" class="popular-category__products-category">Рабочие</a>
@@ -102,7 +101,7 @@
 			<div class="popular-category__products-block popular-category__products-block-stands">
 				<div class="popular-category__products-block-wrapper"></div>
 				<h2 class="popular-category__products-title">Тумбы</h2>
-				    
+
 				<div class="popular-category__products-categories">
 					<a href="#" class="popular-category__products-category">Барные</a>
 					<a href="#" class="popular-category__products-category">Рабочие</a>
@@ -118,7 +117,7 @@
 			<div class="popular-category__products-block popular-category__products-block-hangers">
 				<div class="popular-category__products-block-wrapper"></div>
 				<h2 class="popular-category__products-title">Вешала</h2>
-				    
+
 				<div class="popular-category__products-categories">
 					<a href="#" class="popular-category__products-category">Барные</a>
 					<a href="#" class="popular-category__products-category">Рабочие</a>
@@ -134,7 +133,7 @@
 			<div class="popular-category__products-block popular-category__products-block-sofa">
 				<div class="popular-category__products-block-wrapper"></div>
 				<h2 class="popular-category__products-title">Диваны</h2>
-				    
+
 				<div class="popular-category__products-categories">
 					<a href="#" class="popular-category__products-category">Барные</a>
 					<a href="#" class="popular-category__products-category">Рабочие</a>
@@ -149,7 +148,7 @@
 			<div class="popular-category__products-block popular-category__products-block-shelf">
 				<div class="popular-category__products-block-wrapper"></div>
 				<h2 class="popular-category__products-title">Навесные полки</h2>
-				    
+
 				<div class="popular-category__products-categories">
 					<a href="#" class="popular-category__products-category">Барные</a>
 					<a href="#" class="popular-category__products-category">Рабочие</a>
@@ -406,7 +405,7 @@
 			</div>
 
 			<div class="contacts-and-forms__socials-blocks">
-				
+
 				<div class="contacts-and-forms__socials-block__name_instagram">
 					<h2 class="contacts-and-forms__socials-block__name_instagram-title">Мы в Инстаграм</h2>
 
@@ -423,7 +422,7 @@
 								<p class="contacts-and-forms__socials-block__name_instagram-followers_count">256</p>
 								<p class="contacts-and-forms__socials-block__name_instagram-followers-desc">подписчиков</p>
 							</div>
-							
+
 							<div class="contacts-and-forms__socials-block__name_instagram-block">
 								<p class="contacts-and-forms__socials-block__name_instagram-follows_count">653</p>
 								<p class="contacts-and-forms__socials-block__name_instagram-follows-desc">подписки</p>
@@ -450,7 +449,7 @@
 								<p class="contacts-and-forms__socials-block__name_facebook-followers_count">256</p>
 								<p class="contacts-and-forms__socials-block__name_facebook-followers-desc">подписчиков</p>
 							</div>
-							
+
 							<div class="contacts-and-forms__socials-block__name_facebook-block">
 								<p class="contacts-and-forms__socials-block__name_facebook-follows_count">653</p>
 								<p class="contacts-and-forms__socials-block__name_facebook-follows-desc">подписки</p>
@@ -509,7 +508,7 @@
 		</div>
 
 		<div class="portfolio__photos">
-			
+
 			<div class="portfolio__photo-block">
 				<a href="img/portfolio_md_bg.jpg" class="portfolio__photo-md" data-lighter><img src="img/portfolio_md_bg.jpg" alt=""></a>
 				<div class="portfolio__photos-sm-row">
@@ -529,7 +528,7 @@
 				</div>
 				<a href="img/portfolio_md_bg.jpg" class="portfolio__photo-md" data-lighter><img src="img/portfolio_md_bg.jpg" alt=""></a>
 			</div>
-			
+
 			<div class="portfolio__photo-block">
 				<a href="img/portfolio_lg_bg.jpg" class="portfolio__photo-lg" data-lighter><img src="img/portfolio_lg_bg.jpg" alt=""></a>
 			</div>
