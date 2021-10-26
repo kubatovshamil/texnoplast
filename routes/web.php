@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-
 Route::get('/', function () {
     return view('templates.index');
 });
@@ -15,22 +14,21 @@ Route::prefix('admin')->group(function (){
     });
 
     //Product Pages
-    Route::get('/add-product', function (){
-        return view('admin.pages.product.add-product');
+    Route::get('product/add', function (){
+        return view('admin.pages.product.add_product');
     });
 
-    Route::get('/list-product', function(){
-        return view('admin.pages.product.list-product');
+    Route::get('product/list', function(){
+        return view('admin.pages.product.list_product');
     });
 
     //Category Pages
-    Route::get('/add-category', function (){
-        return view('admin.pages.category.add-category');
+    Route::get('category/add', function (){
+        return view('admin.pages.category.add_category');
     });
 
-    Route::get('/list-category', function(){
-        return view('admin.pages.category.list-category');
+    Route::get('category/list', function(){
+        return view('admin.pages.category.list_category');
     });
-
 });
 
