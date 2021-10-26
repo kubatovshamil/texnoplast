@@ -1,19 +1,18 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
-    <a href="index3.html" class="brand-link">
-        <img src="admintle/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <a href="/admin" class="brand-link">
+        <img src="{{asset('styles/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
-
 
     <div class="sidebar">
 
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="admintle/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                <img src="{{asset('styles/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Kubatov Shamil</a>
+                <a href="/admin" class="d-block">Kubatov Shamil</a>
             </div>
         </div>
 
@@ -32,7 +31,7 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="/admin" class="nav-link">
                         <i class="nav-icon fas fa-home"></i>
                         <p>
                             Главная
@@ -47,7 +46,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/admin/list-product" class="nav-link">
                                 <i class="nav-icon fas fa-list-alt"></i>
                                 <p>
                                     Список товаров
@@ -56,7 +55,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/admin/add-product" class="nav-link">
                                 <i class="nav-icon fas fa-plus"></i>
                                 <p>
                                     Добавить товар
@@ -73,7 +72,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/admin/list-category" class="nav-link">
                                 <i class="nav-icon fas fa-list-alt"></i>
                                 <p>
                                     Список категорий
@@ -82,7 +81,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/admin/add-category" class="nav-link">
                                 <i class="nav-icon fas fa-plus"></i>
                                 <p>
                                     Добавить категорию
