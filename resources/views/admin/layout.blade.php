@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="{{ asset('styles/plugins/fontawesome-free/css/all.min.css')}}">
     <link rel="stylesheet" href="{{ asset('styles/dist/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('styles/dist/css/style.css')}}">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
