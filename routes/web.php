@@ -14,21 +14,21 @@ Route::prefix('admin')->group(function (){
     });
 
     //Product Pages
-    Route::get('product/add', function (){
-        return view('admin.pages.product.add_product');
+    Route::get('products/create', function (){
+        return view('admin.pages.products.create');
     });
 
-    Route::get('product/list', function(){
-        return view('admin.pages.product.list_product');
+    Route::get('products/show', function(){
+        return view('admin.pages.products.show');
     });
 
     //Category Pages
-    Route::get('category/add', function (){
-        return view('admin.pages.category.add_category');
+    Route::get('categories/create', function (){
+        return view('admin.pages.categories.create');
     });
 
-    Route::get('category/list', function(){
-        return view('admin.pages.category.list_category');
+    Route::get('categories/show', function(){
+        return view('admin.pages.categories.show');
     });
 });
 

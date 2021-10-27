@@ -29,7 +29,7 @@ $(document).ready(() => {
 				items: 1,
 				mouseDrag: true
 			},
-			
+
 			640: {
 				items: 2,
 				mouseDrag: true
@@ -167,19 +167,19 @@ $(document).ready(() => {
 	});
 
 
-	$('.product-card__characts-open').each(function (index, item) {
+	$('.products-card__characts-open').each(function (index, item) {
 		$(item).prop('checked', false);
 	});
 
 
 
-	$('.product-card__other-all').on('click', (event) => {
+	$('.products-card__other-all').on('click', (event) => {
 
-		if ($('.product-card__other-all-size').hasClass('size_hide')) {
-			$('.product-card__other-all-size').removeClass('size_hide');
+		if ($('.products-card__other-all-size').hasClass('size_hide')) {
+			$('.products-card__other-all-size').removeClass('size_hide');
 			$(event.currentTarget).text('Скрыть все размеры');
 		} else {
-			$('.product-card__other-all-size').toggleClass('size_hide');
+			$('.products-card__other-all-size').toggleClass('size_hide');
 			$(event.currentTarget).text('Показать все размеры');
 		}
 

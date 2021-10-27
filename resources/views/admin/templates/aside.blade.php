@@ -46,7 +46,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/admin/product/list" class="nav-link">
+                            <a href="/admin/products/show" class="nav-link">
                                 <i class="nav-icon fas fa-list-alt"></i>
                                 <p>
                                     Список товаров
@@ -55,7 +55,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="/admin/product/add" class="nav-link">
+                            <a href="/admin/products/create" class="nav-link">
                                 <i class="nav-icon fas fa-plus"></i>
                                 <p>
                                     Добавить товар
@@ -72,7 +72,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/admin/category/list" class="nav-link">
+                            <a href="/admin/categories/show" class="nav-link">
                                 <i class="nav-icon fas fa-list-alt"></i>
                                 <p>
                                     Список категорий
@@ -81,7 +81,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="/admin/category/add" class="nav-link">
+                            <a href="/admin/categories/create" class="nav-link">
                                 <i class="nav-icon fas fa-plus"></i>
                                 <p>
                                     Добавить категорию

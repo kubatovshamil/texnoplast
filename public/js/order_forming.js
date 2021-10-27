@@ -10,7 +10,7 @@ $(document).ready(() => {
 
 	});
 
-	if(!$('.order-forming__products-product').length) {
+	if(!$('.order-forming__products-products').length) {
 		$('.order-forming__products-desc').text('Корзина пуста');
 		$('.order-forming__product-total').remove();
 	}
@@ -47,7 +47,7 @@ $(document).ready(() => {
 		$(event.currentTarget).parent().remove();
 
 
-		if(!$('.order-forming__products-product').length) {
+		if(!$('.order-forming__products-products').length) {
 			$('.order-forming__products-desc').text('Корзина пуста');
 			$('.order-forming__product-total').remove();
 		}

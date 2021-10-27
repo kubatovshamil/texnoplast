@@ -6,6 +6,10 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="/admin" class="nav-link">Главная</a>
         </li>
+
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/" class="nav-link">Перейти на сайт</a>
+        </li>
     </ul>
 
     <ul class="navbar-nav ml-auto">
