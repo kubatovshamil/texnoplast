@@ -16,7 +16,6 @@ class CategoryController
         $request->validate([
             'title' => 'required',
             'slug' => 'required',
-            'parent_id' => 'required',
             'descriptions' => 'required',
             'keywords' => 'required'
         ]);

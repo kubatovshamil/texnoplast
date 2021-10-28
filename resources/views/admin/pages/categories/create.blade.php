@@ -85,11 +85,6 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleInput1">Идентификатор родительской категории</label>
-                                        <input type="number" class="form-control" name="parent_id" id="exampleInput1" placeholder="Введите идентификатор родительской категории">
-                                    </div>
-
-                                    <div class="form-group">
                                         <label for="exampleInput1">Описание </label>
                                         <input type="text" class="form-control" name="descriptions" id="exampleInput1" placeholder="Введите описание">
                                     </div>
