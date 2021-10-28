@@ -23,7 +23,7 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    Таблица с товарами
+                    Список товаров
                 </div>
             </div>
         </div>
