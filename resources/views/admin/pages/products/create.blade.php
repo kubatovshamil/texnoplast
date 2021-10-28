@@ -29,11 +29,9 @@
                                 <div class="form-group">
                                     <label for="exampleInput1">Наименования категории </label>
                                     <select class="form-control" id="sel1">
-                                        <option>Поликорбонат сотовый</option>
-                                        <option>Пластиковая тара</option>
-                                        <option>Пластиковые паллеты</option>
-                                        <option>Мусорные контейнеры</option>
-                                        <option>Деревянные поддоны</option>
+                                        @foreach($categories as $category)
+                                            <option value="{{$category->id}}">{{ $category->title }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
 
