@@ -31,35 +31,35 @@
                 <div class="row">
                     <div class="col-md-6">
                     <div class="card card-primary">
-                        <form>
+                        <form action="{{route('category.create')}}" method="post">
+                            @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInput1">Наименования категории </label>
-                                    <input type="text" class="form-control" id="exampleInput1" placeholder="Введите название категории">
+                                    <input type="text" class="form-control" name="title" id="exampleInput1" placeholder="Введите название категории">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Родительская категория:</label>
-                                    <select class="form-control" id="sel1">
+                                    <select name="parent_id" class="form-control" id="sel1">
                                         @foreach($categories as $category)
                                             <option value="{{$category->id}}">{{ $category->title }}</option>
                                         @endforeach
                                     </select>
-
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInput1">Ссылка категории</label>
-                                    <input type="text" class="form-control" id="exampleInput1" placeholder="Введите ссылку категории">
+                                    <input type="text" class="form-control" name="slug" id="exampleInput1" placeholder="Введите ссылку категории">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInput1">Описание </label>
-                                    <input type="text" class="form-control" id="exampleInput1" placeholder="Введите описание">
+                                    <input type="text" class="form-control" name="descriptions" id="exampleInput1" placeholder="Введите описание">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInput1">Ключевые слова </label>
-                                    <input type="text" class="form-control" id="exampleInput1" placeholder="Введите ключевые слова">
+                                    <input type="text" class="form-control" name="keywords" id="exampleInput1" placeholder="Введите ключевые слова">
                                 </div>
 
                             </div>

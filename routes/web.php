@@ -18,13 +18,12 @@ Route::prefix('admin')->group(function (){
 
     //Product Pages
     Route::get('products/create', [ProductController::class, 'create'] );
-
     Route::get('products/show', [ProductController::class, 'show'] );
 
     //Category Pages
     Route::get('categories/create', [CategoryController::class, 'create'])->name('categories.create');
-    Route::post('/categories/create', [CategoryController::class, 'createParentCategory'])->name('category.add');
-
+    Route::post('categories/create', [CategoryController::class, 'createParentCategory'])->name('category.add');
+    Route::post('categories/add', [CategoryController::class, 'createCategory'])->name('category.create');
     Route::get('categories/show', [CategoryController::class, 'show']);
 
 });
