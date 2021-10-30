@@ -33,18 +33,6 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">Таблица Категорий</h3>
-
-{{--                                <div class="card-tools">--}}
-{{--                                    <div class="input-group input-group-sm" style="width: 150px;">--}}
-{{--                                        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">--}}
-
-{{--                                        <div class="input-group-append">--}}
-{{--                                            <button type="submit" class="btn btn-default">--}}
-{{--                                                <i class="fas fa-search"></i>--}}
-{{--                                            </button>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
                             </div>
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
@@ -71,7 +59,7 @@
                                             <td>{{\Illuminate\Support\Str::limit($category->keywords, 10) }}</td>
                                             <td><a href="{{route('categories.edit', [$category->id])}}" class="btn btn-success">Edit</a></td>
                                             <td>
-                                                <form action="{{ route('categories.destroyed', [$category->id]) }}" method="post">
+                                                <form action="{{route('categories.destroy', $category->id)}}" method="post">
                                                     @csrf
                                                     @method('DELETE')
                                                     <div class="form-group">
@@ -86,7 +74,7 @@
                             </div>
 
                             <div class="card-footer clearfix">
-                                {{ $categories->links('admin.pages.categories.paginate') }}
+                                {{ $categories->links('admin.categories.paginate') }}
                             </div>
 
                         </div>
