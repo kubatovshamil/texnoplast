@@ -46,7 +46,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/admin/products/show" class="nav-link">
+                            <a href="/admin/products" class="nav-link">
                                 <i class="nav-icon fas fa-list-alt"></i>
                                 <p>
                                     Список товаров

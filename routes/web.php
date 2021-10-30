@@ -15,7 +15,7 @@ Route::prefix('admin')->group(function (){
         return view('admin.index');
     });
     //Product route
-    
+    Route::resource('/products', ProductController::class);
 
     //Category route
     Route::post('/categories/parent', [CategoryController::class, 'parentCategory'])->name('categories.parent');
