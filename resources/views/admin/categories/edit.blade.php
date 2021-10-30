@@ -62,7 +62,8 @@
                                 </div>
 
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                                    <a href="{{ url()->previous() }}" class="btn btn-primary">Назад</a>
+                                    <button type="submit" class="btn btn-success float-right">Сохранить</button>
                                 </div>
                             </form>
                         </div>

@@ -44,39 +44,19 @@
                                         <th>ссылка</th>
                                         <th>descriptions</th>
                                         <th>keywords</th>
-                                        <th>Edit</th>
-                                        <th>show</th>
-                                        <th>delete</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($categories as $category)
                                         <tr>
                                             <td>{{ $category->id }}</td>
-                                            <td>{{\Illuminate\Support\Str::limit($category->title, 10) }}</td>
+                                            <td>{{ $category->title }}</td>
                                             <td>{{ $category->parent_id ? $category->parent_id : 'Null' }}</td>
-                                            <td>{{ \Illuminate\Support\Str::limit($category->slug, 10) }}</td>
-                                            <td>{{\Illuminate\Support\Str::limit($category->descriptions, 10) }}</td>
-                                            <td>{{\Illuminate\Support\Str::limit($category->keywords, 10) }}</td>
-                                            <td><a href="{{route('categories.edit', [$category->id])}}" class="btn btn-success">Edit</a></td>
-                                            <td><a href="{{route('categories.show', [$category->id])}}" class="btn btn-info">Show</a></td>
-                                            <td>
-                                                <form action="{{route('categories.destroy', $category->id)}}" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <div class="form-group">
-                                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                                    </div>
-                                                </form>
-                                            </td>
+                                            <td>{{ $category->slug }}</td>
+                                            <td>{{ $category->descriptions }}</td>
+                                            <td>{{ $category->keywords }}</td>
                                         </tr>
-                                    @endforeach
                                     </tbody>
                                 </table>
-                            </div>
-
-                            <div class="card-footer clearfix">
-                                {{ $categories->links('admin.categories.paginate') }}
                             </div>
 
                         </div>
