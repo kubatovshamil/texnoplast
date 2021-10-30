@@ -71,10 +71,21 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="card card-primary">
-                            <form action="{{ route('categories.parent')}}" method="post">
+                        <div class="card card-secondary collapsed-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Раскрыть форму</h3>
+
+                                <div class="card-tools">
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body" style="display: none">
+                               <form action="{{ route('categories.parent')}}" method="post">
                                 @csrf
-                                <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInput1">Наименования родительской категории</label>
                                         <input type="text" class="form-control" name="title" id="exampleInput1" placeholder="Введите название родительской категории">
@@ -93,11 +104,11 @@
                                         <label for="exampleInput1">Ключевые слова </label>
                                         <input type="text" class="form-control" name="keywords" id="exampleInput1" placeholder="Введите ключевые слова">
                                     </div>
-                                </div>
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Добавить</button>
-                                </div>
                             </form>
+                            </div>
+                            <div class="card-footer" style="display: none">
+                                <button type="submit" class="btn btn-primary">Добавить</button>
+                            </div>
                         </div>
                     </div>
                 </div>
