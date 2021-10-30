@@ -39,6 +39,33 @@ class CategoryController
     }
 
     public function show(){
-        return view('admin.pages.categories.show');
+        $categories = Category::paginate(5);
+        return view('admin.pages.categories.show', compact('categories'));
+
+    }
+
+    public function edit($id){
+        $category = Category::where('id', $id)->first();
+        $categories = Category::whereNull('parent_id')->get(['id','title']);
+        return view('admin.pages.categories.edit', compact('category', 'categories'));
+    }
+
+    public function update(Request $request, $id){
+        $category = Category::findorFail($id);
+        $request->validate([
+            'title' => 'required',
+            'slug' => 'required',
+            'descriptions' => 'required',
+            'keywords' => 'required'
+        ]);
+
+        $category->fill($request->all())->save();
+        return redirect('/admin/categories/show');
+    }
+
+    public function destroyed($id){
+
+        $category = Category::where('id', $id)->delete();
+        return redirect()->route('categories.show')->with("message", "Категория успешно удален");
     }
 }

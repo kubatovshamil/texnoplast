@@ -4,6 +4,12 @@
 
     <div class="content-wrapper">
 
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
+
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -23,7 +29,68 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    Список категорий
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Таблица Категорий</h3>
+
+{{--                                <div class="card-tools">--}}
+{{--                                    <div class="input-group input-group-sm" style="width: 150px;">--}}
+{{--                                        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">--}}
+
+{{--                                        <div class="input-group-append">--}}
+{{--                                            <button type="submit" class="btn btn-default">--}}
+{{--                                                <i class="fas fa-search"></i>--}}
+{{--                                            </button>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+                            </div>
+                            <div class="card-body table-responsive p-0">
+                                <table class="table table-hover text-nowrap">
+                                    <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Наименование</th>
+                                        <th>parent_id</th>
+                                        <th>ссылка</th>
+                                        <th>descriptions</th>
+                                        <th>keywords</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($categories as $category)
+                                        <tr>
+                                            <td>{{ $category->id }}</td>
+                                            <td>{{\Illuminate\Support\Str::limit($category->title, 10) }}</td>
+                                            <td>{{ $category->parent_id ? $category->parent_id : 'Null' }}</td>
+                                            <td>{{ \Illuminate\Support\Str::limit($category->slug, 10) }}</td>
+                                            <td>{{\Illuminate\Support\Str::limit($category->descriptions, 10) }}</td>
+                                            <td>{{\Illuminate\Support\Str::limit($category->keywords, 10) }}</td>
+                                            <td><a href="{{route('categories.edit', [$category->id])}}" class="btn btn-success">Edit</a></td>
+                                            <td>
+                                                <form action="{{ route('categories.destroyed', [$category->id]) }}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                    </div>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="card-footer clearfix">
+                                {{ $categories->links('admin.pages.categories.paginate') }}
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
