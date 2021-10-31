@@ -17,7 +17,7 @@ class ProductController extends Controller
 
     public function create()
     {
-        $categories = Category::whereNull('parent_id')->get(['id','title']);
+        $categories = Category::whereNotNull('parent_id')->get(['id','title']);
         return view('admin.products.create', compact('categories'));
     }
 

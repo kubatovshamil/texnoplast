@@ -54,7 +54,7 @@
 
 
                                     <div class="form-group">
-                                        <label for="exampleInput1">Скидка товара</label>
+                                        <label for="exampleInput1">Старая цена товара</label>
                                         <input type="number" class="form-control" id="exampleInput1" name="discount" placeholder="Введите скидку товара">
                                     </div>
 
@@ -90,9 +90,29 @@
                                         <label for="exampleInput1">Хит продаж</label>
                                         <input type="text" class="form-control" id="exampleInput1" name="hit" placeholder="Введите хит товара">
                                     </div>
+                                    <div id="first-group">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-5 inps">
+                                                <label for="inputState">Название характеристики</label>
+                                                <input type="text" class="form-control" id="nameAttr">
+                                                <select id="dropdown" class="form-control">
+                                                    @foreach($categories as $category)
+                                                        <option name="{{$category->id}}">{{$category->title}}</option>
+                                                    @endforeach
+                                                </select>
+                                                <button class="btn btn-link">Переключить</button>
+                                            </div>
+
+                                            <div class="form-group col-md-5">
+                                                <label for="inputCity">Значение характеристики</label>
+                                                <input type="text" class="form-control" id="inputCity">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-more"></div>
+                                     <button id="add" class="btn btn-dark">Создать поле</button>
 
                                 </div>
-
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-primary">Добавить</button>
                                 </div>
@@ -105,3 +125,4 @@
     </div>
 
 @endsection
+

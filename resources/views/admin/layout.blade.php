@@ -22,5 +22,6 @@
 <script src="{{ asset('styles/plugins/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('styles/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{asset('styles/dist/js/adminlte.min.js')}}"></script>
+<script src="{{asset('styles/dist/js/index.js')}}"></script>
 </body>
 </html>
