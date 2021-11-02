@@ -43,13 +43,13 @@ class CategoryController extends Controller
         $request->validate([
             'title' => 'required',
             'slug' => 'required',
+            'img' => 'required',
             'descriptions' => 'required',
             'keywords' => 'required'
         ]);
 
         Category::create($request->all());
         return redirect()->route('categories.index')->with('message', 'Родительская категория успешно добавлен');
-
     }
 
     public function edit(Category $category)

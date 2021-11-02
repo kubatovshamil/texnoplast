@@ -9,6 +9,7 @@ $(document).ready(function() {
 
     $('form').on('click', '.btn-link', function (e){
         e.preventDefault();
+        $(this).parent().find('#dropdown').prop('selectedIndex', 0);
         $(this).parent().find("#nameAttr").toggle();
         $(this).parent().find("#dropdown").toggle();
     });
@@ -17,4 +18,5 @@ $(document).ready(function() {
         e.preventDefault();
         $(this).parent().remove();
     });
+
 });

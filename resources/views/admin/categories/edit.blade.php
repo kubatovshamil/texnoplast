@@ -49,6 +49,21 @@
                                         <input type="text" class="form-control" name="slug" id="exampleInput1" value="{{$category->slug}}" placeholder="Введите ссылку категории">
                                     </div>
 
+                                    @empty(!$category->img)
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Изборажения товара</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" value="{{$category->img}}" name="img" id="exampleInputFile">
+                                                    <label class="custom-file-label" for="exampleInputFile">Выберите файл</label>
+                                                </div>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">Загрузить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endempty
+
                                     <div class="form-group">
                                         <label for="exampleInput1">Описание </label>
                                         <input type="text" class="form-control" name="descriptions" id="exampleInput1" value="{{$category->descriptions}}" placeholder="Введите описание">

@@ -10,6 +10,17 @@
             </div>
         @endif
 
+            @if(count($errors) > 0)
+                <div class="p-1">
+                    @foreach($errors->all() as $error)
+                        <div class="alert alert-warning alert-danger fade show" role="alert">{{$error}} <button type="button" class="close"
+                                                                                                                data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button></div>
+                    @endforeach
+                </div>
+            @endif
+
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -84,7 +95,7 @@
                                 </div>
                             </div>
                             <div class="card-body" style="display: none">
-                               <form action="{{ route('categories.parent')}}" method="post">
+                               <form action="{{route('categories.parent')}}" method="post">
                                 @csrf
                                     <div class="form-group">
                                         <label for="exampleInput1">Наименования родительской категории</label>
@@ -95,6 +106,20 @@
                                         <input type="text" class="form-control" name="slug" id="exampleInput1" placeholder="Введите ссылку родительской категории">
                                     </div>
 
+                                   <div class="form-group">
+                                       <label for="exampleInputFile">Фотка Родительской категории</label>
+                                       <div class="input-group">
+                                           <div class="custom-file">
+                                               <input type="file" class="custom-file-input" name="img" id="exampleInputFile">
+                                               <label class="custom-file-label" for="exampleInputFile">Выберите файл</label>
+                                           </div>
+                                           <div class="input-group-append">
+                                               <span class="input-group-text">Загрузить</span>
+                                           </div>
+                                       </div>
+                                   </div>
+
+
                                     <div class="form-group">
                                         <label for="exampleInput1">Описание </label>
                                         <input type="text" class="form-control" name="descriptions" id="exampleInput1" placeholder="Введите описание">
@@ -104,10 +129,11 @@
                                         <label for="exampleInput1">Ключевые слова </label>
                                         <input type="text" class="form-control" name="keywords" id="exampleInput1" placeholder="Введите ключевые слова">
                                     </div>
-                            </form>
-                            </div>
-                            <div class="card-footer" style="display: none">
-                                <button type="submit" class="btn btn-primary">Добавить</button>
+
+                                   <div class="card-footer">
+                                       <button type="submit" class="btn btn-primary">Добавить</button>
+                                   </div>
+                               </form>
                             </div>
                         </div>
                     </div>

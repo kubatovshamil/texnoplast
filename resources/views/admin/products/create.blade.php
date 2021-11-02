@@ -1,7 +1,5 @@
 @extends('admin.layout')
-
 @section('content')
-
     <div class="content-wrapper">
 
         <div class="content-header">
@@ -24,7 +22,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card card-primary">
-                            <form action="{{route('products.store')}}" method="post">
+                            <form class="form-product" action="{{route('products.store')}}" method="post">
                                 @csrf
                                 <div class="card-body">
 
@@ -35,7 +33,7 @@
 
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Родительская категория:</label>
-                                        <select name="parent_id" class="form-control" id="sel1">
+                                        <select name="category_id" name="category" class="form-control" id="sel1">
                                             @foreach($categories as $category)
                                                 <option value="{{$category->id}}">{{ $category->title }}</option>
                                             @endforeach
@@ -48,10 +46,9 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleInput1">Описание товара</label>
-                                        <input type="text" class="form-control" name="specification" id="exampleInput1" placeholder="Введите описание товара">
+                                        <label for="exampleFormControlTextarea3">Описание товара</label>
+                                        <textarea class="form-control" name="specification" id="exampleFormControlTextarea3" rows="3"></textarea>
                                     </div>
-
 
                                     <div class="form-group">
                                         <label for="exampleInput1">Старая цена товара</label>
@@ -77,35 +74,39 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleInput1">Описание </label>
+                                        <label for="exampleInput1">Мета теги описание</label>
                                         <input type="text" class="form-control" id="exampleInput1" name="descriptions" placeholder="Введите описание">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleInput1">Ключевые слова </label>
+                                        <label for="exampleInput1">Мета теги ключевые слова</label>
                                         <input type="text" class="form-control" id="exampleInput1" name="keywords" placeholder="Введите ключевые слова">
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="exampleInput1">Хит продаж</label>
-                                        <input type="text" class="form-control" id="exampleInput1" name="hit" placeholder="Введите хит товара">
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                           <strong>Хит</strong>
+                                        </label>
                                     </div>
+
                                     <div id="first-group">
                                         <div class="form-row">
                                             <div class="form-group col-md-5 inps">
-                                                <label for="inputState">Название характеристики</label>
-                                                <input type="text" class="form-control" id="nameAttr">
-                                                <select id="dropdown" class="form-control">
-                                                    @foreach($categories as $category)
-                                                        <option name="{{$category->id}}">{{$category->title}}</option>
-                                                    @endforeach
-                                                </select>
-                                                <button class="btn btn-link">Переключить</button>
+                                                <input type="text" class="form-control attr_name" data-id="0" name="attr_name[]" id="nameAttr">
+                                                @empty(!$attribute_names)
+                                                    <select id="dropdown" name="select_name[]" class="form-control select_name">
+                                                        <option disabled selected value>Выберите</option>
+                                                        @foreach($attribute_names as $item)
+                                                            <option data-id="{{ $item->id }}" data-name="{{$item->name}}">{{$item->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    <button class="btn btn-link">Переключить</button>
+                                                @endempty
                                             </div>
 
                                             <div class="form-group col-md-5">
-                                                <label for="inputCity">Значение характеристики</label>
-                                                <input type="text" class="form-control" id="inputCity">
+                                                <input type="text" class="form-control attr_value" name="attr_val[]" id="inputCity">
                                             </div>
                                         </div>
                                     </div>
@@ -125,4 +126,3 @@
     </div>
 
 @endsection
-

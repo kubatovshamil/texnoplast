@@ -42,6 +42,7 @@
                                         <th>Наименование</th>
                                         <th>parent_id</th>
                                         <th>ссылка</th>
+                                        <th>img</th>
                                         <th>descriptions</th>
                                         <th>keywords</th>
                                         <th>Edit</th>
@@ -56,6 +57,7 @@
                                             <td>{{\Illuminate\Support\Str::limit($category->title, 10) }}</td>
                                             <td>{{ $category->parent_id ? $category->parent_id : 'Null' }}</td>
                                             <td>{{ \Illuminate\Support\Str::limit($category->slug, 10) }}</td>
+                                            <td>{{ \Illuminate\Support\Str::limit($category->img, 10) }}</td>
                                             <td>{{\Illuminate\Support\Str::limit($category->descriptions, 10) }}</td>
                                             <td>{{\Illuminate\Support\Str::limit($category->keywords, 10) }}</td>
                                             <td><a href="{{route('categories.edit', [$category->id])}}" class="btn btn-success">Edit</a></td>

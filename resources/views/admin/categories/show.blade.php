@@ -42,6 +42,9 @@
                                         <th>Наименование</th>
                                         <th>parent_id</th>
                                         <th>ссылка</th>
+                                        @empty(!$category->img)
+                                            <th>img</th>
+                                        @endempty
                                         <th>descriptions</th>
                                         <th>keywords</th>
                                     </tr>
@@ -52,6 +55,9 @@
                                             <td>{{ $category->title }}</td>
                                             <td>{{ $category->parent_id ? $category->parent_id : 'Null' }}</td>
                                             <td>{{ $category->slug }}</td>
+                                            @empty(!$category->img)
+                                                <td>{{ $category->img }}</td>
+                                            @endempty
                                             <td>{{ $category->descriptions }}</td>
                                             <td>{{ $category->keywords }}</td>
                                         </tr>
