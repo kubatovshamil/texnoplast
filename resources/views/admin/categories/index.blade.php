@@ -78,7 +78,7 @@
                             </div>
 
                             <div class="card-footer clearfix">
-                                {{ $categories->links('admin.categories.paginate') }}
+                                {{ $categories->links('admin.templates.paginate') }}
                             </div>
 
                         </div>

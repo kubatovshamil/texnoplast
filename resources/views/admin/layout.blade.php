@@ -24,7 +24,6 @@
 <script src="{{asset('styles/dist/js/adminlte.min.js')}}"></script>
 <script src="{{asset('styles/dist/js/index.js')}}"></script>
 
-
 <script type="text/javascript">
 
     function getFormData($form){
@@ -71,7 +70,6 @@
         return data;
     }
 
-
     $('.form-product').on('submit',function(e){
         e.preventDefault();
         var json = getProductJson(getFormData($(this)));
@@ -83,14 +81,13 @@
                 data: JSON.stringify(json),
             },
             success:function(response){
-                $('.content').html(response);
-            },
+                window.history.back();
+                },
             error: function(response) {
+                console.error(response);
             },
         });
     });
 </script>
-
-
 </body>
 </html>
