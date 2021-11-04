@@ -14,6 +14,7 @@ Route::prefix('admin')->group(function (){
     Route::get('/', function(){
         return view('admin.index');
     });
+
     //Product route
     Route::resource('/products', ProductController::class);
 

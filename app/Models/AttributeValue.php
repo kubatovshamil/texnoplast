@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class AttributeValue extends Model
 {
+
+    protected $primaryKey  = 'attr_id';
+
     use HasFactory;
 
     protected $fillable = [
@@ -14,4 +17,14 @@ class AttributeValue extends Model
         'product_id',
         'value'
     ];
+
+    public function attributeNames(){
+        return $this->belongsTo(AttributeName::class, 'attr_id', 'id');
+    }
+
+
+    public function products(){
+        return $this->belongsTo(Product::class, 'product_id');
+    }
+
 }

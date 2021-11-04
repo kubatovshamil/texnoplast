@@ -19,4 +19,10 @@ class Product extends Model
         'keywords',
         'descriptions'
     ];
+
+
+    public function attributeValues(){
+        return $this->hasMany(AttributeValue::class);
+    }
+
 }

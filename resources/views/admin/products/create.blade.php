@@ -91,7 +91,7 @@
                                     </div>
 
                                     <div id="first-group">
-                                        <div class="form-row">
+                                        <div class="form-row add-input">
                                             <div class="form-group col-md-5 inps">
                                                 <input type="text" class="form-control attr_name" data-id="0" name="attr_name[]" id="nameAttr">
                                                 @empty(!$attribute_names)
@@ -111,7 +111,7 @@
                                         </div>
                                     </div>
                                     <div class="form-more"></div>
-                                     <button id="add" class="btn btn-dark">Создать поле</button>
+                                    <button id="add" class="btn btn-dark">Создать поле</button>
 
                                 </div>
                                 <div class="card-footer">
