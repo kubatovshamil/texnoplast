@@ -8,13 +8,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Редактирования категории</h1>
+                        <h1 class="m-0">Редактирования товара</h1>
 
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/admin">Главная</a></li>
-                            <li class="breadcrumb-item active">Редактирование категории</li>
+                            <li class="breadcrumb-item active">Редактирование товара</li>
                         </ol>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card card-primary">
-                            <form action="{{route('products.update', [$product->id])}}" method="post">
+                            <form id="edit" action="{{route('products.update', [$product->id])}}" method="post">
                                 @csrf
                                 @method("PUT")
                                 <div class="card-body">
@@ -36,7 +36,7 @@
                                     @if($product->category_id)
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Категория:</label>
-                                            <select name="parent_id" class="form-control" id="sel1">
+                                            <select name="category_id" class="form-control" id="sel1">
                                                 @foreach($categories as $item)
                                                     <option value="{{$item->id}}">{{ $item->title }}</option>
                                                 @endforeach
@@ -46,14 +46,14 @@
 
                                     <div class="form-group">
                                         <label for="exampleInput1">Цена товара</label>
-                                        <input type="number" class="form-control" name="slug" id="exampleInput1" value="{{$product->price}}" placeholder="Введите ссылку категории">
+                                        <input type="number" class="form-control" name="price" id="exampleInput1" value="{{$product->price}}" placeholder="Введите ссылку категории">
                                     </div>
 
 
 
                                     <div class="form-group">
                                         <label for="exampleInput1">Старая цена товара</label>
-                                        <input type="number" class="form-control" name="slug" id="exampleInput1" value="{{$product->discount}}" placeholder="Введите старую цену товара">
+                                        <input type="number" class="form-control" name="discount" id="exampleInput1" value="{{$product->discount}}" placeholder="Введите старую цену товара">
                                     </div>
 
                                     <div class="form-group">
@@ -96,15 +96,26 @@
                                         <input type="text" class="form-control" name="keywords" id="exampleInput1" value="{{$product->keywords}}" placeholder="Введите ключевые слова">
                                     </div>
 
-                                    @foreach($attributes as $attribute)
+                                    @foreach($inputs as $input)
                                         <div id="first-group">
                                             <div class="form-row">
                                                 <div class="form-group col-md-5 inps">
-                                                    <input type="text" class="form-control attr_name" data-id="0" name="attr_name[]" id="nameAttr" value="{{$attribute->name}}">
+                                                    <input type="text" class="form-control attr_name" data-id="0" name="attr_name[]" id="nameAttr" value="" style="display: none">
+                                                    <select id="dropdown" name="attr_name[]" class="form-control select_name" style="display: block">
+                                                        <option value>Выберите</option>
+                                                        @foreach($attributes as $item)
+                                                            @if($input->name == $item->name)
+                                                                <option data-id="{{ $item->id }}"  selected  data-name="{{$item->name}}">{{$item->name}}</option>
+                                                            @else
+                                                            <option data-id="{{ $item->id }}"  data-name="{{$item->name}}">{{$item->name}}</option>
+                                                        @endif
+                                                        @endforeach
+                                                    </select>
+                                                    <button class="btn btn-link">Переключить</button>
                                                 </div>
 
                                                 <div class="form-group col-md-5">
-                                                    <input type="text" class="form-control attr_value" name="attr_val[]" id="inputCity" value="{{$attribute->value}}">
+                                                    <input type="text" class="form-control attr_value" name="attr_val[]" id="inputCity" value="{{$input ->value}}">
                                                 </div>
 
                                                 <div class="form-group col-md-2" id="btn">
@@ -115,7 +126,7 @@
                                         </div>
                                     @endforeach
                                     <div class="form-more"></div>
-                                    <button id="create-input" class="btn btn-dark">Создать поле</button>
+                                    <button id="add" class="btn btn-dark">Задать характеристики</button>
                                 </div>
 
                                 <div class="card-footer">

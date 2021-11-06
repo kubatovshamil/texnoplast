@@ -5,20 +5,23 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
 
     public function index()
     {
-        $categories = Category::paginate(5);
-        return view('admin.categories.index', compact('categories'));
+        return view('admin.categories.index',[
+            'categories' => Category::paginate(5)
+        ]);
     }
 
     public function create()
     {
-        $categories = Category::whereNull('parent_id')->get(['id','title']);
-        return view('admin.categories.create', compact('categories'));
+        return view('admin.categories.create', [
+            'categories' => Category::whereNull('parent_id')->get(['id','title'])
+        ]);
     }
 
     public function store(Request $request)
@@ -31,12 +34,15 @@ class CategoryController extends Controller
             'keywords' => 'required'
         ]);
         Category::create($request->all());
+
         return redirect()->route('categories.index')->with('message', 'Категория успешно добавлен');
     }
 
     public function show(Category $category)
     {
-        return view('admin.categories.show', compact('category'));
+        return view('admin.categories.show', [
+            'category' => $category
+        ]);
     }
 
     public function parentCategory(Request $request){
@@ -49,13 +55,17 @@ class CategoryController extends Controller
         ]);
 
         Category::create($request->all());
-        return redirect()->route('categories.index')->with('message', 'Родительская категория успешно добавлен');
+
+        return redirect()->route('categories.index')
+            ->with('message', 'Родительская категория успешно добавлен');
     }
 
     public function edit(Category $category)
     {
-        $categories = Category::whereNull('parent_id')->get(['id','title']);
-        return view('admin.categories.edit', compact('category', 'categories'));
+        return view('admin.categories.edit', [
+            'category' => $category,
+            'categories' => Category::whereNull('parent_id')->get(['id','title'])
+        ]);
     }
 
 
@@ -69,12 +79,15 @@ class CategoryController extends Controller
         ]);
 
         $category->update($request->all());
-        return redirect()->route('categories.index')->with('message', 'Успешно обновил данные');
+        return redirect()->route('categories.index')
+            ->with('message', 'Успешно обновил данные');
     }
 
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route('categories.index')->with('message' ,'Успешно удален категория');
+
+        return redirect()->route('categories.index')
+            ->with('message' ,'Успешно удален категория');
     }
 }

@@ -13,7 +13,4 @@ class AttributeName extends Model
     ];
 
 
-    public function attributeValues(){
-        return $this->hasMany(AttributeValue::class, 'attr_id');
-    }
 }

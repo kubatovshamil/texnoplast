@@ -14,6 +14,7 @@ class CreateAttributeValuesTable extends Migration
     public function up()
     {
         Schema::create('attribute_values', function (Blueprint $table) {
+            $table->id();
             $table->bigInteger("product_id")->nullable();
             $table->foreignId('attr_id')->constrained('attribute_names')
                 ->onDelete('cascade')

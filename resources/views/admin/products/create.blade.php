@@ -17,13 +17,16 @@
                 </div>
             </div>
         </div>
+
+
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card card-primary">
-                            <form class="form-product" action="{{route('products.store')}}" method="post">
+                            <form class="form-product" id="create" action="{{route('products.store')}}" method="post">
                                 @csrf
+                                <input type="hidden" id="attributes" value='@json($attributes)'>
                                 <div class="card-body">
 
                                     <div class="form-group">
@@ -90,28 +93,23 @@
                                         </label>
                                     </div>
 
-                                    <div id="first-group">
-                                        <div class="form-row add-input">
-                                            <div class="form-group col-md-5 inps">
-                                                <input type="text" class="form-control attr_name" data-id="0" name="attr_name[]" id="nameAttr">
-                                                @empty(!$attribute_names)
-                                                    <select id="dropdown" name="select_name[]" class="form-control select_name">
-                                                        <option disabled selected value>Выберите</option>
-                                                        @foreach($attribute_names as $item)
-                                                            <option data-id="{{ $item->id }}" data-name="{{$item->name}}">{{$item->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    <button class="btn btn-link">Переключить</button>
-                                                @endempty
-                                            </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-5">
+                                            <input type="text" id="input" class="form-control" name="attr_name[]">
+                                            <button id="switch" class="btn btn-link">Переключить</button>
+                                        </div>
 
-                                            <div class="form-group col-md-5">
-                                                <input type="text" class="form-control attr_value" name="attr_val[]" id="inputCity">
-                                            </div>
+                                        <div class="form-group col-md-5">
+                                            <input type="text" class="form-control" name="attr_val[]">
+                                        </div>
+
+                                        <div class="form-group col-md-2">
+                                            <button id="remove" class="btn btn-danger">Удалить</button>
                                         </div>
                                     </div>
-                                    <div class="form-more"></div>
-                                    <button id="add" class="btn btn-dark">Создать поле</button>
+
+
+                                    <button id="add" class="btn btn-dark">Задать характеристики</button>
 
                                 </div>
                                 <div class="card-footer">
