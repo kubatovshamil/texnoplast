@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use function PHPUnit\Framework\isNull;
 
 class ProductController extends Controller
 {
@@ -67,22 +68,38 @@ class ProductController extends Controller
 
     public function update(Request $request, Product $product)
     {
-        $product->update([
-            'title' => $request->title,
-            'category_id' => $request->category_id,
-            'price' => $request->price,
-            'discount' => $request->discount,
-            'slug' => $request->slug,
-            'img' => $request->img,
-            'keywords' => $request->keywords,
-            'specification' => $request->specification,
-            'descriptions' => $request->descriptions
-        ]);
+        $product->updateData($request);
 
+        $attributeValues = DB::table('attribute_values')
+            ->where('product_id', $product->id)
+            ->get()
+            ->toArray();
 
-        //Обновление атрибутов!!!
-        //удаление атрибутов!!
-        //создание атрибутов!!
+        $data = $request->only('attr_name', 'attr_val');
+
+        $attributes = [];
+        foreach ($attributeValues as $k => $item) {
+            $attributes[] =  [
+                'id' => $item->id,
+                'select_id' => $data['attr_name'][$k] ?? null,
+                'value' => $data['attr_val'][$k] ?? null
+            ];
+        }
+
+        foreach ($attributes as $item){
+            if($item['select_id']){
+                DB::table('attribute_values')
+                    ->where('id', $item['id'])
+                    ->update([
+                        'product_id' => $product->id,
+                        'attr_id' => $item['select_id'],
+                        'value' => $item['value']
+                    ]);
+            }else{
+                DB::table('attribute_values')
+                    ->delete($item['id']);
+            }
+        }
 
         return redirect()->route('products.edit', $product->id)
             ->with('message', 'Данны успешно обновлены');
