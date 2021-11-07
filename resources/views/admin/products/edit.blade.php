@@ -4,6 +4,14 @@
 
     <div class="content-wrapper">
 
+
+
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
+
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -104,7 +112,7 @@
                                                 <select name="attr_name[]" id="select" class="form-control">
                                                     @foreach($items as $item)
                                                         @if($item->name == $attribute->name)
-                                                            <option selected  data-name="{{$item->name}}">{{$item->name}}</option>
+                                                            <option selected value="{{$item->id}}">{{$item->name}}</option>
                                                         @else
                                                             <option value="{{$item->id}}">{{$item->name}}</option>
                                                         @endif

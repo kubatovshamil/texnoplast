@@ -13,29 +13,12 @@ class AttributeName extends Model
         'name',
     ];
 
-
-    public function store($data, $id){
-        foreach ($data as $k => $item){
-            if(is_string($k)){
-                $attribute = AttributeName::create([
-                    'name' => $k
-                ]);
-                AttributeValue::create([
-                    'attr_id' => $attribute->id,
-                    'value' => $item,
-                    'product_id' => $id,
-                ]);
-            }
-        }
+    public function getElements($id)
+    {
+        return DB::table('attribute_names')->select('attribute_names.id', 'attribute_names.name', 'attribute_values.value')
+            ->join('attribute_values', 'attribute_values.attr_id', '=', 'attribute_names.id')
+            ->where('attribute_values.product_id', $id)
+            ->get();
     }
-
-
-        public function getElements($id)
-        {
-            return DB::table('attribute_names')->select('attribute_names.id', 'attribute_names.name', 'attribute_values.value')
-                ->join('attribute_values', 'attribute_values.attr_id', '=', 'attribute_names.id')
-                ->where('attribute_values.product_id', $id)
-                ->get();
-        }
 
 }

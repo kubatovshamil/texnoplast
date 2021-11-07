@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Services\ProductService;
 use App\Models\AttributeName;
 use App\Models\AttributeValue;
 use App\Models\Category;
@@ -37,13 +38,10 @@ class ProductController extends Controller
         ]);
     }
 
-    public function store(Request $request, Product  $product)
+    public function store(Request $request, Product  $product, ProductService $productService)
     {
-        $attributes  = $request->only('attr_name', 'attr_val');
-        $attributes = array_combine($attributes['attr_name'], $attributes['attr_val']);
         $product = $product->store($request);
-        $this->attributeName->store($attributes, $product->id);
-        $this->attributeValue->store($attributes, $product->id);
+        $productService->storeAttributes($request, $product->id);
         return redirect()->route('products.index')
             ->with('message', 'Продукт успешно добавлен');
     }
@@ -69,12 +67,41 @@ class ProductController extends Controller
 
     public function update(Request $request, Product $product)
     {
-        //
+        $product->update([
+            'title' => $request->title,
+            'category_id' => $request->category_id,
+            'price' => $request->price,
+            'discount' => $request->discount,
+            'slug' => $request->slug,
+            'img' => $request->img,
+            'keywords' => $request->keywords,
+            'specification' => $request->specification,
+            'descriptions' => $request->descriptions
+        ]);
+
+
+        //Обновление атрибутов!!!
+        //удаление атрибутов!!
+        //создание атрибутов!!
+
+        return redirect()->route('products.edit', $product->id)
+            ->with('message', 'Данны успешно обновлены');
     }
 
 
     public function destroy(Product $product)
     {
-        //
+        $attributeValues = DB::table('attribute_values')
+            ->where('product_id', $product->id)
+            ->get();
+
+        $product->delete();
+        foreach ($attributeValues as $attributeValue) {
+            DB::table('attribute_values')
+                ->delete($attributeValue->id);
+        }
+        return redirect()->route('products.index')
+            ->with('message', 'Продукт успешно удален');
+
     }
 }

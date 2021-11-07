@@ -16,18 +16,4 @@ class AttributeValue extends Model
         'value'
     ];
 
-    public function store($data, $id){
-        foreach ($data as $k => $item){
-            if(is_numeric($k)){
-                AttributeValue::create([
-                    'attr_id' => $k,
-                    'value' => $item,
-                    'product_id' => $id
-                ]);
-            }
-        }
-
-    }
-
-
 }
