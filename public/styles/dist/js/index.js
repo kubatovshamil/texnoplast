@@ -1,10 +1,5 @@
 $(document).ready(function() {
 
-    $('form').on('click', '.btn-link', function (e){
-        e.preventDefault();
-
-
-    });
 
     $('form').on('click', '#remove', function (e){
         e.preventDefault();
@@ -12,40 +7,40 @@ $(document).ready(function() {
             .remove();
     });
 
-    $('#switch').on('click', function (e){
+    $('form').on('click', '#switch', function (e){
         e.preventDefault();
         if($(this).parent().find('#input').length){
             $(this).parent().find('#input').remove();
-            createSelect()
+            createSelect($(this));
         }else{
             $(this).parent().find('select').remove();
-            createInput();
+            createInput($(this));
         }
     });
 
-    //created input row
     $('#add').on('click', function (e) {
         e.preventDefault();
+        $(this).before(createForm());
 
     });
 
-    function createInput(){
+    function createInput(data){
         let input = document.createElement('input'),
             switcher = document.querySelector('#switch');
         input.type = "text";
         input.className = "form-control";
         input.name = "attr_name[]";
         input.id = "input";
-        switcher.before(input);
+        data.before(input);
     }
-    function createSelect(){
-        let switcher = document.querySelector('#switch'),
-            select = document.createElement('select'),
+
+    function createSelect(data){
+        let select = document.createElement('select'),
             attributes = JSON.parse($('#attributes').val());
 
         select.className = "form-control";
         select.name = "attr_name[]";
-        switcher.before(select);
+        data.before(select);
 
         attributes.forEach((item) => {
             let option = document.createElement('option');
@@ -56,20 +51,31 @@ $(document).ready(function() {
     }
 
     function createForm(){
-
+        let formRow = '<div class="form-row">';
+        formRow += '<div class="form-group col-md-5">';
+        formRow += '<input type="text" id="input" class="form-control" name="attr_name[]">';
+        formRow += '<button id="switch" class="btn btn-link">Переключить</button>';
+        formRow += '</div>';
+        formRow += '<div class="form-group col-md-5">';
+        formRow += '<input type="text" id="input" class="form-control" name="attr_val[]">';
+        formRow += '</div>';
+        formRow += '<div class="form-group col-md-2">';
+        formRow += '<button id="remove" class="btn btn-danger">Удалить</button>';
+        formRow += '</div></div>';
+        return formRow;
     }
 
-    function sendAjax(url, form, type){
+    function ajaxPattern(url, type, data){
 
         $.ajax({
             url: url,
             type: type,
             data:{
                 "_token": "{{ csrf_token() }}",
-                // data: JSON.stringify(json),
+                data: JSON.stringify(data),
             },
             success:function(response){
-                //
+                console.log(response)
             },
             error: function(response) {
                 console.error(response);
@@ -77,15 +83,6 @@ $(document).ready(function() {
         });
     }
 
-    $('#create').on('submit', function (e){
-        // e.preventDefault();
-        // sendAjax("{{ route('products.store') }}", $(this), "POST");
-    });
-
-    $('#edit').on('submit', function (e){
-        e.preventDefault();
-        sendAjax("{{ route('products.update', $product ?? '') }}", $(this), "PUT");
-    });
 
 
 });

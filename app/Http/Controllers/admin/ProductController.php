@@ -12,10 +12,14 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-    private $category;
+    private $category,
+        $attributeValue,
+        $attributeName;
 
-    public function __construct(Category $category){
+    public function __construct(Category $category, AttributeName $attributeName, AttributeValue  $attributeValue){
         $this->category = $category;
+        $this->attributeName = $attributeName;
+        $this->attributeValue = $attributeValue;
     }
 
     public function index()
@@ -33,22 +37,33 @@ class ProductController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Product  $product)
     {
-        ddd($request);
+        $attributes  = $request->only('attr_name', 'attr_val');
+        $attributes = array_combine($attributes['attr_name'], $attributes['attr_val']);
+        $product = $product->store($request);
+        $this->attributeName->store($attributes, $product->id);
+        $this->attributeValue->store($attributes, $product->id);
+        return redirect()->route('products.index')
+            ->with('message', 'Продукт успешно добавлен');
     }
 
     public function show(Product $product)
     {
-        return view('admin.categories.show', [
+        return view('admin.products.show', [
             'product' => $product,
             'categories' => $this->category->getCategories()
         ]);
     }
 
-    public function edit(Product $product)
+    public function edit(Product $product, AttributeName $attributeName)
     {
-        //
+        return view('admin.products.edit', [
+            'product' => $product,
+            'categories' => $this->category->getCategories(),
+            'items' => $attributeName::all(),
+            'attributes' => $attributeName->getElements($product->id)
+        ]);
     }
 
 

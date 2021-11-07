@@ -92,25 +92,7 @@
                                            <strong>Хит</strong>
                                         </label>
                                     </div>
-
-                                    <div class="form-row">
-                                        <div class="form-group col-md-5">
-                                            <input type="text" id="input" class="form-control" name="attr_name[]">
-                                            <button id="switch" class="btn btn-link">Переключить</button>
-                                        </div>
-
-                                        <div class="form-group col-md-5">
-                                            <input type="text" class="form-control" name="attr_val[]">
-                                        </div>
-
-                                        <div class="form-group col-md-2">
-                                            <button id="remove" class="btn btn-danger">Удалить</button>
-                                        </div>
-                                    </div>
-
-
                                     <button id="add" class="btn btn-dark">Задать характеристики</button>
-
                                 </div>
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-primary">Добавить</button>

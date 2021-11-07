@@ -28,6 +28,7 @@
                             <form id="edit" action="{{route('products.update', [$product->id])}}" method="post">
                                 @csrf
                                 @method("PUT")
+                                <input type="hidden" id="attributes" value='@json($items)'>
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInput1">Наименования товара </label>
@@ -96,36 +97,32 @@
                                         <input type="text" class="form-control" name="keywords" id="exampleInput1" value="{{$product->keywords}}" placeholder="Введите ключевые слова">
                                     </div>
 
-                                    @foreach($inputs as $input)
-                                        <div id="first-group">
-                                            <div class="form-row">
-                                                <div class="form-group col-md-5 inps">
-                                                    <input type="text" class="form-control attr_name" data-id="0" name="attr_name[]" id="nameAttr" value="" style="display: none">
-                                                    <select id="dropdown" name="attr_name[]" class="form-control select_name" style="display: block">
-                                                        <option value>Выберите</option>
-                                                        @foreach($attributes as $item)
-                                                            @if($input->name == $item->name)
-                                                                <option data-id="{{ $item->id }}"  selected  data-name="{{$item->name}}">{{$item->name}}</option>
-                                                            @else
-                                                            <option data-id="{{ $item->id }}"  data-name="{{$item->name}}">{{$item->name}}</option>
+                                    @foreach($attributes as $attribute)
+                                        <div class="form-row">
+
+                                            <div class="form-group col-md-5">
+                                                <select name="attr_name[]" id="select" class="form-control">
+                                                    @foreach($items as $item)
+                                                        @if($item->name == $attribute->name)
+                                                            <option selected  data-name="{{$item->name}}">{{$item->name}}</option>
+                                                        @else
+                                                            <option value="{{$item->id}}">{{$item->name}}</option>
                                                         @endif
-                                                        @endforeach
-                                                    </select>
-                                                    <button class="btn btn-link">Переключить</button>
-                                                </div>
-
-                                                <div class="form-group col-md-5">
-                                                    <input type="text" class="form-control attr_value" name="attr_val[]" id="inputCity" value="{{$input ->value}}">
-                                                </div>
-
-                                                <div class="form-group col-md-2" id="btn">
-                                                    <button class="btn btn-danger">Удалить</button>
-                                                </div>
-
+                                                    @endforeach
+                                                </select>
+                                                <button id="switch" class="btn btn-link">Переключить</button>
                                             </div>
+
+                                            <div class="form-group col-md-5">
+                                                <input type="text" id="input" class="form-control" name="attr_val[]" value="{{$attribute->value}}">
+                                            </div>
+
+                                            <div class="form-group col-md-2">
+                                                <button id="remove" class="btn btn-danger">Удалить</button>
+                                            </div>
+
                                         </div>
                                     @endforeach
-                                    <div class="form-more"></div>
                                     <button id="add" class="btn btn-dark">Задать характеристики</button>
                                 </div>
 

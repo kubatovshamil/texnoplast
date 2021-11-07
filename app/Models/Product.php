@@ -23,11 +23,9 @@ class Product extends Model
     ];
 
 
-    public function getAttributes($data){
-        return DB::table('attribute_names')->select('attribute_names.id','attribute_names.name','attribute_values.value')
-            ->join('attribute_values', 'attribute_values.attr_id', '=', 'attribute_names.id')
-            ->where('attribute_values.product_id', $data->id)
-            ->get();
+
+    public function store($request){
+        return Product::create($request->except('attr_name', 'attr_val'));
     }
 
 }
