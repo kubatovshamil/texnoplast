@@ -118,6 +118,7 @@
                                                         @endif
                                                     @endforeach
                                                 </select>
+                                                <button id="switch" class="btn btn-link">Переключить</button>
                                             </div>
 
                                             <div class="form-group col-md-5">
