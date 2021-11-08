@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class AttributeValue extends Model
 {
@@ -16,4 +17,10 @@ class AttributeValue extends Model
         'value'
     ];
 
+
+    public function getAttributeValues($id){
+        return DB::table('attribute_values')
+            ->where('product_id', $id)
+            ->get();
+    }
 }

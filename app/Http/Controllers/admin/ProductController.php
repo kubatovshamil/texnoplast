@@ -66,40 +66,13 @@ class ProductController extends Controller
     }
 
 
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Product $product, ProductService $productService)
     {
         $product->updateData($request);
 
-        $attributeValues = DB::table('attribute_values')
-            ->where('product_id', $product->id)
-            ->get()
-            ->toArray();
+        $productService->deleteAttributes($product->id);
 
-        $data = $request->only('attr_name', 'attr_val');
-
-        $attributes = [];
-        foreach ($attributeValues as $k => $item) {
-            $attributes[] =  [
-                'id' => $item->id,
-                'select_id' => $data['attr_name'][$k] ?? null,
-                'value' => $data['attr_val'][$k] ?? null
-            ];
-        }
-
-        foreach ($attributes as $item){
-            if($item['select_id']){
-                DB::table('attribute_values')
-                    ->where('id', $item['id'])
-                    ->update([
-                        'product_id' => $product->id,
-                        'attr_id' => $item['select_id'],
-                        'value' => $item['value']
-                    ]);
-            }else{
-                DB::table('attribute_values')
-                    ->delete($item['id']);
-            }
-        }
+        $productService->storeAttributes($request, $product->id);
 
         return redirect()->route('products.edit', $product->id)
             ->with('message', 'Данны успешно обновлены');

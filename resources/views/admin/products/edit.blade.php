@@ -127,9 +127,11 @@
                                             <div class="form-group col-md-2">
                                                 <button id="remove" class="btn btn-danger">Удалить</button>
                                             </div>
-
                                         </div>
                                     @endforeach
+
+                                    <button id="add" class="btn btn-dark">Задать характеристики</button>
+
                                 </div>
 
                                 <div class="card-footer">

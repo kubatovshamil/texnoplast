@@ -8,25 +8,48 @@ use App\Models\AttributeValue;
 class ProductService
 {
 
-    public function storeAttributes($request, $id){
-        $attributes  = $request->only('attr_name', 'attr_val');
-        $attributes = array_combine($attributes['attr_name'], $attributes['attr_val']);
+    public $attributeValue;
 
-        foreach ($attributes as $k => $attribute){
-            if(is_numeric($k)){
+    public function __construct(AttributeValue $attributeValue)
+    {
+        $this->attributeValue = $attributeValue;
+    }
+
+    public function deleteAttributes($id){
+
+        $attributes = $this->attributeValue->getAttributeValues($id);
+        foreach ($attributes as $item){
+            AttributeValue::destroy($item->id);
+        }
+
+    }
+
+    public function storeAttributes($request, $id){
+
+        $attributes  = $request->only('attr_name', 'attr_val');
+        $newArr = [];
+        foreach ($attributes['attr_name'] as $k => $item) {
+            $newArr[] =  [
+                'id' => $attributes['attr_name'][$k],
+                'value' => $attributes['attr_val'][$k] ?? null
+            ];
+        }
+
+        foreach ($newArr as $attribute){
+            if(is_numeric($attribute['id'])){
                 AttributeValue::create([
-                    'attr_id' => $k,
+                    'attr_id' => $attribute['id'],
                     'product_id' => $id,
-                    'value' => $attribute
+                    'value' => $attribute['value']
                 ]);
             }else{
                 $attributeName = AttributeName::create([
-                    'name' => $k
+                    'name' => $attribute['id']
                 ]);
                 AttributeValue::create([
                     'attr_id' => $attributeName->id,
                     'product_id' => $id,
-                    'value' => $attribute
+                    'value' => $attribute['value']
                 ]);
             }
 
