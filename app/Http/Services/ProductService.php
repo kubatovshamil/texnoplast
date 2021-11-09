@@ -22,29 +22,49 @@ class ProductService
 
     public function updateAttributes($request, $id)
     {
-        ddd($this->getAttributes($request));
         foreach ($this->getAttributes($request) as $attribute){
             if($attribute['id']){
-                AttributeValue::where('id', $attribute['id'])
-                    ->update([
-                        'attr_id' => $attribute['attr_id'],
-                        'value' => $attribute['value']
+                if(is_numeric($attribute['attr_id'])){
+                    AttributeValue::where('id', $attribute['id'])
+                        ->update([
+                            'attr_id' => $attribute['attr_id'],
+                            'value' => $attribute['value']
+                        ]);
+                }elseif ($attribute['attr_id'] == null && empty($attribute['value'])){
+                    AttributeValue::destroy($attribute['id']);
+                }
+                else{
+                    $name = AttributeName::create([
+                        'name' => $attribute['attr_id']
                     ]);
+                    AttributeValue::create([
+                        'attr_id' => $name->id,
+                        'value' => $attribute['value'],
+                        'product_id' => $id,
+                    ]);
+                }
+
             }
 
-            if(!$attribute['id'] && $attribute['attr_id'])
-
             if(!$attribute['id']){
+                if(is_numeric($attribute['attr_id'])){
 
-                $name = AttributeName::create([
-                    'name' => $attribute['attr_id']
-                ]);
+                    AttributeValue::create([
+                        'attr_id' => $attribute['attr_id'],
+                        'value' => $attribute['value'],
+                        'product_id' => $id,
+                    ]);
+                }else{
+                    $name = AttributeName::create([
+                        'name' => $attribute['attr_id']
+                    ]);
 
-                AttributeValue::create([
-                    'attr_id' => $name->id,
-                    'value' => $attribute['value'],
-                    'product_id' => $id,
-                ]);
+                    AttributeValue::create([
+                        'attr_id' => $name->id,
+                        'value' => $attribute['value'],
+                        'product_id' => $id,
+                    ]);
+                }
             }
         }
     }
@@ -52,13 +72,11 @@ class ProductService
     public function getAttributes($request){
         $attributes = $request->only('attr_name', 'attr_val', 'attr_id');
         $data = [];
-
         if(count($attributes['attr_name']) > count($attributes['attr_id'])){
             $data[] = $attributes['attr_name'];
         }else{
             $data[] = $attributes['attr_id'];
         }
-
         foreach ($data[0] as $k => $item){
             $this->attributes[] = [
                 'id' =>   $attributes['attr_id'][$k] ?? null,
