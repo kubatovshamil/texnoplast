@@ -130,6 +130,9 @@
                                             </div>
                                         </div>
                                     @endforeach
+                                    @foreach($attributes as $attribute)
+                                        <input type="hidden" name="attr_id[]" value="{{$attribute->id}}">
+                                    @endforeach
 
                                     <button id="add" class="btn btn-dark">Задать характеристики</button>
 

@@ -16,7 +16,8 @@ class ProductController extends Controller
 {
     private $category,
         $attributeValue,
-        $attributeName;
+        $attributeName,
+        $attributes;
 
     public function __construct(Category $category, AttributeName $attributeName, AttributeValue  $attributeValue){
         $this->category = $category;
@@ -68,11 +69,9 @@ class ProductController extends Controller
 
     public function update(Request $request, Product $product, ProductService $productService)
     {
-        $product->updateData($request);
+         $product->update($request->except('attr_name', 'attr_val'));
+        $productService->updateAttributes($request, $product->id);
 
-        $productService->deleteAttributes($product->id);
-
-        $productService->storeAttributes($request, $product->id);
 
         return redirect()->route('products.edit', $product->id)
             ->with('message', 'Данны успешно обновлены');

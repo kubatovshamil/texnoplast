@@ -24,23 +24,8 @@ class Product extends Model
     ];
 
 
-
     public function store($request){
         return Product::create($request->except('attr_name', 'attr_val'));
-    }
-
-    public function updateData($request){
-        return $this->update([
-            'title' => $request->title,
-            'category_id' => $request->category_id,
-            'price' => $request->price,
-            'discount' => $request->discount,
-            'slug' => $request->slug,
-            'img' => $request->img,
-            'keywords' => $request->keywords,
-            'specification' => $request->specification,
-            'descriptions' => $request->descriptions
-            ]);
     }
 
 }
