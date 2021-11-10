@@ -69,7 +69,7 @@ class ProductController extends Controller
 
     public function update(Request $request, Product $product, ProductService $productService)
     {
-        $product->update($request->except('attr_name', 'attr_val'));
+//        $product->update($request->except('attr_name', 'attr_val'));
 
         $productService->updateAttributes($request, $product->id);
 
