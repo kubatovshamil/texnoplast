@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card card-primary">
-                            <form action="{{route('categories.update', [$category->id])}}" method="post">
+                            <form action="{{route('categories.update', [$category->id])}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method("PUT")
                                 <div class="card-body">
@@ -44,25 +44,24 @@
                                         </div>
                                     @endif
 
+
                                     <div class="form-group">
                                         <label for="exampleInput1">Ссылка категории</label>
                                         <input type="text" class="form-control" name="slug" id="exampleInput1" value="{{$category->slug}}" placeholder="Введите ссылку категории">
                                     </div>
 
-                                    @empty(!$category->img)
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">Изборажения товара</label>
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" value="{{$category->img}}" name="img" id="exampleInputFile">
-                                                    <label class="custom-file-label" for="exampleInputFile">Выберите файл</label>
-                                                </div>
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text">Загрузить</span>
-                                                </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputFile">Изборажения товара</label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" value="{{$category->img}}" name="img" id="exampleInputFile">
+                                                <label class="custom-file-label" for="exampleInputFile">Выберите файл</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">Загрузить</span>
                                             </div>
                                         </div>
-                                    @endempty
+                                    </div>
 
                                     <div class="form-group">
                                         <label for="exampleInput1">Описание </label>

@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card card-primary">
-                            <form action="{{route('categories.store')}}" method="post">
+                            <form action="{{route('categories.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
@@ -57,6 +57,21 @@
                                             @endforeach
                                         </select>
                                     </div>
+
+
+                                    <div class="form-group">
+                                        <label for="exampleInputFile">Фотка категории</label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" name="img" id="exampleInputFile">
+                                                <label class="custom-file-label" for="exampleInputFile">Выберите файл</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">Загрузить</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
 
                                     <div class="form-group">
                                         <label for="exampleInput1">Ссылка категории</label>
@@ -95,7 +110,7 @@
                                 </div>
                             </div>
                             <div class="card-body" style="display: none">
-                               <form action="{{route('categories.parent')}}" method="post">
+                               <form action="{{route('categories.parent')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                     <div class="form-group">
                                         <label for="exampleInput1">Наименования родительской категории</label>

@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use function PHPUnit\Framework\isNull;
 
 class ProductController extends Controller
@@ -43,6 +44,7 @@ class ProductController extends Controller
     public function store(Request $request, Product  $product, ProductService $productService)
     {
         $product = $product->store($request);
+
         $productService->storeAttributes($request, $product->id);
         return redirect()->route('products.index')
             ->with('message', 'Продукт успешно добавлен');

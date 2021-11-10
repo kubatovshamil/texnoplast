@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card card-primary">
-                            <form class="form-product" id="create" action="{{route('products.store')}}" method="post">
+                            <form class="form-product" id="create" action="{{route('products.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" id="attributes" value='@json($attributes)'>
                                 <div class="card-body">

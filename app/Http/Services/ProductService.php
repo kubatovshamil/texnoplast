@@ -17,7 +17,8 @@ class ProductService
         $this->attributeValue = $attributeValue;
     }
 
-    public function storeAttributes(){
+    public function storeAttributes()
+    {
 
     }
 

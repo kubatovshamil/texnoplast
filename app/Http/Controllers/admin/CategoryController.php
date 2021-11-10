@@ -4,8 +4,10 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -33,7 +35,25 @@ class CategoryController extends Controller
             'descriptions' => 'required',
             'keywords' => 'required'
         ]);
-        Category::create($request->all());
+
+        if($file = $request->file('img')){
+
+            $destinationPath = public_path('storage/category');
+
+            $categoryImage = date('YmdHis') . "." . $file->getClientOriginalExtension();
+
+            $file->move($destinationPath, $categoryImage);
+
+            Category::create([
+                'title' => $request->title,
+                'slug' => $request->slug,
+                'img' => $categoryImage,
+                'parent_id' => $request->parent_id,
+                'keywords' => $request->keywords,
+                'descriptions' => $request->descriptions
+            ]);
+        }
+
 
         return redirect()->route('categories.index')->with('message', 'Категория успешно добавлен');
     }
@@ -54,7 +74,23 @@ class CategoryController extends Controller
             'keywords' => 'required'
         ]);
 
-        Category::create($request->all());
+        if($file = $request->file('img')){
+
+            $destinationPath = public_path('storage/category');
+
+            $categoryImage = date('YmdHis') . "." . $file->getClientOriginalExtension();
+
+            $file->move($destinationPath, $categoryImage);
+
+            Category::create([
+                'title' => $request->title,
+                'slug' => $request->slug,
+                'img' => $categoryImage,
+                'parent_id' => null,
+                'keywords' => $request->keywords,
+                'descriptions' => $request->descriptions
+            ]);
+        }
 
         return redirect()->route('categories.index')
             ->with('message', 'Родительская категория успешно добавлен');
@@ -78,7 +114,27 @@ class CategoryController extends Controller
             'keywords' => 'required'
         ]);
 
-        $category->update($request->all());
+
+        if($file = $request->file('img')){
+
+            $destinationPath = public_path('storage/category');
+
+            $categoryImage = date('YmdHis') . "." . $file->getClientOriginalExtension();
+
+            $file->move($destinationPath, $categoryImage);
+
+            $category->update([
+                'title' => $request->title,
+                'parent_id' => $request->parent_id,
+                'descriptions' => $request->descriptions,
+                'keywords' => $request->keywords,
+                'img' => $categoryImage
+            ]);
+
+        }else{
+            $category->update($request->all());
+        }
+
         return redirect()->route('categories.index')
             ->with('message', 'Успешно обновил данные');
     }
