@@ -117,11 +117,19 @@ class CategoryController extends Controller
 
         if($file = $request->file('img')){
 
+            $nameImage = '/category/' . Category::find($category->id)->img;
+
+            if(Storage::disk('public')->exists($nameImage)){
+                Storage::disk('public')->delete($nameImage);
+            }
+
             $destinationPath = public_path('storage/category');
 
             $categoryImage = date('YmdHis') . "." . $file->getClientOriginalExtension();
 
             $file->move($destinationPath, $categoryImage);
+
+
 
             $category->update([
                 'title' => $request->title,
