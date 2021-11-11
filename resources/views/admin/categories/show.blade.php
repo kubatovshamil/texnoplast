@@ -30,42 +30,28 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Таблица Категорий</h3>
-                            </div>
-                            <div class="card-body table-responsive p-0">
-                                <table class="table table-hover text-nowrap">
-                                    <thead>
-                                    <tr>
-                                        <th>id</th>
-                                        <th>Наименование</th>
-                                        <th>parent_id</th>
-                                        <th>ссылка</th>
-                                        @empty(!$category->img)
-                                            <th>img</th>
-                                        @endempty
-                                        <th>descriptions</th>
-                                        <th>keywords</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>{{ $category->id }}</td>
-                                            <td>{{ $category->title }}</td>
-                                            <td>{{ $category->parent_id ? $category->parent_id : 'Null' }}</td>
-                                            <td>{{ $category->slug }}</td>
-                                            @empty(!$category->img)
-                                                <td>{{ $category->img }}</td>
-                                            @endempty
-                                            <td>{{ $category->descriptions }}</td>
-                                            <td>{{ $category->keywords }}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
+                        <div>
+                            <label>Наименования категории: </label>
+                            <p>{{$category->title}}</p>
                         </div>
+
+                        <div>
+                            <label>parent_id: </label>
+                            <p>{{ $category->parent_id ?? 'null' }}</p>
+                        </div>
+
+                        <div>
+                            <label>Ссылка категории: </label>
+                            <p>{{$category->slug}}</p>
+                        </div>
+
+                        <div>
+                            <label>Картинка категории: </label>
+                            <div class="cart-img">
+                                <img src="{{asset('storage/category/' . $category->img)}}" width="150" height="150" alt="not found">
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

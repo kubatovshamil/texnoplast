@@ -17,6 +17,15 @@ class AttributeValue extends Model
         'value'
     ];
 
+    public function getAttributeNameValues($id)
+    {
+        return DB::table('attribute_values')
+            ->where('product_id', $id)
+            ->join('attribute_names', 'attribute_values.attr_id', '=', 'attribute_names.id')
+            ->select('name', 'value')
+            ->get();
+
+    }
 
     public function getAttributeValues($id)
     {

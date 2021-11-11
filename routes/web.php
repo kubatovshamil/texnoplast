@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Product;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ProductController;
+
+
 Route::get('/', function () {
     return view('templates.index');
 });

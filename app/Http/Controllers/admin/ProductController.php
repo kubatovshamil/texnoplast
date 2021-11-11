@@ -57,7 +57,7 @@ class ProductController extends Controller
     {
         return view('admin.products.show', [
             'product' => $product,
-            'categories' => $this->category->getCategories()
+            'attributes' => $this->attributeValue->getAttributeNameValues($product->id)
         ]);
     }
 

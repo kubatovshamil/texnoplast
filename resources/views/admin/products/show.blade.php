@@ -30,38 +30,48 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Старица Продукта</h3>
-                            </div>
-                            <div class="card-body table-responsive p-0">
-                                <table class="table table-hover text-nowrap">
-                                    <thead>
-                                    <tr>
-                                        <th>id</th>
-                                        <th>Наименование</th>
-                                        <th>category_id</th>
-                                        <th>ссылка</th>
-                                        <th>img</th>
-                                        <th>descriptions</th>
-                                        <th>keywords</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>{{ $product->id }}</td>
-                                        <td>{{ $product->title }}</td>
-                                        <td>{{ $product->category_id }}</td>
-                                        <td>{{ $product->slug }}</td>
-                                        <td>{{ $product->img }}</td>
-                                        <td>{{ $product->descriptions }}</td>
-                                        <td>{{ $product->keywords }}</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
+                        <div>
+                            <label>Наименования товара: </label>
+                            <p>{{$product->title}}</p>
                         </div>
+
+                        <div>
+                            <label>category_id: </label>
+                            <p>{{$product->category_id}}</p>
+                        </div>
+
+
+                        <div>
+                            <label>Ссылка товара: </label>
+                            <p>{{$product->slug}}</p>
+                        </div>
+
+                        <div>
+                            <label>Описание товара: </label>
+                            <p>{{$product->descriptions}}</p>
+                        </div>
+
+                        <div>
+                            <label>Ключевые слова товара: </label>
+                            <p>{{$product->keywords}}</p>
+                        </div>
+
+
+                        <div>
+                            <label>Изображения товара: </label>
+                            <br>
+                            <img src="{{asset("storage/products/" . $product->img)}}" alt="not found" width="150" height="150">
+                        </div>
+
+                        @foreach($attributes as $attribute)
+                            <div>
+                                <p>
+                                    <strong>Аттрибут : </strong> {{$attribute->name}}
+                                    <strong>Значение : </strong> {{$attribute->value}}
+                                </p>
+                            </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>
