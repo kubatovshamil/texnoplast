@@ -22,7 +22,7 @@ class Category extends Model
 
     public function getCategories(){
         return DB::table('categories')
-            ->whereNull('parent_id')
+            ->whereNotNull('parent_id')
             ->get();
     }
 

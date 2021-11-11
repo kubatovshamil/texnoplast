@@ -4,6 +4,9 @@ namespace App\Http\Services;
 
 use App\Models\AttributeName;
 use App\Models\AttributeValue;
+use App\Models\Gallery;
+use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
 
 class ProductService
 {
@@ -11,14 +14,99 @@ class ProductService
     public $attributeValue;
     public $attributes;
     public $data;
+    public $product;
 
     public function __construct(AttributeValue $attributeValue)
     {
         $this->attributeValue = $attributeValue;
     }
 
-    public function storeAttributes()
+    public function uploadFile($request)
     {
+        if($files = $request->file('img')){
+
+            $destinationPath = public_path('/storage/products/');
+
+            foreach ($files as $k => $file)
+            {
+                if($files[0] == $file){
+                    $productImage = date('YmdHis') . $k . "." . $file->getClientOriginalExtension();
+                    $file->move($destinationPath, $productImage);
+                    $input = $request->all();
+                    $input['img'] = $productImage;
+                    $this->product = Product::create($input);
+                }else{
+
+                    $productImage = date('YmdHis') . $k . "." . $file->getClientOriginalExtension();
+                    $file->move($destinationPath, $productImage);
+                    Gallery::create([
+                        'product_id' => $this->product->id,
+                        'img' => $productImage
+                    ]);
+
+                }
+
+            }
+        }
+        return $this->product;
+    }
+
+    public function updateProduct($request, $product)
+    {
+        if($request->hasFile('img'))
+        {
+            $file = $request->file('img');
+
+            $request = $request->except('attr_name', 'attr_val');
+
+            $destinationPath = public_path('/storage/products/');
+
+            $imgName = '/products/' . Product::find($product->id)->img;
+
+            $productImage = date('YmdHis') . "." . $file->getClientOriginalExtension();
+
+            if(Storage::disk('public')->exists($imgName))
+            {
+                Storage::disk('public')->delete($imgName);
+            }
+
+            $gallery = Gallery::where('product_id', $product->id);
+
+            foreach ($gallery as $item)
+            {
+                $galleryImg = '/products/' . $item->img;
+
+                if(Storage::disk('public')->exists($galleryImg))
+                {
+                    Storage::disk('public')->delete($galleryImg);
+                }
+            }
+
+            $file->move($destinationPath, $productImage);
+
+            $input =  $request;
+
+            $input['img'] = $productImage;
+
+            return $product->update($input);
+        }
+
+        return $product->update($request->except('attr_name', 'attr_val'));
+
+    }
+
+    public function storeAttributes($request, $id)
+    {
+        $attributes = $this->getAttributes($request);
+        foreach ($attributes as $attribute)
+        {
+            if(is_numeric($attribute['attr_name']))
+            {
+                $this->attributeValue->createAttribute($attribute, $id);
+            }else{
+                $this->attributeValue->createAttributes($attribute, $id);
+            }
+        }
 
     }
 
@@ -27,41 +115,31 @@ class ProductService
         $attributes = $this->getAttributes($request);
 
         foreach ($attributes as $k => $attribute) {
-            if(isset($attribute['attr_id'])){
-                if(isset($attribute['attr_name'])){
-                    AttributeValue::where('id', $attribute['attr_id'])
-                        ->update([
-                            'attr_id' => $attribute['attr_name'],
-                            'value' => $attribute['attr_val'],
-                            'product_id' => $id
-                        ]);
-                }else{
-                    AttributeValue::destroy($attribute['attr_id']);
-                }
-            }else{
 
-                if(is_numeric($attribute['attr_name'])){
-                    AttributeValue::create([
-                        'attr_id' => $attribute['attr_name'],
-                        'value' => $attribute['attr_val'],
-                        'product_id' => $id,
-                    ]);
-                }else{
-                    $name = AttributeName::create([
-                        'name' => $attribute['attr_name']
-                    ]);
-                    AttributeValue::create([
-                        'attr_id' => $name->id,
-                        'value' => $attribute['attr_val'],
-                        'product_id' => $id,
-                    ]);
+            if(isset($attribute['attr_id'])){
+
+                if(isset($attribute['attr_name'])){
+                    $this->attributeValue->updateAttributes($attribute, $id);
+                }
+                else{
+                    $this->attributeValue->destroyAttribute($attribute['attr_id']);
                 }
             }
+            if(!isset($attribute['attr_id']))
+            {
+                if(is_numeric($attribute['attr_name'])){
+                    $this->attributeValue->createAttribute($attribute, $id);
+                }
+                else{
+                    $this->attributeValue->updateAttributes($attribute, $id);
+                }
+            }
+
         }
     }
 
-
-    public function getAttributes($request){
+    public function getAttributes($request)
+    {
 
         $attributes = $request->only('attr_name', 'attr_val', 'attr_id');
 

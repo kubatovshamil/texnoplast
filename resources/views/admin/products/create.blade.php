@@ -59,17 +59,10 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleInputFile">Изборажения товара</label>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" name="img" id="exampleInputFile">
-                                                <label class="custom-file-label" for="exampleInputFile">Выберите файл</label>
-                                            </div>
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">Загрузить</span>
-                                            </div>
-                                        </div>
+                                        <label for="exampleFormControlFile1">Изображения товара</label>
+                                        <input type="file" class="form-control-file" name="img[]" id="exampleFormControlFile1" multiple>
                                     </div>
+
 
                                     <div class="form-group">
                                         <label for="exampleInput1">Ссылка товара</label>

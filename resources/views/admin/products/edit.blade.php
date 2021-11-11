@@ -33,7 +33,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card card-primary">
-                            <form id="edit" action="{{route('products.update', [$product->id])}}" method="post">
+                            <form id="edit" action="{{route('products.update', [$product->id])}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method("PUT")
                                 <input type="hidden" id="attributes" value='@json($items)'>

@@ -46,11 +46,11 @@
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="exampleInput1">Наименования категории </label>
+                                        <label for="exampleInput1">Наименования подкатегории </label>
                                         <input type="text" class="form-control" name="title" id="exampleInput1" placeholder="Введите название категории">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Родительская категория:</label>
+                                        <label for="exampleInputPassword1">Категория:</label>
                                         <select name="parent_id" class="form-control" id="sel1">
                                             @foreach($categories as $category)
                                                 <option value="{{$category->id}}">{{ $category->title }}</option>
@@ -58,23 +58,15 @@
                                         </select>
                                     </div>
 
-
                                     <div class="form-group">
-                                        <label for="exampleInputFile">Фотка категории</label>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" name="img" id="exampleInputFile">
-                                                <label class="custom-file-label" for="exampleInputFile">Выберите файл</label>
-                                            </div>
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">Загрузить</span>
-                                            </div>
-                                        </div>
+                                        <label for="exampleFormControlFile1">Фотка подкатегории</label>
+                                        <input type="file" class="form-control-file" name="img" id="exampleFormControlFile1">
                                     </div>
 
 
+
                                     <div class="form-group">
-                                        <label for="exampleInput1">Ссылка категории</label>
+                                        <label for="exampleInput1">Ссылка подкатегории</label>
                                         <input type="text" class="form-control" name="slug" id="exampleInput1" placeholder="Введите ссылку категории">
                                     </div>
 
@@ -113,27 +105,18 @@
                                <form action="{{route('categories.parent')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                     <div class="form-group">
-                                        <label for="exampleInput1">Наименования родительской категории</label>
+                                        <label for="exampleInput1">Наименования категории</label>
                                         <input type="text" class="form-control" name="title" id="exampleInput1" placeholder="Введите название родительской категории">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInput1">Ссылка родительской категории</label>
+                                        <label for="exampleInput1">Ссылка категории</label>
                                         <input type="text" class="form-control" name="slug" id="exampleInput1" placeholder="Введите ссылку родительской категории">
                                     </div>
 
                                    <div class="form-group">
-                                       <label for="exampleInputFile">Фотка Родительской категории</label>
-                                       <div class="input-group">
-                                           <div class="custom-file">
-                                               <input type="file" class="custom-file-input" name="img" id="exampleInputFile">
-                                               <label class="custom-file-label" for="exampleInputFile">Выберите файл</label>
-                                           </div>
-                                           <div class="input-group-append">
-                                               <span class="input-group-text">Загрузить</span>
-                                           </div>
-                                       </div>
+                                       <label for="exampleFormControlFile1">Фотка категории</label>
+                                       <input type="file" class="form-control-file" name="img" id="exampleFormControlFile1">
                                    </div>
-
 
                                     <div class="form-group">
                                         <label for="exampleInput1">Описание </label>

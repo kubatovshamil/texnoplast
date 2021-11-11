@@ -18,9 +18,46 @@ class AttributeValue extends Model
     ];
 
 
-    public function getAttributeValues($id){
+    public function getAttributeValues($id)
+    {
         return DB::table('attribute_values')
             ->where('product_id', $id)
             ->get();
+    }
+
+    public function updateAttributes($attribute, $id)
+    {
+        AttributeValue::where('id', $attribute['attr_id'])
+            ->update([
+                'attr_id' => $attribute['attr_name'],
+                'value' => $attribute['attr_val'],
+                'product_id' => $id
+            ]);
+    }
+
+    public function destroyAttribute($id)
+    {
+        AttributeValue::destroy($id);
+    }
+
+    public function createAttribute($attribute, $id)
+    {
+        AttributeValue::create([
+            'attr_id' => $attribute['attr_name'],
+            'value' => $attribute['attr_val'],
+            'product_id' => $id,
+        ]);
+    }
+
+    public function createAttributes($attribute, $id)
+    {
+        $name = AttributeName::create([
+            'name' => $attribute['attr_name']
+        ]);
+        AttributeValue::create([
+            'attr_id' => $name->id,
+            'value' => $attribute['attr_val'],
+            'product_id' => $id,
+        ]);
     }
 }

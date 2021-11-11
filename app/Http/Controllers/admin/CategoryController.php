@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Services\CategoryService;
 use App\Models\Category;
 use File;
 use Illuminate\Http\Request;
@@ -11,6 +12,14 @@ use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
+
+    protected $categoryService;
+
+    public function __construct(CategoryService $categoryService)
+    {
+        $this->categoryService = $categoryService;
+    }
+
 
     public function index()
     {
@@ -36,24 +45,7 @@ class CategoryController extends Controller
             'keywords' => 'required'
         ]);
 
-        if($file = $request->file('img')){
-
-            $destinationPath = public_path('storage/category');
-
-            $categoryImage = date('YmdHis') . "." . $file->getClientOriginalExtension();
-
-            $file->move($destinationPath, $categoryImage);
-
-            Category::create([
-                'title' => $request->title,
-                'slug' => $request->slug,
-                'img' => $categoryImage,
-                'parent_id' => $request->parent_id,
-                'keywords' => $request->keywords,
-                'descriptions' => $request->descriptions
-            ]);
-        }
-
+        $this->categoryService->uploadFile($request);
 
         return redirect()->route('categories.index')->with('message', 'Категория успешно добавлен');
     }
@@ -74,23 +66,7 @@ class CategoryController extends Controller
             'keywords' => 'required'
         ]);
 
-        if($file = $request->file('img')){
-
-            $destinationPath = public_path('storage/category');
-
-            $categoryImage = date('YmdHis') . "." . $file->getClientOriginalExtension();
-
-            $file->move($destinationPath, $categoryImage);
-
-            Category::create([
-                'title' => $request->title,
-                'slug' => $request->slug,
-                'img' => $categoryImage,
-                'parent_id' => null,
-                'keywords' => $request->keywords,
-                'descriptions' => $request->descriptions
-            ]);
-        }
+        $this->categoryService->uploadFile($request);
 
         return redirect()->route('categories.index')
             ->with('message', 'Родительская категория успешно добавлен');
@@ -114,34 +90,7 @@ class CategoryController extends Controller
             'keywords' => 'required'
         ]);
 
-
-        if($file = $request->file('img')){
-
-            $nameImage = '/category/' . Category::find($category->id)->img;
-
-            if(Storage::disk('public')->exists($nameImage)){
-                Storage::disk('public')->delete($nameImage);
-            }
-
-            $destinationPath = public_path('storage/category');
-
-            $categoryImage = date('YmdHis') . "." . $file->getClientOriginalExtension();
-
-            $file->move($destinationPath, $categoryImage);
-
-
-
-            $category->update([
-                'title' => $request->title,
-                'parent_id' => $request->parent_id,
-                'descriptions' => $request->descriptions,
-                'keywords' => $request->keywords,
-                'img' => $categoryImage
-            ]);
-
-        }else{
-            $category->update($request->all());
-        }
+        $this->categoryService->updateFile($request, $category);
 
         return redirect()->route('categories.index')
             ->with('message', 'Успешно обновил данные');
@@ -149,6 +98,14 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
+
+        $categoryImg = '/category/' . $category->img;
+
+        if(Storage::disk('public')->exists($categoryImg))
+        {
+            Storage::disk('public')->delete($categoryImg);
+        }
+
         $category->delete();
 
         return redirect()->route('categories.index')

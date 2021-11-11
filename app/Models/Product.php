@@ -25,30 +25,4 @@ class Product extends Model
         'descriptions'
     ];
 
-
-    public function store($request){
-
-        if($file = $request->file('img')){
-            $destinationPath = public_path('/storage/products/');
-
-            $productImage = date('YmdHis') . "." . $file->getClientOriginalExtension();
-
-            $file->move($destinationPath, $productImage);
-
-            return Product::create([
-                'title' => $request->title,
-                'category_id' => $request->category_id,
-                'price' => $request->price,
-                'discount' => $request->discount,
-                'slug' => $request->slug,
-                'specification' => $request->specification,
-                'descriptions' => $request->descriptions,
-                'keywords' => $request->keywords,
-                'img' => $productImage,
-
-            ]);
-        }
-
-    }
-
 }

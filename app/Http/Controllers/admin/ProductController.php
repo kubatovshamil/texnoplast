@@ -7,6 +7,7 @@ use App\Http\Services\ProductService;
 use App\Models\AttributeName;
 use App\Models\AttributeValue;
 use App\Models\Category;
+use App\Models\Gallery;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -43,9 +44,11 @@ class ProductController extends Controller
 
     public function store(Request $request, Product  $product, ProductService $productService)
     {
-        $product = $product->store($request);
+
+        $product = $productService->uploadFile($request);
 
         $productService->storeAttributes($request, $product->id);
+
         return redirect()->route('products.index')
             ->with('message', 'Продукт успешно добавлен');
     }
@@ -72,8 +75,7 @@ class ProductController extends Controller
     public function update(Request $request, Product $product, ProductService $productService)
     {
 
-
-        $product->update($request->except('attr_name', 'attr_val'));
+        $productService->updateProduct($request, $product);
 
         $productService->updateAttributes($request, $product->id);
 
@@ -88,7 +90,26 @@ class ProductController extends Controller
             ->where('product_id', $product->id)
             ->get();
 
+        $productImg = '/products/' . $product->img;
+
+        if(Storage::disk('public')->exists($productImg))
+        {
+            Storage::disk('public')->delete($productImg);
+        }
+
+        $gallery = Gallery::where('product_id', $product->id)->get();
+
+        foreach ($gallery as $item)
+        {
+            $item = '/products/' . $item->img;
+            if(Storage::disk('public')->exists($item))
+            {
+                Storage::disk('public')->delete($item);
+            }
+        }
+
         $product->delete();
+
         foreach ($attributeValues as $attributeValue) {
             DB::table('attribute_values')
                 ->delete($attributeValue->id);
