@@ -2,24 +2,22 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ProductController;
 
 
-Route::get('/', function () {
-    return view('templates.index');
-});
+
+Route::get('/', [HomeController::class, 'index']);
+
 
 Route::prefix('admin')->group(function (){
-
     //Home page
     Route::get('/', function(){
         return view('admin.index');
     });
-
     //Product route
     Route::resource('/products', ProductController::class);
-
     //Category route
     Route::post('/categories/parent', [CategoryController::class, 'parentCategory'])->name('categories.parent');
     Route::resource('/categories', CategoryController::class);

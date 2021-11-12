@@ -57,7 +57,8 @@ class ProductController extends Controller
     {
         return view('admin.products.show', [
             'product' => $product,
-            'attributes' => $this->attributeValue->getAttributeNameValues($product->id)
+            'attributes' => $this->attributeValue->getAttributeNameValues($product->id),
+            'gallery' => Gallery::where('product_id', $product->id)->get()
         ]);
     }
 

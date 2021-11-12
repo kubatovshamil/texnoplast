@@ -45,120 +45,26 @@
 	<div class="popular-category container">
 		<div class="popular-category__header">
 			<h1 class="popular-category__header-title">Популярные категории</h1>
-			<span class="popular-category__header-count">4857 товаров</span>
+			<span class="popular-category__header-count">{{ $productQuantity }} товаров</span>
 		</div>
 
 		<div class="popular-category__products">
 
-			<div class="popular-category__products-block popular-category__products-block-tables">
-				<div class="popular-category__products-block-wrapper"></div>
-				<h2 class="popular-category__products-title">Столы</h2>
-
-				<div class="popular-category__products-categories">
-					<a href="#" class="popular-category__products-category">Барные</a>
-					<a href="#" class="popular-category__products-category">Рабочие</a>
-					<a href="#" class="popular-category__products-category">Обеденные</a>
-					<a href="#" class="popular-category__products-category">Журнальные</a>
-					<a href="#" class="popular-category__products-category">Столики для кафе и баров</a>
-				</div>
-
- 				<a href="#" class="popular-category__products-all">Все товары</a>
-			</div>
-
-
-			<div class="popular-category__products-block popular-category__products-block-chairs">
-				<div class="popular-category__products-block-wrapper"></div>
-				<h2 class="popular-category__products-title">Стулья</h2>
-
-				<div class="popular-category__products-categories">
-					<a href="#" class="popular-category__products-category">Барные</a>
-					<a href="#" class="popular-category__products-category">Рабочие</a>
-					<a href="#" class="popular-category__products-category">Обеденные</a>
-					<a href="#" class="popular-category__products-category">Журнальные</a>
-					<a href="#" class="popular-category__products-category">Столики для кафе и баров</a>
-				</div>
-
- 				<a href="#" class="popular-category__products-all">Все товары</a>
-			</div>
-
-
-			<div class="popular-category__products-block popular-category__products-block-stellages">
-				<div class="popular-category__products-block-wrapper"></div>
-				<h2 class="popular-category__products-title">Стеллажи</h2>
-
-				<div class="popular-category__products-categories">
-					<a href="#" class="popular-category__products-category">Барные</a>
-					<a href="#" class="popular-category__products-category">Рабочие</a>
-					<a href="#" class="popular-category__products-category">Обеденные</a>
-					<a href="#" class="popular-category__products-category">Журнальные</a>
-					<a href="#" class="popular-category__products-category">Столики для кафе и баров</a>
-				</div>
-
- 				<a href="#" class="popular-category__products-all">Все товары</a>
-			</div>
-
-
-			<div class="popular-category__products-block popular-category__products-block-stands">
-				<div class="popular-category__products-block-wrapper"></div>
-				<h2 class="popular-category__products-title">Тумбы</h2>
-
-				<div class="popular-category__products-categories">
-					<a href="#" class="popular-category__products-category">Барные</a>
-					<a href="#" class="popular-category__products-category">Рабочие</a>
-					<a href="#" class="popular-category__products-category">Обеденные</a>
-					<a href="#" class="popular-category__products-category">Журнальные</a>
-					<a href="#" class="popular-category__products-category">Столики для кафе и баров</a>
-				</div>
-
- 				<a href="#" class="popular-category__products-all">Все товары</a>
-			</div>
-
-
-			<div class="popular-category__products-block popular-category__products-block-hangers">
-				<div class="popular-category__products-block-wrapper"></div>
-				<h2 class="popular-category__products-title">Вешала</h2>
-
-				<div class="popular-category__products-categories">
-					<a href="#" class="popular-category__products-category">Барные</a>
-					<a href="#" class="popular-category__products-category">Рабочие</a>
-					<a href="#" class="popular-category__products-category">Обеденные</a>
-					<a href="#" class="popular-category__products-category">Журнальные</a>
-					<a href="#" class="popular-category__products-category">Столики для кафе и баров</a>
-				</div>
-
- 				<a href="#" class="popular-category__products-all">Все товары</a>
-			</div>
-
-
-			<div class="popular-category__products-block popular-category__products-block-sofa">
-				<div class="popular-category__products-block-wrapper"></div>
-				<h2 class="popular-category__products-title">Диваны</h2>
-
-				<div class="popular-category__products-categories">
-					<a href="#" class="popular-category__products-category">Барные</a>
-					<a href="#" class="popular-category__products-category">Рабочие</a>
-					<a href="#" class="popular-category__products-category">Обеденные</a>
-					<a href="#" class="popular-category__products-category">Журнальные</a>
-					<a href="#" class="popular-category__products-category">Столики для кафе и баров</a>
-				</div>
-
- 				<a href="#" class="popular-category__products-all">Все товары</a>
-			</div>
-
-			<div class="popular-category__products-block popular-category__products-block-shelf">
-				<div class="popular-category__products-block-wrapper"></div>
-				<h2 class="popular-category__products-title">Навесные полки</h2>
-
-				<div class="popular-category__products-categories">
-					<a href="#" class="popular-category__products-category">Барные</a>
-					<a href="#" class="popular-category__products-category">Рабочие</a>
-					<a href="#" class="popular-category__products-category">Обеденные</a>
-					<a href="#" class="popular-category__products-category">Журнальные</a>
-					<a href="#" class="popular-category__products-category">Столики для кафе и баров</a>
-				</div>
-
- 				<a href="#" class="popular-category__products-all">Все товары</a>
-			</div>
+            @foreach($categories as $category)
+                <div class="popular-category__products-block popular-category__products-block-tables">
+                    <div class="popular-category__products-block-wrapper"></div>
+                    <h2 class="popular-category__products-title">{{ $category['title'] }}</h2>
+                    <img class="popular-category__products-img" src="{{ asset("storage/category/" . $category['img']) }}" alt="not found">
+                    @if(isset($category['_children']))
+                        @foreach($category['_children'] as $child)
+                            <div class="popular-category__products-categories">
+                                <a href="{{ url('categories', $child['slug']) }}" class="popular-category__products-category">{{$child['title']}}</a>
+                            </div>
+                        @endforeach
+                    @endif
+                    <a href="{{ url('categories', $category['slug']) }}" class="popular-category__products-all">Все товары</a>
+                </div>
+            @endforeach
 
 		</div>
 	</div>

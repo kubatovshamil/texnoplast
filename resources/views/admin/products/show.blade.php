@@ -61,16 +61,29 @@
                             <label>Изображения товара: </label>
                             <br>
                             <img src="{{asset("storage/products/" . $product->img)}}" alt="not found" width="150" height="150">
+                            @if(isset($gallery))
+                                @foreach($gallery as $img)
+                                    <img src="{{asset("storage/products/" . $img->img)}}" alt="not found" width="150" height="150">
+                                @endforeach
+                            @endif
                         </div>
 
-                        @foreach($attributes as $attribute)
-                            <div>
-                                <p>
-                                    <strong>Аттрибут : </strong> {{$attribute->name}}
-                                    <strong>Значение : </strong> {{$attribute->value}}
-                                </p>
-                            </div>
-                        @endforeach
+                        <div class="col-sm-6">
+                            <table class="table table-striped">
+                                <thead>
+                                <th>Наименования</th>
+                                <th>Значения</th>
+                                </thead>
+                                <tbody>
+                                @foreach($attributes as $attribute)
+                                    <tr>
+                                        <td>{{$attribute->name}}</td>
+                                        <td>{{$attribute->value}}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
 
                     </div>
                 </div>
