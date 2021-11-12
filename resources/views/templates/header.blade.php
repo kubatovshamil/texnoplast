@@ -79,121 +79,45 @@
 </div>
 
 <div class="second-menu">
-  <div class="container second-item__name_dropdown__relative">
-    <div class="second-menu__item second-item__name_dropdown">
-      <a class="second-menu__link burger" href="#">каталог товаров</a>
+    <div class="container second-item__name_dropdown__relative">
+        <div class="second-menu__item second-item__name_dropdown">
+            <a class="second-menu__link burger" href="#">каталог товаров</a>
+        </div>
+
+        <div class="second-item__name_dropdown-menu">
+            <div class="second-item__name_dropdown__left">
+                @foreach($categories as $k => $category)
+                    <a class="second-item__name_dropdown-left__item {{ $k == 0 ? 'active' : ''}} " href="#">{{$category['title']}}</a>
+                @endforeach
+            </div>
+            @foreach($categories as $k => $category)
+                <div class="second-item__name_dropdown__right {{ $k == 0 ? 'show' : ''}}">
+                    @foreach($category['_children'] as $child)
+                            <div class="second-item__name_dropdown__block__wrapper">
+                                <a href="#" class="second-item__name_dropdown__block">
+                                    <img class="second-item__name_dropdown__block__img" src="{{ asset("storage/category/" . $child['img']) }}" width="100" height="100" alt="img">
+                                    <p class="second-item__name_dropdown__block__title">{{$child['title']}}</p>
+                                </a>
+                            </div>
+                    @endforeach
+                </div>
+            @endforeach
+        </div>
+
+        <div class="second-menu__item responsive_width">
+            <a class="second-menu__link armchair" href="#">индивидуальный заказ</a>
+        </div>
+
+        <div class="second-menu__item">
+            <a class="second-menu__link calc" href="#">онлайн калькулятор</a>
+        </div>
+
+        <div class="second-menu__item">
+            <a class="second-menu__link cart" href="#">мебель в наличии</a>
+        </div>
+
+        <div class="second-menu__item">
+            <a class="second-menu__link sale" href="#">распродажа</a>
+        </div>
     </div>
-
-    <div class="second-item__name_dropdown-menu">
-      <div class="second-item__name_dropdown__left">
-        <a class="second-item__name_dropdown-left__item active" href="#">Столы</a>
-        <a class="second-item__name_dropdown-left__item" href="#">Стулья, табуреты</a>
-        <a class="second-item__name_dropdown-left__item" href="#">Стеллажи</a>
-        <a class="second-item__name_dropdown-left__item" href="#">Комоды, консоли</a>
-        <a class="second-item__name_dropdown-left__item" href="#">Навесные полочки</a>
-        <a class="second-item__name_dropdown-left__item" href="#">Вешала</a>
-        <a class="second-item__name_dropdown-left__item" href="#">Диваны, кресла</a>
-        <a class="second-item__name_dropdown-left__item" href="#">Каркасы, подстолья</a>
-        <a class="second-item__name_dropdown-left__item" href="#">Светильники</a>
-        <a class="second-item__name_dropdown-left__item" href="#">Для бизнеса</a>
-        <a class="second-item__name_dropdown-left__item" href="#">Фурнитура</a>
-        <a class="second-item__name_dropdown-left__item" href="#">Аксессуары и предметы интерьера</a>
-      </div>
-
-      <div class="second-item__name_dropdown__right">
-        <div class="second-item__name_dropdown__block__wrapper">
-          <a href="#" class="second-item__name_dropdown__block">
-            <img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
-            <p class="second-item__name_dropdown__block__title">Барные столы</p>
-          </a>
-        </div>
-
-        <div class="second-item__name_dropdown__block__wrapper">
-          <a href="#" class="second-item__name_dropdown__block">
-            <img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
-            <p class="second-item__name_dropdown__block__title">Обеденные столы</p>
-          </a>
-        </div>
-
-        <div class="second-item__name_dropdown__block__wrapper">
-          <a href="#" class="second-item__name_dropdown__block">
-            <img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
-            <p class="second-item__name_dropdown__block__title">Письменные столы</p>
-          </a>
-        </div>
-
-        <div class="second-item__name_dropdown__block__wrapper">
-          <a href="#" class="second-item__name_dropdown__block">
-            <img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
-            <p class="second-item__name_dropdown__block__title">Журнальные столы</p>
-          </a>
-        </div>
-
-        <div class="second-item__name_dropdown__block__wrapper">
-          <a href="#" class="second-item__name_dropdown__block">
-            <img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
-            <p class="second-item__name_dropdown__block__title">Столики для кафе и баров</p>
-          </a>
-        </div>
-
-        <div class="second-item__name_dropdown__block__wrapper">
-          <a href="#" class="second-item__name_dropdown__block">
-            <img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
-            <p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
-          </a>
-        </div>
-
-        <div class="second-item__name_dropdown__block__wrapper">
-          <a href="#" class="second-item__name_dropdown__block">
-            <img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
-            <p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
-          </a>
-        </div>
-
-        <div class="second-item__name_dropdown__block__wrapper">
-          <a href="#" class="second-item__name_dropdown__block">
-            <img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
-            <p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
-          </a>
-        </div>
-
-        <div class="second-item__name_dropdown__block__wrapper">
-          <a href="#" class="second-item__name_dropdown__block">
-            <img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
-            <p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
-          </a>
-        </div>
-
-        <div class="second-item__name_dropdown__block__wrapper">
-          <a href="#" class="second-item__name_dropdown__block">
-            <img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
-            <p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
-          </a>
-        </div>
-
-        <div class="second-item__name_dropdown__block__wrapper">
-          <a href="#" class="second-item__name_dropdown__block">
-            <img class="second-item__name_dropdown__block__img" src="img/block.svg" alt="img">
-            <p class="second-item__name_dropdown__block__title">Прикроватные столики</p>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="second-menu__item responsive_width">
-      <a class="second-menu__link armchair" href="#">индивидуальный заказ</a>
-    </div>
-
-    <div class="second-menu__item">
-      <a class="second-menu__link calc" href="#">онлайн калькулятор</a>
-    </div>
-
-    <div class="second-menu__item">
-      <a class="second-menu__link cart" href="#">мебель в наличии</a>
-    </div>
-
-    <div class="second-menu__item">
-      <a class="second-menu__link sale" href="#">распродажа</a>
-    </div>
-  </div>
 </div>
