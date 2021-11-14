@@ -152,4 +152,24 @@ $(document).ready(() => {
 
     });
 
+
+    $('#burger-menu').on('click', function (event){
+        $('.mobile-menu').toggleClass('transform-menu');
+        $('body').toggleClass('block');
+
+    });
+
+    $('.arrow').on('click', function(event){
+        event.preventDefault();
+        let item = $(this).parent().parent();
+
+
+        if($(item).hasClass('expanded')){
+            item = $(item)[0];
+            $(item).removeClass('expanded');
+        }else{
+            (item).addClass('expanded');
+        }
+    });
+
 });

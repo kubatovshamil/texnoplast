@@ -23,7 +23,7 @@
 
           <div class="header__block header__block__name_actions mobile_menu">
             <div class="header__block header__actions-block">
-              <a href="javascript:void(0)" class="header__actions-block header__actions-block__name_burger-menu"></a>
+              <a href="javascript:void(0)" id="burger-menu" class="header__actions-block header__actions-block__name_burger-menu"></a>
             </div>
 
             <div class="header__block header__actions-block">
@@ -74,6 +74,48 @@
           </div>
         </div>
       </div>
+        <div class="mobile-menu">
+
+            <ul class="mobile-menu____unit">
+                <li class="mobile-menu__unit__item">
+                    <a class="mobile-menu__unit__item__link" href="#" title="Главная">
+                        <span>Главная</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__unit__item">
+                    <a class="mobile-menu__unit__item__link parrent" href="https://www.google.ru">
+                        <span>Каталог</span>
+                        <span class="arrow">
+								<i class="svg svg_triangle_right"></i>
+							</span>
+                    </a>
+                    <ul class="mobile-menu____unit dropdown">
+                        <li class="mobile-menu__unit__item">
+                            <a class="mobile-menu__unit__item__link parrent" href="https://www.google.ru">
+                                <span>Поликорбонат сотовый</span>
+                                <span class="arrow">
+								<i class="svg svg_triangle_right"></i>
+							</span>
+                            </a>
+
+                            <ul class="mobile-menu____unit dropdown">
+                                <li class="mobile-menu__unit__item">
+                                    <a class="mobile-menu__unit__item__link" href="https://www.google.ru">
+                                        <span>Поликарбонат сотовый Agrolux</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="mobile-menu__unit__item">
+                    <a class="mobile-menu__unit__item__link" href="#">
+                        <span>Распрадажа</span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
     </div>
   </div>
 </div>
