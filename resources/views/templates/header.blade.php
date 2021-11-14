@@ -87,25 +87,32 @@
                         <span>Каталог</span>
                         <span class="arrow">
 								<i class="svg svg_triangle_right"></i>
-							</span>
+                        </span>
                     </a>
                     <ul class="mobile-menu____unit dropdown">
-                        <li class="mobile-menu__unit__item">
-                            <a class="mobile-menu__unit__item__link parrent" href="https://www.google.ru">
-                                <span>Поликорбонат сотовый</span>
-                                <span class="arrow">
-								<i class="svg svg_triangle_right"></i>
-							</span>
-                            </a>
-
-                            <ul class="mobile-menu____unit dropdown">
-                                <li class="mobile-menu__unit__item">
-                                    <a class="mobile-menu__unit__item__link" href="https://www.google.ru">
-                                        <span>Поликарбонат сотовый Agrolux</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        @foreach($categories as $k => $category)
+                            <li class="mobile-menu__unit__item">
+                                <a class="mobile-menu__unit__item__link  {{ isset($category['_children']) ? 'parent' :''  }}" href="{{ "/categories" . $category['slug']}}">
+                                    <span>{{$category['title']}}</span>
+                                    @if(isset($category['_children']))
+                                        <span class="arrow">
+                                            <i class="svg svg_triangle_right"></i>
+                                        </span>
+                                    @endif
+                                </a>
+                                @if(isset($category['_children']))
+                                    <ul class="mobile-menu____unit dropdown">
+                                        @foreach($category['_children'] as $child)
+                                            <li class="mobile-menu__unit__item">
+                                                <a class="mobile-menu__unit__item__link" href="{{ "/categories" . $child['slug'] }}">
+                                                    <span>{{$child['title']}}</span>
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            </li>
+                        @endforeach
                     </ul>
                 </li>
                 <li class="mobile-menu__unit__item">
