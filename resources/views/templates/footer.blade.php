@@ -2,7 +2,7 @@
   <div class="container">
     <div class="footer__block">
       <div class="footer__logo">
-        <a href="/"><img class="footer__logo-img" src="img/icons/loftlogo__white 1.svg" alt="footer logo"></a>
+        <a href="/"><img class="footer__logo-img" src="img/white-logo.png" alt="footer logo"></a>
 
         <p class="footer__copyright">© Интернет-магазин лофт-мебели, 2018-2020</p>
 
