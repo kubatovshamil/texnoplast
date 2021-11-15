@@ -7,8 +7,8 @@ use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ProductController;
 
 
-
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/catalog', [HomeController::class, 'catalog']);
 
 
 Route::prefix('admin')->group(function (){

@@ -84,7 +84,7 @@
 			    <div class="bestsellers__block-slide">
 				<div class="bestsellers__block">
 					<div class="bestsellers__block-wrapper">
-						<img src="img/bestsellers_bg.jpg" alt="" class="bestsellers__block-img">
+						<img src="{{ asset("storage/products/" . $hit['img']) }}" alt="" class="bestsellers__block-img">
 						<span class="bestsellers__block-stock">-{{ round(($hit->discount - $hit->price) * 100 / $hit->discount) }}%</span>
 						<div class="bestsellers__block-circle-buttons">
 							<a href="javascript:void(0)" class="bestsellers__block-circle-button-favorite"></a>

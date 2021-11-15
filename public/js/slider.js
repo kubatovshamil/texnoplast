@@ -1,24 +1,26 @@
 $(document).ready(() => {
 
+    if($('.main-slider__wrapper').length)
+    {
+        var main_slider = tns({
+            container: '.main-slider__wrapper',
+            controls: false,
+            arrowKeys: false,
+            autoplayButtonOutput: false,
+            items: 1,
+            autoplay: true,
+            loop: true,
+            rewind: false,
+            navContainer: '.main-slider__navigation',
+            speed: 1200,
 
-	var main_slider = tns({
-		container: '.main-slider__wrapper',
-		controls: false,
-		arrowKeys: false,
-		autoplayButtonOutput: false,
-		items: 1,
-		autoplay: true,
-		loop: true,
-		rewind: false,
-		navContainer: '.main-slider__navigation',
-		speed: 1200,
-
-		responsive: {
-			300: {
-				mouseDrag: true
-			}
-		}
-	});
+            responsive: {
+                300: {
+                    mouseDrag: true
+                }
+            }
+        });
+    }
 
 
 	var bestsellers_slider = tns({
@@ -127,7 +129,5 @@ $(document).ready(() => {
             (item).addClass('expanded');
         }
     });
-
-
 
 });

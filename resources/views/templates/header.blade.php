@@ -131,7 +131,7 @@
 <div class="second-menu">
     <div class="container second-item__name_dropdown__relative">
         <div class="second-menu__item second-item__name_dropdown">
-            <a class="second-menu__link burger" href="#">каталог товаров</a>
+            <a class="second-menu__link burger" href="{{ "/catalog" }}">каталог товаров</a>
         </div>
 
         <div class="second-item__name_dropdown-menu">

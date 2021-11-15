@@ -17,4 +17,14 @@ class HomeController
         ]);
     }
 
+    public function catalog()
+    {
+        return view('templates.catalog', [
+            'productQuantity' => Product::all()->count(),
+            'categories' => Tree::buildTree(Category::all()->toArray()),
+            'hits' => Product::where('hit', "1")->get(),
+            'products' => Product::all(),
+        ]);
+    }
+
 }
