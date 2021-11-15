@@ -91,7 +91,8 @@ $(document).ready(() => {
 	});
 
 
-    $('.second-item__name_dropdown-left__item').on('click', function(event){
+    $('.second-item__name_dropdown-left__item').hover(function(event){
+
         let dropdownRight = $('.second-item__name_dropdown__right'),
             currentIndex = $(this).index();
 

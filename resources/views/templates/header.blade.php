@@ -137,7 +137,7 @@
         <div class="second-item__name_dropdown-menu">
             <div class="second-item__name_dropdown__left">
                 @foreach($categories as $k => $category)
-                    <a class="second-item__name_dropdown-left__item {{ $k == 0 ? 'active' : ''}} " href="#">{{$category['title']}}</a>
+                    <a class="second-item__name_dropdown-left__item {{ $k == 0 ? 'active' : ''}} " href="{{ "/categories/" . $category['slug'] }}">{{$category['title']}}</a>
                 @endforeach
             </div>
             @foreach($categories as $k => $category)
