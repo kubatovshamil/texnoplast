@@ -98,6 +98,13 @@
                                         <input type="text" class="form-control" name="keywords" id="exampleInput1" value="{{$product->keywords}}" placeholder="Введите ключевые слова">
                                     </div>
 
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" {{$product->hit ? 'checked' : ''}} name="hit" type="checkbox" value="1" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            <strong>Хит</strong>
+                                        </label>
+                                    </div>
+
                                     @foreach($attributes as $attribute)
                                         <div class="form-row">
 

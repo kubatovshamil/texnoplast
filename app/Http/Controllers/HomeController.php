@@ -13,6 +13,7 @@ class HomeController
         return view('templates.index', [
             'productQuantity' => Product::all()->count(),
             'categories' => Tree::buildTree(Category::all()->toArray()),
+            'hits' => Product::where('hit', "1")->get()
         ]);
     }
 

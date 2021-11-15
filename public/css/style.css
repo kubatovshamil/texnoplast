@@ -408,11 +408,15 @@ button[type=submit]:hover {
 }
 
 .armchair::before {
-	background: url('../img/icons/armchair_icon.svg') no-repeat center;
+	background: url('../img/icons/order.svg') no-repeat center;
+    background-size: 24px;
+    opacity: 0.7;
 }
 
 .calc::before {
-	background: url('../img/icons/calc_icon.svg') no-repeat center;
+	background: url('../img/icons/provider.svg') no-repeat center;
+    background-size: 30px;
+    opacity: 0.8;
 }
 
 .cart::before {
@@ -7279,10 +7283,6 @@ button[type=submit]:hover {
 
 	.burger::before {
 		background: url('../img/icons/burger_mobile.svg') no-repeat center;
-	}
-
-	.armchair::before {
-		background: url('../img/icons/armchair_mobile.svg') no-repeat center;
 	}
 
 	.calc::before {

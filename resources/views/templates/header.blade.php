@@ -5,9 +5,10 @@
       <div class="col-lg-10 col-md-10 col-sm-9">
         <div class="header__row-top">
           <div class="header__block header__block__name_menu">
-            <a href="" class="header__menu-link">О компании</a><a href="" class="header__menu-link">Самовывоз</a>
-            <a href="" class="header__menu-link">Доставка</a><a href="" class="header__menu-link">Оплата</a>
-            <a href="" class="header__menu-link">Контакты</a>
+              <a href="" class="header__menu-link">О компании</a>
+              <a href="" class="header__menu-link">Задать-Вопрос</a>
+              <a href="" class="header__menu-link">Оплата</a>
+              <a href="" class="header__menu-link">Доставка</a>
           </div>
           <div class="header__block header__block__name_profile">
             <a href="personal.php" class="header__profile-link">Личный кабинет</a>
@@ -33,17 +34,17 @@
 
           <div class="header__block header__block__name_contacts">
             <div class="header__block header__block__name_contact1">
-              <div class="header__contact1 header__contact1__name_email"><a href="mailto:info@loftbox.ru" class="header__contact-email-link">
-                info@loftbox.ru
+              <div class="header__contact1 header__contact1__name_email"><a href="mailto:info@maksprom.ru" class="header__contact-email-link">
+                info@maksprom.ru
               </a></div>
-              <div class="header__contact2 header__contact2__name_address">г.Белгород, ул.Гоголя, д.8а, оф.1</div>
+              <div class="header__contact2 header__contact2__name_address">г.Калуга, пер. Аэропортский д.11</div>
             </div>
             <div class="header__block header__block__name_contact2">
               <div class="header__contact3 header__contact3__name_phone1">
-                <a href="tel:+74722808080" class="header__contact-phone header__contact-phone__name_phone1">+7 (4722) 80-80-80</a>
+                <a href="tel:+74722808080" class="header__contact-phone header__contact-phone__name_phone1">+7 (800) 300-89-93</a>
               </div>
               <div class="header__contact4 header__contact4__name_phone2">
-                <a href="tel:+74722808080" class="header__contact-phone header__contact-phone__name_phone2">+7 (4722) 80-80-80</a>
+                <a href="tel:+74722808080" class="header__contact-phone header__contact-phone__name_phone2">+7 (980) 715-35-71</a>
               </div>
             </div>
           </div>
@@ -158,11 +159,11 @@
         </div>
 
         <div class="second-menu__item">
-            <a class="second-menu__link calc" href="#">онлайн калькулятор</a>
+            <a class="second-menu__link calc" href="#">Поставщикам</a>
         </div>
 
         <div class="second-menu__item">
-            <a class="second-menu__link cart" href="#">мебель в наличии</a>
+            <a class="second-menu__link cart" href="#">Материал в наличии</a>
         </div>
 
         <div class="second-menu__item">

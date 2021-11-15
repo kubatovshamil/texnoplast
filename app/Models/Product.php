@@ -22,7 +22,8 @@ class Product extends Model
         'img',
         'slug',
         'keywords',
-        'descriptions'
+        'descriptions',
+        'hit'
     ];
 
 }

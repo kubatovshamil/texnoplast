@@ -80,7 +80,7 @@
                                     </div>
 
                                     <div class="form-check mb-3">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <input class="form-check-input" name="hit" type="checkbox" value="1" id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">
                                            <strong>Хит</strong>
                                         </label>

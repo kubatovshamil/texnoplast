@@ -91,7 +91,13 @@ class ProductService
             return $product->update($input);
         }
 
-        return $product->update($request->except('attr_name', 'attr_val'));
+        $request = $request->except('attr_name', 'attr_val');
+
+        if(!isset($request['hit'])){
+            $request['hit'] = "0";
+        }
+
+        return $product->update($request);
 
     }
 
