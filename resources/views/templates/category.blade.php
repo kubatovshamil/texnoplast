@@ -3,13 +3,22 @@
 
 @section('content')
     <div class="catalog container">
+
+
         <ul class="breadcrumb">
             <li><a href="/">Главная</a></li>
             @if(isset($title))
                 <li>{{$title}}</li>
             @endif
-
-
+            @if(isset($names))
+                @foreach($names as $k => $name)
+                    @if($k == 1)
+                        <li>{{$name->title}}</li>
+                    @else
+                        <li><a href="{{ url('/categories/' . $name->slug) }}">{{$name->title}}</a></li>
+                    @endif
+                @endforeach
+            @endif
         </ul>
 
 

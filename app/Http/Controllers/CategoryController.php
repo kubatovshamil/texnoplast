@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Filters\Tree;
 use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController
 {
@@ -17,13 +18,22 @@ class CategoryController
         ]);
     }
 
-    public function subCategory($category, $subCategory )
+    public function subCategory($category, $subCategory)
     {
-        $category = Category::where('slug', $subCategory)->first();
+        $names = Category::getNames($category, $subCategory);
+
+       $category = Category::where('slug', $subCategory)->first();
         return view('templates.category', [
             'products' => Product::where('category_id', $category->id)->paginate(12),
+            'names' => $names
         ]);
     }
+
+
+
+
+
+
 
 
 }

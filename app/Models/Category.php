@@ -27,4 +27,13 @@ class Category extends Model
     }
 
 
+    public static function getNames($category, $subCategory)
+    {
+        return DB::table('categories')
+            ->where('slug', $category)
+            ->orWhere('slug', $subCategory)
+            ->get(['title', 'slug']);
+    }
+
+
 }
