@@ -22,50 +22,51 @@ $(document).ready(() => {
         });
     }
 
+    if($('.bestsellers__blocks-wrapper').length){
+        var bestsellers_slider = tns({
+            container: '.bestsellers__blocks-wrapper',
+            controlsContainer: '.bestsellers__sliders',
+            nav: true,
+            navPosition: 'bottom',
+            swipeAngle: false,
+            loop: true,
+            arrowKeys: false,
+            autoplayButtonOutput: false,
+            autoplayTimeout: 10000,
+            autoplay: true,
+            rewind: false,
+            speed: 1200,
 
-	var bestsellers_slider = tns({
-		container: '.bestsellers__blocks-wrapper',
-		controlsContainer: '.bestsellers__sliders',
-		nav: true,
-		navPosition: 'bottom',
-		swipeAngle: false,
-		loop: true,
-		arrowKeys: false,
-		autoplayButtonOutput: false,
-		autoplayTimeout: 10000,
-		autoplay: true,
-		rewind: false,
-		speed: 1200,
+            responsive: {
+                1: {
+                    items: 1,
+                    mouseDrag: true
+                },
 
-		responsive: {
-			1: {
-				items: 1,
-				mouseDrag: true
-			},
+                640: {
+                    items: 2,
+                    mouseDrag: true
+                },
 
-			640: {
-				items: 2,
-				mouseDrag: true
-			},
+                735: {
+                    items: 3,
+                    mouseDrag: true
+                },
 
-			735: {
-				items: 3,
-				mouseDrag: true
-			},
+                860: {
+                    items: 3
+                },
 
-			860: {
-				items: 3
-			},
+                1309: {
+                    items: 3
+                },
 
-			1309: {
-				items: 3
-			},
-
-			1350: {
-				items: 4
-			}
-		}
-	});
+                1350: {
+                    items: 4
+                }
+            }
+        });
+    }
 
 
 	$('.bestsellers__block-circle-button-favorite').on('click', function () {

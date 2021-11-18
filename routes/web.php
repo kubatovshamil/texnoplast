@@ -8,7 +8,22 @@ use App\Http\Controllers\admin\ProductController;
 
 
 Route::get('/', [HomeController::class, 'index']);
+
 Route::get('/catalog', [HomeController::class, 'catalog']);
+
+Route::get('/contact', [HomeController::class, 'contact']);
+
+Route::get('/about', [HomeController::class, 'about']);
+
+Route::get('/provider', [HomeController::class, 'provider']);
+
+Route::get('/police', [HomeController::class, 'personal']);
+
+Route::get('/delivery', [HomeController::class, 'delivery']);
+
+Route::get('/question', [HomeController::class, 'question']);
+
+Route::get('/register', [HomeController::class, 'register']);
 
 
 Route::prefix('admin')->group(function (){
