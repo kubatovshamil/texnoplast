@@ -69,57 +69,17 @@
 		</div>
 	</div>
 
-	<div class="bestsellers container">
-		<div class="bestsellers__header">
-			<h1 class="bestsellers__header-title">Хиты продаж</h1>
+    <x-best-seller />
 
-			<div class="bestsellers__sliders">
-				<a href="javascript:void(0)" class="bestsellers__slider-arrow bestsellers__slider-arrow-left"></a>
-				<a href="javascript:void(0)" class="bestsellers__slider-arrow bestsellers__slider-arrow-right"></a>
-			</div>
-		</div>
-
-        <x-best-seller />
-
-	</div>
-
-	<div class="advatages container">
-		<div class="advantages__header">
-			<h1 class="advantages__header-title">Наши преимущества</h1>
-		</div>
-
-		<div class="advantages__blocks">
-			<div class="advantages__block">
-				<h1 class="advantages__block-title advantages__shipping-title">Бесплатная доставка</h1>
-				<p class="advantages__block-desc">по Белгороду</p>
-
-				<a href="#" class="advantages__block-button">Смотреть</a>
-			</div>
-
-			<div class="advantages__block">
-				<h1 class="advantages__block-title advantages__order-title">Ищите эксклюзив?</h1>
-				<p class="advantages__block-desc">Изготовление мебели по индивидуальному заказу</p>
-
-				<a href="#" class="advantages__block-button">Смотреть</a>
-			</div>
-
-			<div class="advantages__block">
-				<h1 class="advantages__block-title advantages__sales-title">Скидка 10%</h1>
-				<p class="advantages__block-desc">на всю мебель</p>
-
-				<a href="#" class="advantages__block-button">Смотреть</a>
-			</div>
-		</div>
-	</div>
 
 	<div class="contacts-and-forms container">
 		<div class="contacts-and-forms__numbers">
 			<h1 class="contacts-and-forms__numbers-title">Остались вопросы? Звоните!</h1>
 
-			<span class="contacts-and-forms__numbers-work">Пн-Пт: 10-19 Сб: 12-17 (МСК)</span>
+			<span class="contacts-and-forms__numbers-work">ПН по ПТ: с 09:00 до 19:00 (МСК)</span>
 
-			<a href="#" class="contacts-and-forms__numbers-phone1">+7 (4722) 80-30-30</a>
-			<a href="#" class="contacts-and-forms__numbers-phone2">+7 (4722) 80-30-30</a>
+			<a href="tel:78003008993" class="contacts-and-forms__numbers-phone1">+7 (800) 300-89-93</a>
+			<a href="https://wa.me/79807153571" class="contacts-and-forms__numbers-phone2">+7 (980) 715-35-71</a>
 		</div>
 
 		<div class="contacts-and-forms__socials">

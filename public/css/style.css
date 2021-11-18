@@ -609,7 +609,6 @@ button[type=submit]:hover {
 	padding: 75px 0;
 	width: 100%;
 	max-height: 370px;
-	min-height: 370px;
 	background-color: #313840;
 }
 
@@ -1740,19 +1739,11 @@ button[type=submit]:hover {
 }
 
 
-
-
-
-
-
-
-
-
 .bestsellers__header {
 	display: block;
 	width: 100%;
 	height: 80px;
-	margin-top: 100px;
+	margin-top: 20px;
 	margin-bottom: 30px;
 }
 
@@ -1875,8 +1866,9 @@ button[type=submit]:hover {
 
 .bestsellers__block-img {
 	position: relative;
-	width: 250px;
-	height: 355px;
+	width: 220px;
+	height: 280px;
+    border-radius: 4px;
 }
 
 .bestsellers__block-stock {
@@ -6433,7 +6425,26 @@ button[type=submit]:hover {
     padding: 0 20px 0 20px;
 }
 
-
+ul.breadcrumb {
+    padding: 20px 30px;
+    list-style: none;
+}
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+ul.breadcrumb li a {
+    text-decoration: underline;
+}
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
 
 
 /* BEGIN Media */
@@ -6444,8 +6455,6 @@ button[type=submit]:hover {
 	.header__search {
 		width: 290px;
 	}
-
-
 
 	.header__logo_image {
 		width: 100%;

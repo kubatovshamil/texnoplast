@@ -26,4 +26,11 @@ class Product extends Model
         'hit'
     ];
 
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
+
+
+
 }

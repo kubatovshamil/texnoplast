@@ -21,61 +21,46 @@ class HomeController
         return view('templates.catalog', [
             'productQuantity' => Product::all()->count(),
             'categories' => Tree::buildTree(Category::all()->toArray()),
-            'products' => Product::all(),
+            'products' => Product::paginate(12),
         ]);
     }
 
 
     public function contact()
     {
-        return view('pages.contact', [
-            'categories' => Tree::buildTree(Category::all()->toArray()),
-        ]);
+        return view('pages.contact');
     }
 
     public function about()
     {
-        return view('pages.about', [
-            'categories' => Tree::buildTree(Category::all()->toArray()),
-        ]);
+        return view('pages.about');
     }
 
     public function delivery()
     {
-        return view('pages.delivery', [
-            'categories' => Tree::buildTree(Category::all()->toArray()),
-        ]);
+        return view('pages.delivery');
     }
 
 
     public function personal()
     {
-        return view('pages.personal', [
-            'categories' => Tree::buildTree(Category::all()->toArray()),
-        ]);
+        return view('pages.personal');
     }
 
     public function provider()
     {
-        return view('pages.provider', [
-            'categories' => Tree::buildTree(Category::all()->toArray()),
-        ]);
+        return view('pages.provider');
     }
 
     public function question()
     {
-        return view('pages.question', [
-            'categories' => Tree::buildTree(Category::all()->toArray()),
-        ]);
+        return view('pages.question');
     }
 
 
     public function register()
     {
-        return view('pages.register', [
-            'categories' => Tree::buildTree(Category::all()->toArray()),
-        ]);
+        return view('pages.register');
     }
-
 
 }

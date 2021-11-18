@@ -37,41 +37,11 @@
                 @endforeach
             </div>
 
-            <div class="catalog__products-pagination">
-                <div class="catalog__products-pages">
-                    <a href="javascript:void(0)" class="catalog__pages-begin">В начало</a>
-                    <a href="javascript:void(0)" class="catalog__pages-prev">&#8249;</a>
+                {{ $products->links('templates.paginate-catalog') }}
 
-                    <div class="catalog__pages-dots-wrapper-prev"></div>
-
-                    <div class="catalog__pages-num-wrapper"></div>
-
-                    <div class="catalog__pages-dots-wrapper-next"></div>
-
-                    <a href="javascript:void(0)" class="catalog__pages-next">&#8250;</a>
-                    <a href="javascript:void(0)" class="catalog__pages-end">В конец</a>
-                </div>
-
-                <a href="javascript:void(0)" class="catalog__products-scrollup">Наверх</a>
-            </div>
-        </div>
-
-        <a href="javascript:void(0)" class="see__more">Показать еще</a>
-
-
-        <div class="bestsellers container">
-            <div class="bestsellers__header">
-                <h1 class="bestsellers__header-title">Хиты продаж</h1>
-
-                <div class="bestsellers__sliders">
-                    <a href="javascript:void(0)" class="bestsellers__slider-arrow bestsellers__slider-arrow-left"></a>
-                    <a href="javascript:void(0)" class="bestsellers__slider-arrow bestsellers__slider-arrow-right"></a>
-                </div>
-            </div>
-
-            <x-best-seller />
 
         </div>
+        <x-best-seller />
     </div>
 
 @endsection

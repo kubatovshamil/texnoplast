@@ -5,7 +5,7 @@ use App\Models\Product;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ProductController;
-
+use App\Http\Controllers\CategoryController as CategoryControllerAlias;
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -23,7 +23,17 @@ Route::get('/delivery', [HomeController::class, 'delivery']);
 
 Route::get('/question', [HomeController::class, 'question']);
 
+
 Route::get('/register', [HomeController::class, 'register']);
+
+
+
+
+
+Route::get('/categories/{category}', [CategoryControllerAlias::class, 'category']);
+Route::get('/categories/{category}/{subCategory}', [CategoryControllerAlias::class, 'subCategory']);
+
+
 
 
 Route::prefix('admin')->group(function (){

@@ -5,10 +5,9 @@
       <div class="col-lg-10 col-md-10 col-sm-9">
         <div class="header__row-top">
           <div class="header__block header__block__name_menu">
-              <a href="" class="header__menu-link">О компании</a>
-              <a href="" class="header__menu-link">Задать-Вопрос</a>
-              <a href="" class="header__menu-link">Оплата</a>
-              <a href="" class="header__menu-link">Доставка</a>
+              <a href="/about" class="header__menu-link">О компании</a>
+              <a href="/question" class="header__menu-link">Задать-Вопрос</a>
+              <a href="/delivery" class="header__menu-link">Доставка</a>
           </div>
           <div class="header__block header__block__name_profile">
             <a href="personal.php" class="header__profile-link">Личный кабинет</a>
@@ -144,7 +143,7 @@
                 <div class="second-item__name_dropdown__right {{ $k == 0 ? 'show' : ''}}">
                     @foreach($category['_children'] as $child)
                             <div class="second-item__name_dropdown__block__wrapper">
-                                <a href="#" class="second-item__name_dropdown__block">
+                                <a href="{{ "/categories/". $category['slug'] . "/" . $child['slug'] }}" class="second-item__name_dropdown__block">
                                     <img class="second-item__name_dropdown__block__img" src="{{ asset("storage/category/" . $child['img']) }}" width="100" height="100" alt="img">
                                     <p class="second-item__name_dropdown__block__title">{{$child['title']}}</p>
                                 </a>
