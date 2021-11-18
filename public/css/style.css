@@ -4584,7 +4584,7 @@ button[type=submit]:hover {
 	vertical-align: top;
 
 	width: 115px;
-	height: 60;
+	height: 60px;
 	line-height: 58px;
 	text-align: center;
 	margin-right: 10px;
@@ -6244,6 +6244,8 @@ button[type=submit]:hover {
 }
 
 .registration__form__checkbox .btn button{
+    background-color: #FA7916;
+    color: #ffffff;
     margin-bottom: 0;
     font-weight: 400;
     text-align: center;
@@ -6258,7 +6260,6 @@ button[type=submit]:hover {
     font-size: 13px;
     line-height: 1.398;
     border-radius: 0;
-    height: 38px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -7012,6 +7013,10 @@ button[type=submit]:hover {
 		margin-left: 15px;
 	}
 
+    .registration__top__text{
+        width: 50%;
+    }
+
 }
 
 
@@ -7307,6 +7312,14 @@ button[type=submit]:hover {
 		display: block;
 	}
 
+    .registration__top__text{
+        width: 80%;
+    }
+
+    .fieldset{
+        width: 85%;
+    }
+
 }
 
 
@@ -7315,6 +7328,14 @@ button[type=submit]:hover {
 	.header__block.header__block__name_actions {
 		width: auto;
 	}
+
+    .registration__top__text{
+        width: 100%;
+    }
+
+    .fieldset{
+        width: 100%;
+    }
 
 }
 
@@ -7859,6 +7880,7 @@ button[type=submit]:hover {
 	.catalog__settings-range-slider {
 		width: 100%;
 	}
+
 }
 
 
@@ -7877,6 +7899,10 @@ button[type=submit]:hover {
 		display: block;
 		font-size: 14px;
 	}
+
+    .fieldset{
+        width: 60%;
+    }
 
 }
 
@@ -8578,6 +8604,8 @@ button[type=submit]:hover {
 		margin-bottom: 15px;
 	}
 
+
+
 }
 
 
@@ -8590,6 +8618,12 @@ button[type=submit]:hover {
 	.bestsellers__blocks-wrapper {
 		margin-bottom: 0;
 	}
+
+    .fieldset{
+        width: 80%;
+    }
+
+
 
 }
 
@@ -8977,8 +9011,12 @@ button[type=submit]:hover {
 		display: block;
 		width: 100px;
 	}
+    .registration__top{
+        padding: 15px 30px;
+    }
 
 }
+
 
 
 @media screen and (max-width: 568px) {
@@ -9822,6 +9860,37 @@ button[type=submit]:hover {
 	.popular-category__products-block-shelf {
 		background-position-x: 330%;
 	}
+
+    .fieldset{
+        padding: 20px 20px;
+    }
+
+    .fieldset .form-group{
+        flex-direction: column;
+    }
+
+    .container{
+        width: auto;
+    }
+    .fieldset{
+        width: 100%;
+    }
+
+    .registration__form__checkbox .btn,
+    .registration__form__checkbox .btn button
+    {
+        width: 100%;
+    }
+    .registration__form__checkbox{
+        align-items: flex-end;
+    }
+
+    .custom-checkbox+label:before{
+        left: -30px;
+    }
+    .fieldset .form-group{
+        height: 85px;
+    }
 
 }
 

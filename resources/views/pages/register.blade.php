@@ -20,7 +20,7 @@
             <form action="" >
                 <fieldset class="fieldset">
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-xs-12 col-md-6 col-sm-12 col-12">
                             <div class="registration__form__left">
                                 <div class="form-group">
                                     <label for="email">*Email:</label>
@@ -39,7 +39,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-6">
+                        <div class="col-xs-12 col-md-6 col-sm-12 col-12">
                             <div class="registration__form__right">
                                 <div class="form-group">
                                     <label for="password">*Пароль:</label>
@@ -61,7 +61,7 @@
                         <input type="checkbox" id="cbPersonalData" class="custom-checkbox">
                         <label for="cbPersonalData">
                             Я согласен на
-                            <a class="green-link" target="_blank" href="">
+                            <a class="green-link" target="_blank" href="/police">
                                 обработку моих данных<span class="green-label">*</span></a>
                         </label>
                     </div>
