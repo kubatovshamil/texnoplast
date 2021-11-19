@@ -17,21 +17,21 @@ Route::get('/sale', [HomeController::class, 'sale']);
 
 Route::get('/product/{slug}', [ProductControllerAlias::class, 'index']);
 
-Route::get('/contact', [HomeController::class, 'contact']);
+Route::view('/contact', 'pages.others.contact');
 
-Route::get('/about', [HomeController::class, 'about']);
+Route::view('/about', 'pages.others.about');
 
-Route::get('/provider', [HomeController::class, 'provider']);
+Route::view('/provider', 'pages.others.provider');
 
-Route::get('/police', [HomeController::class, 'personal']);
+Route::view('/police', 'pages.others.personal');
 
-Route::get('/delivery', [HomeController::class, 'delivery']);
+Route::view('/delivery', 'pages.others.delivery');
 
-Route::get('/question', [HomeController::class, 'question']);
+Route::view('/question', 'pages.others.question');
 
 Route::get('/basket', [OrderController::class, 'index']);
 
-Route::get('/register', [HomeController::class, 'register']);
+Route::view('/register', 'pages.register');
 
 
 Route::get('/categories/{category}', [CategoryControllerAlias::class, 'category']);
