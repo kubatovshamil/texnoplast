@@ -27,7 +27,7 @@ class HomeController
 
     public function sale()
     {
-        return view('pages.others.sale',[
+        return view('pages.sale',[
             'products' => Product::where('hit', '1')->paginate(12),
         ]);
     }
