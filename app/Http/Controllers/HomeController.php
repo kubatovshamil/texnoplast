@@ -10,7 +10,7 @@ class HomeController
 {
     public function index()
     {
-        return view('templates.index', [
+        return view('pages.index', [
             'productQuantity' => Product::all()->count(),
             'categories' => Tree::buildTree(Category::all()->toArray()),
         ]);
@@ -18,7 +18,7 @@ class HomeController
 
     public function catalog()
     {
-        return view('templates.catalog', [
+        return view('pages.catalog', [
             'productQuantity' => Product::all()->count(),
             'categories' => Tree::buildTree(Category::all()->toArray()),
             'products' => Product::paginate(12),
@@ -27,7 +27,7 @@ class HomeController
 
     public function sale()
     {
-        return view('pages.sale',[
+        return view('pages.others.sale',[
             'products' => Product::where('hit', '1')->paginate(12),
         ]);
     }
@@ -35,33 +35,33 @@ class HomeController
 
     public function contact()
     {
-        return view('pages.contact');
+        return view('pages.others.contact');
     }
 
     public function about()
     {
-        return view('pages.about');
+        return view('pages.others.about');
     }
 
     public function delivery()
     {
-        return view('pages.delivery');
+        return view('pages.others.delivery');
     }
 
 
     public function personal()
     {
-        return view('pages.personal');
+        return view('pages.others.personal');
     }
 
     public function provider()
     {
-        return view('pages.provider');
+        return view('pages.others.provider');
     }
 
     public function question()
     {
-        return view('pages.question');
+        return view('pages.others.question');
     }
 
 

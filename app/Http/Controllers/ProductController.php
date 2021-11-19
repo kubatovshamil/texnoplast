@@ -12,10 +12,10 @@ class ProductController
     public function index($slug, AttributeName $attributeName)
     {
         $product = Product::where('slug', $slug)->first();
-        return view('pages.product', [
+        return view('products.index', [
             'product' => $product,
             'attributes' => $attributeName->getElements($product->id),
-            'galleries' => Gallery::where('product_id', $product->id)
+            'galleries' => Gallery::where('product_id', $product->id)->get()
         ]);
     }
 

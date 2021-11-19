@@ -133,7 +133,7 @@ $(document).ready(() => {
 
         var clickedImg = $(event.currentTarget).find('.product_card__image').attr('src');
         $('.product_card__big-image').css('background-image', `url(${clickedImg})`);
-
+        $('.product_card__big-image-wrapper img').attr('src', clickedImg);
         $(event.currentTarget).toggleClass('product_card__image-active');
 
     });

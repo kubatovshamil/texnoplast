@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('templates.header', function($view){
+        View::composer('layouts.header', function($view){
             $view->with([ 'categories' => Tree::buildTree(Category::all()->toArray())]);
         });
     }

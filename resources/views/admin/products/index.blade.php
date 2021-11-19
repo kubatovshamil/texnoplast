@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('admin.layouts.index')
 
 @section('content')
 
@@ -79,7 +79,7 @@
                             </div>
 
                             <div class="card-footer clearfix">
-                                {{ $products->links('admin.templates.paginate') }}
+                                {{ $products->links('admin.pages.paginate') }}
                             </div>
                         </div>
                     </div>

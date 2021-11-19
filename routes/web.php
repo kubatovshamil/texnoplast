@@ -42,7 +42,7 @@ Route::get('/categories/{category}/{subCategory}', [CategoryControllerAlias::cla
 Route::prefix('admin')->group(function (){
     //Home page
     Route::get('/', function(){
-        return view('admin.index');
+        return view('admin.pages.index');
     });
     //Product route
     Route::resource('/products', ProductController::class);

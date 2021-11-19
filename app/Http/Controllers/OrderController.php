@@ -7,7 +7,7 @@ class OrderController
 
     public function index()
     {
-        return view('pages.basket');
+        return view('orders.index');
     }
 
 

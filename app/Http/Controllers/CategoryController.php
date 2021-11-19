@@ -12,7 +12,7 @@ class CategoryController
 
     public function category($slug)
     {
-        return view('templates.category', [
+        return view('categories.index', [
             'products' => Tree::getProducts($slug),
             'title' => Category::where('slug', $slug)->first()->title
         ]);
@@ -21,8 +21,9 @@ class CategoryController
     public function subCategory($category, $subCategory)
     {
         $names = Category::getNames($category, $subCategory);
-       $category = Category::where('slug', $subCategory)->first();
-        return view('templates.category', [
+        $category = Category::where('slug', $subCategory)->first();
+
+        return view('categories.index', [
             'products' => Product::where('category_id', $category->id)->paginate(12),
             'names' => $names
         ]);
