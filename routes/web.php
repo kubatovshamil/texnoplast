@@ -6,10 +6,16 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\CategoryController as CategoryControllerAlias;
+use App\Http\Controllers\ProductController as ProductControllerAlias;
+use App\Http\Controllers\OrderController;
 
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/catalog', [HomeController::class, 'catalog']);
+
+Route::get('/sale', [HomeController::class, 'sale']);
+
+Route::get('/product/{slug}', [ProductControllerAlias::class, 'index']);
 
 Route::get('/contact', [HomeController::class, 'contact']);
 
@@ -23,16 +29,13 @@ Route::get('/delivery', [HomeController::class, 'delivery']);
 
 Route::get('/question', [HomeController::class, 'question']);
 
+Route::get('/basket', [OrderController::class, 'index']);
 
 Route::get('/register', [HomeController::class, 'register']);
 
 
-
-
-
 Route::get('/categories/{category}', [CategoryControllerAlias::class, 'category']);
 Route::get('/categories/{category}/{subCategory}', [CategoryControllerAlias::class, 'subCategory']);
-
 
 
 

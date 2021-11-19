@@ -1,26 +1,13 @@
 @extends('layout')
 
-
 @section('content')
-    <div class="catalog container">
+    <div class="sale container">
 
-
-            <ul class="breadcrumb">
-                <li><a href="/">Главная</a></li>
-                @if(isset($title))
-                    <li>{{$title}}</li>
-                @endif
-                @if(isset($names))
-                    @foreach($names as $k => $name)
-                        @if($k == 1)
-                            <li>{{$name->title}}</li>
-                        @else
-                            <li><a href="{{ url('/categories/' . $name->slug) }}">{{$name->title}}</a></li>
-                        @endif
-                    @endforeach
-                @endif
-            </ul>
-
+        <ul class="breadcrumb">
+            <li><a href="/">Главная</a></li>
+            <li><a href="/catalog">Каталог</a></li>
+            <li>Распрадажа</li>
+        </ul>
 
         <div id="category1" class="catalog__products catalog__products-active">
             <div class="catalog__products-wrapper">
@@ -41,7 +28,7 @@
                             </div>
 
                             <div class="bestsellers__block-buttons">
-                                <a href="{{ url('/product/' . $product->slug) }}" class="bestsellers__block-button-buy-click">Подробнее</a>
+                                <a href="javascript:void(0)" class="bestsellers__block-button-buy-click">Купить в 1 клик</a>
                                 <a href="javascript:void(0)" class="bestsellers__block-button-buy">Купить</a>
                             </div>
 

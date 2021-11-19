@@ -69,6 +69,77 @@ $(document).ready(() => {
     }
 
 
+
+    if($('.product_card__image-carousel__wrapper').length) {
+        var product_card_slider = tns({
+            container: '.product_card__image-carousel__wrapper',
+            controlsContainer: '.product_card__image-arrow',
+            nav: false,
+            mouseDrag: true,
+            swipeAngle: false,
+            arrowKeys: false,
+            rewind: false,
+            loop: true,
+            autoplayButtonOutput: false,
+            speed: 400,
+
+            responsive: {
+                300: {
+                    items: 2
+                },
+
+                413: {
+                    items: 3
+                },
+
+                568: {
+                    items: 4
+                },
+
+                637: {
+                    items: 4
+                },
+
+                767: {
+                    items: 5
+                },
+
+                813: {
+                    items: 3
+                },
+
+                960: {
+                    items: 4
+                },
+
+                1024: {
+                    items: 4
+                },
+
+                1025: {
+                    items: 4
+                }
+            }
+        });
+    }
+
+
+
+    $('.product_card__image-wrapper').on('click', (event) => {
+
+        $('.product_card__image-wrapper').each((index, item) => {
+            $(item).removeClass('product_card__image-active');
+        });
+
+        var clickedImg = $(event.currentTarget).find('.product_card__image').attr('src');
+        $('.product_card__big-image').css('background-image', `url(${clickedImg})`);
+
+        $(event.currentTarget).toggleClass('product_card__image-active');
+
+    });
+
+
+
 	$('.bestsellers__block-circle-button-favorite').on('click', function () {
 
 		$(this).toggleClass('active');
@@ -130,5 +201,47 @@ $(document).ready(() => {
             (item).addClass('expanded');
         }
     });
+
+    if(!$('.order-forming__products-products').length) {
+        $('.order-forming__products-desc').text('Корзина пуста');
+        $('.order-forming__product-total').remove();
+    }
+
+
+    $('.order-forming__product-count-plus').on('click', (event) => {
+
+        var input = $(event.currentTarget).parent().find('.order-forming__product-count-input');
+
+        $(input).val(parseInt($(input).val()) + 1 || 1);
+
+    });
+
+
+
+    $('.order-forming__product-count-minus').on('click', (event) => {
+
+        var input = $(event.currentTarget).parent().find('.order-forming__product-count-input');
+
+        if ($(input).val() <= 1)
+            return;
+
+        $(input).val(parseInt($(input).val()) - 1 || 1);
+
+    });
+
+
+    $('.order-forming__product-price-remove').on('click', (event) => {
+
+        $(event.currentTarget).parent().remove();
+
+
+        if(!$('.order-forming__products-products').length) {
+            $('.order-forming__products-desc').text('Корзина пуста');
+            $('.order-forming__product-total').remove();
+        }
+    });
+
+
+
 
 });

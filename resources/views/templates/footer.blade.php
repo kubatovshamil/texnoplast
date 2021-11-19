@@ -2,7 +2,7 @@
   <div class="container">
     <div class="footer__block">
       <div class="footer__logo">
-        <a href="/"><img class="footer__logo-img" src="img/white-logo.png" alt="footer logo"></a>
+        <a href="/"><img class="footer__logo-img" src="{{ asset('/img/white-logo.png') }}" alt="footer logo"></a>
 
         <p class="footer__copyright">© Интернет-магазин MaksProm, 2021</p>
 
@@ -26,7 +26,7 @@
         </ul>
 
         <div class="footer__contacts">
-          <a href="tel:+78003008993" class="footer__contacts-phone">+7 (800) 300-89-93</a>
+          <a href="tel:+79807153571" class="footer__contacts-phone">+7 (980) 715-35-71</a>
           <p class="footer__contacts_desc">Для звонков с любой точки мира</p>
 
           <a href="javascript:void(0)" class="footer__contacts_button">Заказать звонок</a>

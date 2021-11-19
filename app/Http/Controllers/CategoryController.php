@@ -21,19 +21,12 @@ class CategoryController
     public function subCategory($category, $subCategory)
     {
         $names = Category::getNames($category, $subCategory);
-
        $category = Category::where('slug', $subCategory)->first();
         return view('templates.category', [
             'products' => Product::where('category_id', $category->id)->paginate(12),
             'names' => $names
         ]);
     }
-
-
-
-
-
-
 
 
 }

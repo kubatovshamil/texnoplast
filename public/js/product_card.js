@@ -149,8 +149,6 @@ $(document).ready(() => {
 
 
 
-
-
 	$('.product_card__image-wrapper').on('click', (event) => {
 
 		$('.product_card__image-wrapper').each((index, item) => {

@@ -25,7 +25,7 @@ class BestSeller extends Component
     public function render()
     {
         return view('components.best-seller',[
-            'hits' => Product::where('hit', "1")->get()
+            'hits' => Product::where('hit', "1")->take(12)->get()
         ]);
     }
 }

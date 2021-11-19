@@ -1,7 +1,7 @@
 <div class="header">
   <div class="container">
     <div class="row">
-      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-5"><a href="/" class="header__logo"><img class="header__logo_image" src="img/logo.png" alt="logo not found" /></a></div>
+      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-5"><a href="/" class="header__logo"><img class="header__logo_image" src="{{asset('/img/logo.png')}}" alt="logo not found" /></a></div>
       <div class="col-lg-10 col-md-10 col-sm-9">
         <div class="header__row-top">
           <div class="header__block header__block__name_menu">
@@ -10,7 +10,7 @@
               <a href="/delivery" class="header__menu-link">Доставка</a>
           </div>
           <div class="header__block header__block__name_profile">
-            <a href="personal.php" class="header__profile-link">Личный кабинет</a>
+            <a href="javascript:void(1)" class="header__profile-link">Личный кабинет</a>
           </div>
         </div>
         <div class="header__row-bottom">
@@ -61,15 +61,15 @@
             </div>
 
             <div class="header__block header__actions-block mobile_profile">
-              <a href="personal.php" class="header__actions-block header__actions-block__name_profile"></a>
+              <a href="javascript:void(1)" class="header__actions-block header__actions-block__name_profile"></a>
             </div>
 
             <div class="header__block header__actions-block">
-              <a href="favorites.php" class="header__actions-block header__actions-block__name_favorites"><span class="favorites_msg">2</span></a>
+              <a href="/favorite" class="header__actions-block header__actions-block__name_favorites"><span class="favorites_msg">2</span></a>
             </div>
 
             <div class="header__block header__actions-block">
-              <a href="basket.php" class="header__actions-block header__actions-block__name_basket"><span class="basket_msg">2</span></a>
+              <a href="/basket" class="header__actions-block header__actions-block__name_basket"><span class="basket_msg">2</span></a>
             </div>
           </div>
         </div>
@@ -154,19 +154,19 @@
         </div>
 
         <div class="second-menu__item responsive_width">
-            <a class="second-menu__link armchair" href="#">индивидуальный заказ</a>
+            <a class="second-menu__link armchair" href="javascript:void(1)">индивидуальный заказ</a>
         </div>
 
         <div class="second-menu__item">
-            <a class="second-menu__link calc" href="#">Поставщикам</a>
+            <a class="second-menu__link calc" href="/provider">Поставщикам</a>
         </div>
 
         <div class="second-menu__item">
-            <a class="second-menu__link cart" href="#">Материал в наличии</a>
+            <a class="second-menu__link cart" href="/catalog">Материал в наличии</a>
         </div>
 
         <div class="second-menu__item">
-            <a class="second-menu__link sale" href="#">распродажа</a>
+            <a class="second-menu__link sale" href="/sale">распродажа</a>
         </div>
     </div>
 </div>

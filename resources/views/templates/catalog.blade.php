@@ -2,7 +2,16 @@
 
 @section('content')
 
+
+
     <div class="catalog container">
+
+        <ul class="breadcrumb">
+            <li><a href="/">Главная</a></li>
+            <li>Каталог</li>
+        </ul>
+
+
         <div class="catalog__header">
             <h1 class="catalog__header-title">Каталог товаров</h1>
 
@@ -28,7 +37,7 @@
                         </div>
 
                         <div class="bestsellers__block-buttons">
-                            <a href="javascript:void(0)" class="bestsellers__block-button-buy-click">Купить в 1 клик</a>
+                            <a href="{{ url('/product/' . $product->slug) }}" class="bestsellers__block-button-buy-click">Подробнее</a>
                             <a href="javascript:void(0)" class="bestsellers__block-button-buy">Купить</a>
                         </div>
 
