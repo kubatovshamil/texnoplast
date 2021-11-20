@@ -8,6 +8,7 @@ use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\CategoryController as CategoryControllerAlias;
 use App\Http\Controllers\ProductController as ProductControllerAlias;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\AjaxController;
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -33,9 +34,15 @@ Route::get('/basket', [OrderController::class, 'index']);
 
 Route::view('/register', 'pages.register');
 
-Route::get('/modal', [HomeController::class, 'modal']);
 
 Route::get('/categories/{slug}/{subSlug?}', [CategoryControllerAlias::class, 'index']);
+
+
+
+//ajax
+
+Route::view('/product','pages.ajax.modal');
+Route::view('/order', 'pages.ajax.order');
 
 
 

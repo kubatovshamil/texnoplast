@@ -6430,6 +6430,10 @@ ul.breadcrumb li a:hover {
     text-decoration: underline;
 }
 
+.order-form{
+    width: 700px !important;
+    height: 500px !important;
+}
 
 /* BEGIN Media */
 

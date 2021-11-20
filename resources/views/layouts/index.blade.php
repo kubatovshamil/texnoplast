@@ -29,10 +29,7 @@
 
 		@include('layouts.footer')
 
-        <div class="modal__modal-box">
-            <div class="box-modal" id="Modal">
-
-            </div>
+        <div class="modal__modal-box" id="Modal">
         </div>
 
 

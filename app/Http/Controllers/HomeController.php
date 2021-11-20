@@ -32,9 +32,5 @@ class HomeController
         ]);
     }
 
-    public function modal()
-    {
-        return view('pages.ajax.modal');
-    }
 
 }
