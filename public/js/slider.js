@@ -148,40 +148,12 @@ $(document).ready(() => {
 
 
 	$('.bestsellers__block-button-buy').on('click', function () {
-
-        $('#Modal').arcticmodal({
-            type: 'ajax',
-            url: '/product',
-            data:{
-                "_token": $('meta[name="csrf-token"]').attr('content'),
-            },
-            success:function(response){
-                $('#Modal').html(response);
-            },
-            error: function(response) {
-                console.error(response);
-            },
-        });
-
+        getTemplate('/product', 'ajax');
 	});
 
 
     $('.armchair').on('click', function () {
-
-        $('#Modal').arcticmodal({
-            type: 'ajax',
-            url: '/order',
-            data:{
-                "_token": $('meta[name="csrf-token"]').attr('content'),
-            },
-            success:function(response){
-                $('#Modal').html(response);
-            },
-            error: function(response) {
-                console.error(response);
-            },
-        });
-
+        getTemplate('/order', 'ajax');
     });
 
 
@@ -274,21 +246,13 @@ $(document).ready(() => {
 
 
     function getTemplate(url, type){
-
-        $.ajax({
+        $.arcticmodal({
+            type: 'ajax',
             url: url,
-            type: type,
             data:{
                 "_token": $('meta[name="csrf-token"]').attr('content'),
             },
-            success:function(response){
-                $('.box-modal').html(response);
-            },
-            error: function(response) {
-                console.error(response);
-            },
         });
     }
-
 
 });
