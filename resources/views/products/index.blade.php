@@ -5,8 +5,11 @@
 
 
     <div class="product-card container">
-        <div class="product-card__characteristics-mobile">
 
+        <x-bread-crumbs />
+
+
+        <div class="product-card__characteristics-mobile">
             <h1 class="product-card__characteristics-title">{{ $product->title }}</h1>
 
             <div class="product-card__characteristics-functions">

@@ -34,8 +34,7 @@ Route::get('/basket', [OrderController::class, 'index']);
 Route::view('/register', 'pages.register');
 
 
-Route::get('/categories/{category}', [CategoryControllerAlias::class, 'category']);
-Route::get('/categories/{category}/{subCategory}', [CategoryControllerAlias::class, 'subCategory']);
+Route::get('/categories/{slug}/{subSlug?}', [CategoryControllerAlias::class, 'index']);
 
 
 
@@ -46,7 +45,7 @@ Route::prefix('admin')->group(function (){
     });
     //Product route
     Route::resource('/products', ProductController::class);
-    //Category route
+    //CategoryFilter route
     Route::post('/categories/parent', [CategoryController::class, 'parentCategory'])->name('categories.parent');
     Route::resource('/categories', CategoryController::class);
 });

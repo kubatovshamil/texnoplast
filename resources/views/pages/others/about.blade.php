@@ -5,6 +5,8 @@
 
 <div class="about-us">
     <div class="container">
+
+        <x-bread-crumbs />
         <img src="img/about_img.jpg" class="about-us__block about-us__img" alt="">
 
         <div class="about-us__block about-us__text">

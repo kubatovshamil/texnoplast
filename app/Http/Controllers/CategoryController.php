@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Filters\BreadCrumbs;
+use App\Http\Filters\CategoryFilter;
 use App\Http\Filters\Tree;
 use App\Models\Category;
 use App\Models\Product;
@@ -10,23 +12,21 @@ use Illuminate\Support\Facades\DB;
 class CategoryController
 {
 
-    public function category($slug)
+    public function index($slug, $subSlug = '')
     {
-        return view('categories.index', [
-            'products' => Tree::getProducts($slug),
-            'title' => Category::where('slug', $slug)->first()->title
-        ]);
-    }
+        if(!empty($slug) && empty($subSlug)){
 
-    public function subCategory($category, $subCategory)
-    {
-        $names = Category::getNames($category, $subCategory);
-        $category = Category::where('slug', $subCategory)->first();
 
-        return view('categories.index', [
-            'products' => Product::where('category_id', $category->id)->paginate(12),
-            'names' => $names
-        ]);
+
+            return view('categories.index', [
+                'products' => CategoryFilter::getProducts($slug)
+            ]);
+        }else{
+            $category = Category::where('slug', $subSlug)->first();
+            return view('categories.index', [
+                'products' => Product::where('category_id', $category->id)->paginate(12)
+            ]);
+        }
     }
 
 

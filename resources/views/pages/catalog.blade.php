@@ -6,11 +6,7 @@
 
     <div class="catalog container">
 
-        <ul class="breadcrumb">
-            <li><a href="/">Главная</a></li>
-            <li>Каталог</li>
-        </ul>
-
+        <x-bread-crumbs />
 
         <div class="catalog__header">
             <h1 class="catalog__header-title">Каталог товаров</h1>

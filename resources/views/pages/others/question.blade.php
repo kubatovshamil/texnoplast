@@ -5,6 +5,8 @@
 
 <div class="question">
     <div class="container">
+
+        <x-bread-crumbs />
         <div class="question-links">
             <h1 class="question-links__title">Вы можете задать вопрос:</h1>
             <ul class="question-links-list">

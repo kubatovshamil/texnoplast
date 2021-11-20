@@ -22,19 +22,4 @@ class Tree
         }
         return $tree;
     }
-
-    public static function getProducts($slug)
-    {
-        $data = (object) [];
-
-        $category = Category::where('slug', $slug)->first();
-        $categories = Category::where('parent_id', $category->id)->get();
-
-        foreach($categories as $k => $category)
-        {
-            $data = Product::where('category_id', $category->id)->paginate(12);
-        }
-
-        return $data;
-    }
 }

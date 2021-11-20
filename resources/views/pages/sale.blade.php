@@ -3,11 +3,7 @@
 @section('content')
     <div class="sale container">
 
-        <ul class="breadcrumb">
-            <li><a href="/">Главная</a></li>
-            <li><a href="/catalog">Каталог</a></li>
-            <li>Распрадажа</li>
-        </ul>
+        <x-bread-crumbs />
 
         <div id="category1" class="catalog__products catalog__products-active">
             <div class="catalog__products-wrapper">

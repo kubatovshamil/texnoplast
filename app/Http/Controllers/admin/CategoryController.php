@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Services\CategoryService;
+use App\Http\Services\admin\CategoryService;
 use App\Models\Category;
 use File;
 use Illuminate\Http\Request;

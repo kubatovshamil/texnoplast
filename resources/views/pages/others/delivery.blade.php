@@ -6,6 +6,8 @@
 
 <div class="delivery">
     <div class="container">
+
+        <x-bread-crumbs />
         <h1 class="delivery__title">Доставка и оплата товаров</h1>
         <div class="row">
             <div class="col-12">

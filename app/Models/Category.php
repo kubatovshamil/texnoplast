@@ -35,5 +35,14 @@ class Category extends Model
             ->get(['title', 'slug']);
     }
 
+    public static function getCategoriesBySlug($slug)
+    {
+        $currentCategory = Category::where('slug', $slug)->first();
+        return DB::table('categories')
+            ->where('slug', $slug)
+            ->orWhere('parent_id', $currentCategory->id)
+            ->get();
+    }
+
 
 }

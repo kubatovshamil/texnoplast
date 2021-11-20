@@ -5,7 +5,7 @@
 
 <div class="registration">
     <div class="container">
-
+        <x-bread-crumbs />
         <div class="registration__top">
             <h1 class="registration__top__title">Регистрация</h1>
             <p class="registration__top__text">

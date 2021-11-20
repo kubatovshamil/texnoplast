@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="order-forming container">
-
+        <x-bread-crumbs />
         <h1 class="order-forming-title">Оформление заказа</h1>
 
         <span class="order-forming__products-desc">Товары в вашей корзине</span>

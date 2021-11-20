@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Http\Services\ProductService;
+use ArrayObject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
@@ -25,12 +26,5 @@ class Product extends Model
         'descriptions',
         'hit'
     ];
-
-    public function categories()
-    {
-        return $this->belongsToMany(Category::class);
-    }
-
-
 
 }

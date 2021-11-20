@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Services\ProductService;
+use App\Http\Services\admin\ProductService;
 use App\Models\AttributeName;
 use App\Models\AttributeValue;
 use App\Models\Category;

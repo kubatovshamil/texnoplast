@@ -4,6 +4,9 @@
 @section('content')
 
 <div class="contacts container">
+
+    <x-bread-crumbs />
+
     <div class="title">
         <h1 class="title__name">Контакты</h1>
     </div>

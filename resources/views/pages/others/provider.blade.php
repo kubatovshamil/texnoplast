@@ -5,6 +5,9 @@
 
 <div class="provider">
     <div class="container">
+
+        <x-bread-crumbs />
+
         <h1 class="provider__title">Поставщикам</h1>
         <div class="provider__content">
             <div class="provider__content__block">
