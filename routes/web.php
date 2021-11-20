@@ -33,6 +33,7 @@ Route::get('/basket', [OrderController::class, 'index']);
 
 Route::view('/register', 'pages.register');
 
+Route::get('/modal', [HomeController::class, 'modal']);
 
 Route::get('/categories/{slug}/{subSlug?}', [CategoryControllerAlias::class, 'index']);
 

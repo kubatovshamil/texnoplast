@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 		<title>Texnoplast Site</title>
 		<link rel="stylesheet" href="{{ asset('css/bootstrap3.grid.css') }}" />
 		<link rel="stylesheet" href="{{ asset('css/fonts/font.css') }}" />
@@ -30,14 +31,7 @@
 
         <div class="modal__modal-box">
             <div class="box-modal" id="Modal">
-                <div class="box-modal_close arcticmodal-close">&#10006;</div>
 
-                <p class="modal__desc">Товар добавлен в корзину!</p>
-
-                <div class="modal__buttons">
-                    <a class="modal__button bag" href="order_forming.php">Перейти в корзину</a>
-                    <div class="modal__button continue arcticmodal-close">Продолжить покупки</div>
-                </div>
             </div>
         </div>
 

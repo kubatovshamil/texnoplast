@@ -65,24 +65,4 @@ $(document).ready(function() {
         return formRow;
     }
 
-    function ajaxPattern(url, type, data){
-
-        $.ajax({
-            url: url,
-            type: type,
-            data:{
-                "_token": "{{ csrf_token() }}",
-                data: JSON.stringify(data),
-            },
-            success:function(response){
-                console.log(response)
-            },
-            error: function(response) {
-                console.error(response);
-            },
-        });
-    }
-
-
-
 });

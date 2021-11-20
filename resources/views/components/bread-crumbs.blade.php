@@ -9,7 +9,7 @@
     @if(isset($product))
         <li><a href="/catalog">Каталог</a></li>
         <li><a href="{{url('/categories/' . $subcat->slug)}}">{{ $subcat->title }}</a></li>
-        <li>{{$product->title}}</li>
+        <li>{{ Str::limit($product->title, 30)}}</li>
     @endif
 
     @if(isset($current))

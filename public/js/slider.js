@@ -148,12 +148,19 @@ $(document).ready(() => {
 
 
 	$('.bestsellers__block-button-buy').on('click', function () {
+
+        getTemplate("/modal", "get");
+
 		$('#Modal').arcticmodal({
 			closeOnEsc: true,
     		closeOnOverlayClick: true
 		});
 
 	});
+
+    $(document).on('click', '.arcticmodal-close', function (){
+        $(this).arcticmodal("close")
+    });
 
 	$('.header__actions-block.header__actions-block__name_search').on('click', function () {
 
@@ -242,6 +249,22 @@ $(document).ready(() => {
     });
 
 
+    function getTemplate(url, type){
+
+        $.ajax({
+            url: url,
+            type: type,
+            data:{
+                "_token": $('meta[name="csrf-token"]').attr('content'),
+            },
+            success:function(response){
+                $('.box-modal').html(response);
+            },
+            error: function(response) {
+                console.error(response);
+            },
+        });
+    }
 
 
 });
