@@ -6485,6 +6485,12 @@ ul.breadcrumb li a:hover {
     height: 90px;
     resize: vertical;
 }
+
+.form-overflow{
+    background-color: #f3f3f3 !important;
+    opacity: 1 !important;
+}
+
 /* BEGIN Media */
 
 

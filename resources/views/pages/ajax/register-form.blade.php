@@ -1,4 +1,4 @@
-<div class="box-modal individual" id="Modal">
+<div class="box-modal individual register-form-content" id="Modal">
 
     <div class="box-modal_close arcticmodal-close">&#10006;</div>
     <form action="#" class="individual-order">

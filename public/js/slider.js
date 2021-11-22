@@ -246,17 +246,14 @@ $(document).ready(() => {
 
     $('.header__profile-link').on('click', function (event){
         $.arcticmodal({
+            overlay: {
+                tpl: '<div class="arcticmodal-overlay form-overflow"></div>'
+            },
             type: 'ajax',
             url: '/form',
             data:{
                 "_token": $('meta[name="csrf-token"]').attr('content'),
             },
-            overlay: {
-                css: {
-                    backgroundColor: '#f3f3f3',
-                    opacity: 1
-                }
-            }
         });
     });
 
