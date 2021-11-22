@@ -244,6 +244,22 @@ $(document).ready(() => {
         }
     });
 
+    $('.header__profile-link').on('click', function (event){
+        $.arcticmodal({
+            type: 'ajax',
+            url: '/form',
+            data:{
+                "_token": $('meta[name="csrf-token"]').attr('content'),
+            },
+            overlay: {
+                css: {
+                    backgroundColor: '#f3f3f3',
+                    opacity: 1
+                }
+            }
+        });
+    });
+
     function getTemplate(url, type){
         $.arcticmodal({
             type: 'ajax',

@@ -43,7 +43,7 @@ Route::get('/categories/{slug}/{subSlug?}', [CategoryControllerAlias::class, 'in
 
 Route::view('/product','pages.ajax.modal');
 Route::view('/order', 'pages.ajax.order');
-
+Route::view('/form', 'pages.ajax.register-form');
 
 
 Route::prefix('admin')->group(function (){
