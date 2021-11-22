@@ -10,7 +10,7 @@
               <a href="/delivery" class="header__menu-link">Доставка</a>
           </div>
           <div class="header__block header__block__name_profile">
-            <a href="{{ url('/register') }}" class="header__profile-link">Личный кабинет</a>
+            <a href="#" class="header__profile-link">Войти</a>
           </div>
         </div>
         <div class="header__row-bottom">

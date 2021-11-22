@@ -244,7 +244,6 @@ $(document).ready(() => {
         }
     });
 
-
     function getTemplate(url, type){
         $.arcticmodal({
             type: 'ajax',
