@@ -1380,7 +1380,7 @@ button[type=submit]:hover {
 
 .box-modal {
 	position: relative;
-	background-color: #fff;
+	background-color: #f3f3f3;
 
 	border-radius: 5px;
 
@@ -6450,7 +6450,6 @@ ul.breadcrumb li a:hover {
 
 .individual{
     height: auto;
-    background: #f3f3f3;
 }
 
 .individual-order__inp{

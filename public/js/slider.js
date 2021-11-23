@@ -245,55 +245,45 @@ $(document).ready(() => {
     });
 
     $('.header__profile-link').on('click', function (event){
-        $.arcticmodal({
-            overlay: {
-                tpl: '<div class="arcticmodal-overlay form-overflow"></div>'
-            },
-            type: 'ajax',
-            url: '/form',
-            data:{
-                "_token": $('meta[name="csrf-token"]').attr('content'),
-            },
-        });
+      getChangedModal('form', 'ajax');
     });
 
     $(document).on('click', '.forgot-pw', function(){
 
         $('.box-modal').arcticmodal('close');
 
-        $.arcticmodal({
-            overlay: {
-                tpl: '<div class="arcticmodal-overlay form-overflow"></div>'
-            },
-            type: 'ajax',
-            url: '/restore-password',
-            data:{
-                "_token": $('meta[name="csrf-token"]').attr('content'),
-            },
-        });
+        getChangedModal('restore-password', 'ajax');
     });
 
     $(document).on('click', '.to-back', function(){
 
         $('.box-modal').arcticmodal('close');
 
-        $.arcticmodal({
-            overlay: {
-                tpl: '<div class="arcticmodal-overlay form-overflow"></div>'
-            },
-            type: 'ajax',
-            url: '/form',
-            data:{
-                "_token": $('meta[name="csrf-token"]').attr('content'),
-            },
-        });
+        getChangedModal('form', 'ajax');
     });
 
+    $('.footer__contacts_button').on('click', function (event){
+        event.preventDefault();
+        getTemplate('/phone', 'ajax');
+    })
 
 
     function getTemplate(url, type){
         $.arcticmodal({
-            type: 'ajax',
+            type: type,
+            url: url,
+            data:{
+                "_token": $('meta[name="csrf-token"]').attr('content'),
+            },
+        });
+    }
+
+    function getChangedModal(url, type){
+        $.arcticmodal({
+            overlay: {
+                tpl: '<div class="arcticmodal-overlay form-overflow"></div>'
+            },
+            type: type,
             url: url,
             data:{
                 "_token": $('meta[name="csrf-token"]').attr('content'),
