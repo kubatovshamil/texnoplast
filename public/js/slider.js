@@ -244,7 +244,7 @@ $(document).ready(() => {
         }
     });
 
-    $('.header__profile-link').on('click', function (event){
+    $('.login').on('click', function (event){
       getChangedModal('form', 'ajax');
     });
 

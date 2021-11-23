@@ -31,11 +31,6 @@
 
           <a href="javascript:void(0)" class="footer__contacts_button">Заказать звонок</a>
 
-          <div class="footer__contacts_socials">
-            <a class="footer__contacts-social footer__contacts-social_name__facebook" href="#"></a>
-            <a class="footer__contacts-social footer__contacts-social_name__instagram" href="#"></a>
-            <a class="footer__contacts-social footer__contacts-social_name__twitter" href="#"></a>
-          </div>
         </div>
       </div>
 

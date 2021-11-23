@@ -10,7 +10,7 @@
               <a href="/delivery" class="header__menu-link">Доставка</a>
           </div>
           <div class="header__block header__block__name_profile">
-            <a href="#" class="header__profile-link">Войти</a>
+            <a href="#" class="header__profile-link login">Войти</a>
           </div>
         </div>
         <div class="header__row-bottom">
@@ -26,9 +26,6 @@
               <a href="javascript:void(0)" id="burger-menu" class="header__actions-block header__actions-block__name_burger-menu"></a>
             </div>
 
-            <div class="header__block header__actions-block">
-              <a href="contacts.php" class="header__actions-block header__actions-block__name_contacts">Контакты</a>
-            </div>
           </div>
 
           <div class="header__block header__block__name_contacts">
@@ -61,7 +58,7 @@
             </div>
 
             <div class="header__block header__actions-block mobile_profile">
-              <a href="javascript:void(1)" class="header__actions-block header__actions-block__name_profile"></a>
+              <a href="javascript:void(1)" class="header__actions-block header__actions-block__name_profile login"></a>
             </div>
 
             <div class="header__block header__actions-block">
@@ -83,7 +80,7 @@
                     </a>
                 </li>
                 <li class="mobile-menu__unit__item">
-                    <a class="mobile-menu__unit__item__link parrent" href="https://www.google.ru">
+                    <a class="mobile-menu__unit__item__link parrent" href="/catalog">
                         <span>Каталог</span>
                         <span class="arrow">
 								<i class="svg svg_triangle_right"></i>
@@ -92,7 +89,7 @@
                     <ul class="mobile-menu____unit dropdown">
                         @foreach($categories as $k => $category)
                             <li class="mobile-menu__unit__item">
-                                <a class="mobile-menu__unit__item__link  {{ isset($category['_children']) ? 'parent' :''  }}" href="{{ "/categories" . $category['slug']}}">
+                                <a class="mobile-menu__unit__item__link  {{ isset($category['_children']) ? 'parent' :''  }}" href="{{ "/categories/" . $category['slug']}}">
                                     <span>{{$category['title']}}</span>
                                     @if(isset($category['_children']))
                                         <span class="arrow">
@@ -104,7 +101,7 @@
                                     <ul class="mobile-menu____unit dropdown">
                                         @foreach($category['_children'] as $child)
                                             <li class="mobile-menu__unit__item">
-                                                <a class="mobile-menu__unit__item__link" href="{{ "/categories" . $child['slug'] }}">
+                                                <a class="mobile-menu__unit__item__link" href="{{ "/categories/" . $child['slug'] }}">
                                                     <span>{{$child['title']}}</span>
                                                 </a>
                                             </li>
@@ -116,7 +113,7 @@
                     </ul>
                 </li>
                 <li class="mobile-menu__unit__item">
-                    <a class="mobile-menu__unit__item__link" href="#">
+                    <a class="mobile-menu__unit__item__link" href="/sale">
                         <span>Распрадажа</span>
                     </a>
                 </li>

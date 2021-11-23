@@ -1626,7 +1626,7 @@ button[type=submit]:hover {
     top: 10%;
     bottom: 10%;
     right: 3%;
-    width: 220px;
+    width: 40%;
     transition: 0.4s;
     opacity: 1;
     height: 80%;
@@ -1648,7 +1648,7 @@ button[type=submit]:hover {
 	margin: 0;
 	font-size: 24px;
 	color: #313840;
-    width: 64%;
+    width: 60%;
 }
 
 
@@ -7433,9 +7433,15 @@ ul.breadcrumb li a:hover {
 		text-align: center;
 	}
 
-	.popular-category__products-block-tables, .popular-category__products-block-chairs, .popular-category__products-block-stellages, .popular-category__products-block-stands, .popular-category__products-block-hangers, .popular-category__products-block-sofa, .popular-category__products-block-shelf {
+	.popular-category__products-block-tables{
 		width: 100%;
 	}
+    .popular-category__products-img{
+        height: 100%;
+    }
+    .mobile-menu{
+        top: 58px;
+    }
 
 	.catalog__products-wrapper .bestsellers__block {
 		width: 300px;
@@ -8282,7 +8288,9 @@ ul.breadcrumb li a:hover {
 
 @media screen and (max-width: 740px) {
 
-
+    .mobile-menu{
+        top: 54px;
+    }
 
 	.header__actions-block__name_burger-menu::before, .header__actions-block__name_burger-menu::after, .header__actions-block.header__actions-block__name_contacts {
 		height: 35px;
@@ -8435,7 +8443,7 @@ ul.breadcrumb li a:hover {
 	}
 
 	.footer__contacts {
-		margin-left: 0;
+		margin-left: 50px;
 	}
 
 	.footer__offerts-link {
@@ -8679,6 +8687,9 @@ ul.breadcrumb li a:hover {
 		margin-bottom: 15px;
 	}
 
+    .footer__contacts{
+        margin-left: 10px;
+    }
 
 
 }
@@ -8705,6 +8716,7 @@ ul.breadcrumb li a:hover {
 
 
 @media screen and (max-width: 666px) {
+
 
 	.contacts-and-forms__socials-block__name_instagram, .contacts-and-forms__socials-block__name_facebook {
 		display: block;
@@ -8770,10 +8782,14 @@ ul.breadcrumb li a:hover {
 	}
 
 	.footer__contacts {
-		margin-left: 20px;
+		margin-left: 0px;
 	}
 
-	.footer__contacts-phone {
+    .footer__vertical-menu:nth-child(2){
+        margin-left: 15px;
+    }
+
+    .footer__contacts-phone {
 		font-size: 20px;
 	}
 
@@ -8923,6 +8939,20 @@ ul.breadcrumb li a:hover {
 	.portfolio__text-desc {
 		width: auto;
 	}
+    .footer__contacts{
+        margin-left: 0px;
+    }
+
+    .footer__vertical-menu:nth-child(2){
+        margin-left: 15px;
+    }
+
+    .footer__vertical-menu:nth-child(1){
+        margin-left: 120px;
+    }
+    .footer__vertical-menu{
+        width: 37%;
+    }
 
 }
 
@@ -9088,6 +9118,13 @@ ul.breadcrumb li a:hover {
 	}
     .registration__top{
         padding: 15px 30px;
+    }
+    .popular-category__products-title{
+        width: 60%;
+    }
+    .popular-category__products-img{
+        height: 50%;
+        width: 37%;
     }
 
 }
@@ -9449,6 +9486,11 @@ ul.breadcrumb li a:hover {
 	.instagram-photos__block, .instagram-photos__phone {
 		margin-right: 5px;
 	}
+
+    .footer__vertical-menu:nth-child(1){
+        margin-left: 70px;
+        vertical-align: top;
+    }
 }
 
 
@@ -9913,6 +9955,9 @@ ul.breadcrumb li a:hover {
 		margin-top: 35px;
 	}
 
+    .footer__vertical-menu:nth-child(1){
+        margin-left: 50px;
+    }
 }
 
 
@@ -9991,6 +10036,18 @@ ul.breadcrumb li a:hover {
 	.about-us__text-header {
 		font-size: 30px;
 	}
+
+    .footer__vertical-menu:nth-child(1){
+        margin-left: 30px;
+    }
+
+    .popular-category__products-title{
+        width: 50%;
+    }
+    .popular-category__products-img{
+        width: 27%;
+        height: 27%;
+    }
 
 }
 
