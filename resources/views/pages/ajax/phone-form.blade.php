@@ -8,11 +8,16 @@
         </div>
 
         <div class="form-group">
-            <input type="text" class="individual-order__inp" placeholder="+7 (989) - 874 - 96 - 64">
+            <input type="text" id="#phone" data-name="phone" name="phone" class="individual-order__inp" placeholder="Телефон">
         </div>
 
-        <button class="individual-order__btn">Отправить</button>
+        <button id="send" class="individual-order__btn">Отправить</button>
 
     </form>
 
 </div>
+
+<script src="{{ asset('libs/maskedinput/jquery.maskedinput.min.js') }}"></script>
+<script>
+    $($(document).find('input')[5]).mask("+7 (999) 999-99-99");
+</script>
