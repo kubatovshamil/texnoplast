@@ -245,21 +245,21 @@ $(document).ready(() => {
     });
 
     $('.login').on('click', function (event){
-      getChangedModal('form', 'ajax');
+      getChangedModal('/form', 'ajax');
     });
 
     $(document).on('click', '.forgot-pw', function(){
 
         $('.box-modal').arcticmodal('close');
 
-        getChangedModal('restore-password', 'ajax');
+        getChangedModal('/restore-password', 'ajax');
     });
 
     $(document).on('click', '.to-back', function(){
 
         $('.box-modal').arcticmodal('close');
 
-        getChangedModal('form', 'ajax');
+        getChangedModal('/form', 'ajax');
     });
 
     $('.footer__contacts_button').on('click', function (event){

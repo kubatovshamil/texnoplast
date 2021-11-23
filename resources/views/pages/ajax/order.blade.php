@@ -12,7 +12,7 @@
         </div>
 
         <div class="form-group">
-            <input type="text" class="individual-order__inp" placeholder="Телефон">
+            <input type="tel" class="individual-order__inp" placeholder="Телефон">
         </div>
 
         <div class="form-group">
@@ -27,5 +27,5 @@
 
 <script src="{{ asset('libs/maskedinput/jquery.maskedinput.min.js') }}"></script>
 <script>
-    $($(document).find('input')[6]).mask("+7 (999) 999-99-99");
+    $(document).find('input[type="tel"]').mask("+7 (999) 999-99-99");
 </script>
