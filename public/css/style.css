@@ -6482,6 +6482,11 @@ ul.breadcrumb li a:hover {
 .forgot-pw{
     float: right;
     text-decoration: underline;
+    margin-top: -20px;
+}
+.to-register-form{
+    float: right;
+    text-decoration: underline;
 }
 
 .individual-order__restore_btn{

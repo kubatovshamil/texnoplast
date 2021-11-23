@@ -12,6 +12,7 @@
         </div>
         <div class="form-group">
             <button class="individual-order__btn">Войти</button>
+            <a class="to-register-form" href="/register">Зарегистрироваться</a>
             <a class="forgot-pw" href="#">Забыли пароль</a>
         </div>
 
