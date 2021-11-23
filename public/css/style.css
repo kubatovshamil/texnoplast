@@ -6471,14 +6471,37 @@ ul.breadcrumb li a:hover {
     border-radius: 4px;
     outline: none;
     appearance: none;
-    display: block;
-    width: 45%;
-    height: 60px;
-    line-height: 58px;
+    width: 33%;
+    height: 38px;
+    line-height: 37px;
     background-color: #FA7916;
-    font-size: 18px;
+    font-size: 17px;
     color: #fff;
     margin-bottom: 10px;
+}
+
+.forgot-pw{
+    float: right;
+    text-decoration: underline;
+}
+
+.individual-order__restore_btn{
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    appearance: none;
+    width: 55%;
+    height: 42px;
+    line-height: 37px;
+    background-color: #FA7916;
+    font-size: 17px;
+    color: #fff;
+    margin-bottom: 10px;
+    float: right;
+}
+.to-back{
+    float: left;
+    text-decoration: underline;
 }
 
 .individual-order .form-group textarea{

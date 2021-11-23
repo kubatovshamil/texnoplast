@@ -10,8 +10,10 @@
         <div class="form-group">
             <input type="password" class="individual-order__inp" name="name" placeholder="Пароль">
         </div>
-
-        <button class="individual-order__btn">Войти</button>
+        <div class="form-group">
+            <button class="individual-order__btn">Войти</button>
+            <a class="forgot-pw" href="#">Забыли пароль</a>
+        </div>
 
     </form>
 </div>

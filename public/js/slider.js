@@ -257,6 +257,40 @@ $(document).ready(() => {
         });
     });
 
+    $(document).on('click', '.forgot-pw', function(){
+
+        $('.box-modal').arcticmodal('close');
+
+        $.arcticmodal({
+            overlay: {
+                tpl: '<div class="arcticmodal-overlay form-overflow"></div>'
+            },
+            type: 'ajax',
+            url: '/restore-password',
+            data:{
+                "_token": $('meta[name="csrf-token"]').attr('content'),
+            },
+        });
+    });
+
+    $(document).on('click', '.to-back', function(){
+
+        $('.box-modal').arcticmodal('close');
+
+        $.arcticmodal({
+            overlay: {
+                tpl: '<div class="arcticmodal-overlay form-overflow"></div>'
+            },
+            type: 'ajax',
+            url: '/form',
+            data:{
+                "_token": $('meta[name="csrf-token"]').attr('content'),
+            },
+        });
+    });
+
+
+
     function getTemplate(url, type){
         $.arcticmodal({
             type: 'ajax',
