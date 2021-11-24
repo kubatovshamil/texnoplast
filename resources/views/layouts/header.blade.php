@@ -15,8 +15,8 @@
         </div>
         <div class="header__row-bottom">
           <div class="header__block header__block__name_search">
-            <form class="header__search">
-              <input type="text" class="header__search-input" placeholder="Поиск"/>
+            <form class="header__search" action="{{ route('search') }}">
+              <input type="text" name="q" class="header__search-input" placeholder="Поиск"/>
               <input type="submit" class="header__search-button" value=""/>
             </form>
           </div>

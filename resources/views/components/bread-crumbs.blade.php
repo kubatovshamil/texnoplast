@@ -66,4 +66,9 @@
         <li><a href="/catalog">Каталог</a></li>
         <li>Контакты</li>
     @endif
+
+    @if(request()->segment(1) == 'search')
+        <li><a href="/catalog">Каталог</a></li>
+        <li>Поиск</li>
+    @endif
 </ul>
