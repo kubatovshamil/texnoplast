@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-2 col-md-2 col-sm-3 col-xs-5"><a href="/" class="header__logo"><img class="header__logo_image" src="{{asset('/img/logo.png')}}" alt="logo not found" /></a></div>
-      <div class="col-lg-10 col-md-10 col-sm-9">
+      <div class="col-lg-10 col-md-10 col-sm-9 col-xs-7">
         <div class="header__row-top">
           <div class="header__block header__block__name_menu">
               <a href="/about" class="header__menu-link">О компании</a>
