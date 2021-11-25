@@ -10,9 +10,9 @@
         <div class="form-group">
             <input type="tel" id="#phone" data-name="phone" name="phone" class="individual-order__inp" placeholder="Телефон">
         </div>
-
-        <button id="send" class="individual-order__btn">Отправить</button>
-
+        <div class="form-group">
+            <button id="send" class="individual-order__btn">Отправить</button>
+        </div>
     </form>
 
 </div>

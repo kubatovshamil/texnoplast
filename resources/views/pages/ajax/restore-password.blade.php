@@ -9,7 +9,7 @@
         <div class="form-group">
             <input type="email" class="individual-order__inp" name="email" placeholder="E-mail">
         </div>
-        <div class="form-group">
+        <div class="form-group to-top">
             <a class="to-back" href="#">Назад</a>
             <button class="individual-order__restore_btn">Восстановить</button>
         </div>

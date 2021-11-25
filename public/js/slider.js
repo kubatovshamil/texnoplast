@@ -267,6 +267,10 @@ $(document).ready(() => {
         getTemplate('/phone', 'ajax');
     })
 
+    $('.btn-provider').on('click', function (event){
+        event.preventDefault();
+        getTemplate('/provider-form', 'ajax');
+    });
 
     function getTemplate(url, type){
         $.arcticmodal({

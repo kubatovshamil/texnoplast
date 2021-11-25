@@ -47,6 +47,7 @@ Route::view('/order', 'pages.ajax.order');
 Route::view('/form', 'pages.ajax.register-form');
 Route::view('/restore-password', 'pages.ajax.restore-password');
 Route::view('/phone', 'pages.ajax.phone-form');
+Route::view('/provider-form', 'pages.ajax.provider');
 
 Route::prefix('admin')->group(function (){
     //Home page

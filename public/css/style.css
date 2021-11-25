@@ -8700,7 +8700,7 @@ ul.breadcrumb li a:hover {
 }
 
 
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 641px) {
 
 	.bestsellers__block {
 		width: 310px;
@@ -8959,6 +8959,13 @@ ul.breadcrumb li a:hover {
         width: 37%;
     }
 
+    .box-modal{
+        width: 560px;
+        margin: auto;
+    }
+
+
+
 }
 
 @media screen and (max-width: 639px) {
@@ -9103,6 +9110,10 @@ ul.breadcrumb li a:hover {
 	.order-forming__product-count-minus, .order-forming__product-count-plus {
 		width: 25px;
 	}
+
+    .box-modal{
+        width: 520px;
+    }
 
 }
 
@@ -9496,6 +9507,14 @@ ul.breadcrumb li a:hover {
         margin-left: 70px;
         vertical-align: top;
     }
+
+    .box-modal{
+        width: 440px;
+    }
+
+    .individual-order .form-group{
+        width: 58%;
+    }
 }
 
 
@@ -9511,6 +9530,13 @@ ul.breadcrumb li a:hover {
 	.instagram-photos {
 		height: auto;
 	}
+    .box-modal{
+        width: 380px;
+    }
+
+    .individual-order .form-group{
+        width: 70%;
+    }
 
 }
 
@@ -9589,6 +9615,14 @@ ul.breadcrumb li a:hover {
 	.news-and-articles__header {
 		height: auto;
 	}
+
+    .box-modal{
+        width: 370px;
+    }
+
+    .individual-order .form-group{
+        width: 73%;
+    }
 
 }
 
@@ -9680,9 +9714,38 @@ ul.breadcrumb li a:hover {
 		width: auto;
 	}
 
+    .box-modal{
+        width: 320px;
+    }
+
+    .individual-order .form-group{
+        width: 70%;
+    }
+    .individual-order__btn{
+        width: 100%;
+    }
+    .to-register-form,
+    .forgot-pw{
+        float: none;
+        display: block;
+    }
+    .forgot-pw{
+        margin-top: 0px;
+    }
+
+    .to-top{
+        margin-top: -10px;
+    }
+
+    .individual-order__restore_btn{
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .individual{
+        padding: 15px 0;
+    }
 }
-
-
 
 @media screen and (max-width: 375px) {
 
@@ -10019,6 +10082,14 @@ ul.breadcrumb li a:hover {
         height: 85px;
     }
 
+    .box-modal{
+        width: 280px;
+    }
+
+    .individual-order .form-group{
+        width: 70%;
+    }
+
 }
 
 @media screen and (max-width: 325px) {
@@ -10054,6 +10125,14 @@ ul.breadcrumb li a:hover {
     .popular-category__products-img{
         width: 27%;
         height: 27%;
+    }
+
+    .box-modal{
+        width: 240px;
+    }
+
+    .individual-order .form-group{
+        width: 80%;
     }
 
 }
