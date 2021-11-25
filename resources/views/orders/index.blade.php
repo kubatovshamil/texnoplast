@@ -7,94 +7,28 @@
 
         <span class="order-forming__products-desc">Товары в вашей корзине</span>
         <div class="order-forming__products">
+            @foreach($products as $product)
+                <div class="order-forming__products-product">
+                    <div class="order-forming__product-img"></div>
 
-            <div class="order-forming__products-product">
-                <div class="order-forming__product-img"></div>
-
-                <div class="order-forming__product-content">
-                    <a href="#" class="order-forming__product-title">Полочка Loft 12</a>
-
-                    <span class="order-forming__product-article">Артикул: 46000255 - 9012355</span>
-
-                    <div class="order-forming__product-characts">
-                        <span class="order-forming__product-charact">Дерево: ясень</span>
-                        <span class="order-forming__product-charact">Ширина: 160</span>
-                        <span class="order-forming__product-charact">Высота: 90</span>
+                    <div class="order-forming__product-content">
+                        <a href="#" class="order-forming__product-title">{{ $product['title'] }}</a>
                     </div>
-                </div>
 
-                <div class="order-forming__product-count">
-                    <input value="1" class="order-forming__product-count-input" type="text">
-                    <span class="order-forming__product-count-minus"></span>
-                    <span class="order-forming__product-count-plus"></span>
-                </div>
-
-                <div class="order-forming__product-price">
-                    <p class="order-forming__product-price-old">18 500₽</p>
-                    <p class="order-forming__product-price-new">12 000<span class="sup_rub">₽</span></p>
-                </div>
-
-                <a href="javascript:void(0)" class="order-forming__product-price-remove"></a>
-            </div>
-
-
-            <div class="order-forming__products-product">
-                <div class="order-forming__product-img"></div>
-
-                <div class="order-forming__product-content">
-                    <a href="#" class="order-forming__product-title">Полочка Loft 12</a>
-
-                    <span class="order-forming__product-article">Артикул: 46000255 - 9012355</span>
-
-                    <div class="order-forming__product-characts">
-                        <span class="order-forming__product-charact">Дерево: ясень</span>
-                        <span class="order-forming__product-charact">Ширина: 160</span>
-                        <span class="order-forming__product-charact">Высота: 90</span>
+                    <div class="order-forming__product-count">
+                        <input value="{{ $product['quantity'] }}" data-id="{{ $product['id'] }}" class="order-forming__product-count-input" type="text">
+                        <span class="order-forming__product-count-minus"></span>
+                        <span class="order-forming__product-count-plus"></span>
                     </div>
-                </div>
 
-                <div class="order-forming__product-count">
-                    <input value="1" class="order-forming__product-count-input" type="text">
-                    <span class="order-forming__product-count-minus"></span>
-                    <span class="order-forming__product-count-plus"></span>
-                </div>
-
-                <div class="order-forming__product-price">
-                    <p class="order-forming__product-price-old">18 500₽</p>
-                    <p class="order-forming__product-price-new">12 000<span class="sup_rub">₽</span></p>
-                </div>
-
-                <a href="javascript:void(0)" class="order-forming__product-price-remove"></a>
-            </div>
-
-            <div class="order-forming__products-product">
-                <div class="order-forming__product-img"></div>
-
-                <div class="order-forming__product-content">
-                    <a href="#" class="order-forming__product-title">Полочка Loft 12</a>
-
-                    <span class="order-forming__product-article">Артикул: 46000255 - 9012355</span>
-
-                    <div class="order-forming__product-characts">
-                        <span class="order-forming__product-charact">Дерево: ясень</span>
-                        <span class="order-forming__product-charact">Ширина: 160</span>
-                        <span class="order-forming__product-charact">Высота: 90</span>
+                    <div class="order-forming__product-price">
+                        <p class="order-forming__product-price-old">{{ $product['discount'] }}₽</p>
+                        <p class="order-forming__product-price-new">{{ $product['price'] }}<span class="sup_rub">₽</span></p>
                     </div>
-                </div>
 
-                <div class="order-forming__product-count">
-                    <input value="1" class="order-forming__product-count-input" type="text">
-                    <span class="order-forming__product-count-minus"></span>
-                    <span class="order-forming__product-count-plus"></span>
+                    <a href="javascript:void(0)" class="order-forming__product-price-remove"></a>
                 </div>
-
-                <div class="order-forming__product-price">
-                    <p class="order-forming__product-price-old">18 500₽</p>
-                    <p class="order-forming__product-price-new">12 000<span class="sup_rub">₽</span></p>
-                </div>
-
-                <a href="javascript:void(0)" class="order-forming__product-price-remove"></a>
-            </div>
+            @endforeach
 
             <div class="order-forming__product-total">
                 <p class="order-forming__product-total-title">Товаров на сумму:</p>

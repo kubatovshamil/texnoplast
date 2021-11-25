@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Filters\CartShopping;
 use App\Http\Filters\Tree;
 use App\Models\Category;
 use App\Models\Product;

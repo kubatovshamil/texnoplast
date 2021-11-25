@@ -66,7 +66,11 @@
             </div>
 
             <div class="header__block header__actions-block">
-              <a href="/basket" class="header__actions-block header__actions-block__name_basket"><span class="basket_msg">2</span></a>
+              <a href="/basket" class="header__actions-block header__actions-block__name_basket">
+                  @if( session()->get('cart'))
+                      <span class="basket_msg">{{ count((array) session('cart')) }}</span>
+                  @endif
+              </a>
             </div>
           </div>
         </div>

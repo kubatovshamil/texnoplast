@@ -38,10 +38,11 @@ Route::get('/search/', [HomeController::class, 'search'])->name('search');
 
 Route::get('/categories/{slug}/{subSlug?}', [CategoryControllerAlias::class, 'index']);
 
+Route::post('/addToCart', [OrderController::class, 'addToCart'])->name('add.to.cart');
+Route::put('/updateCart', [OrderController::class, 'updateCart']);
 
 
 //ajax
-
 Route::view('/product','pages.ajax.modal');
 Route::view('/order', 'pages.ajax.order');
 Route::view('/form', 'pages.ajax.register-form');
