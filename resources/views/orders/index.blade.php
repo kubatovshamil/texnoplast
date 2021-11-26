@@ -86,10 +86,13 @@
 
             <div class="order-forming__form-row">
                 <h2 class="order-forming__form-title total-title">Итого к оплате</h2>
-                <p class="order-forming__form-total-price">12 000<span class="sup_rub-big">₽</span></p>
+                @php $total = 0 @endphp
+                @foreach((array) $products as $id => $details)
+                    @php $total += $details['price'] * $details['quantity'] @endphp
+                @endforeach
+                <p class="order-forming__form-total-price">{{ $total }}<span class="sup_rub-big">₽</span></p>
                 <span class="order-forming__form-total-desc">*Сумма без учета доставки</span>
             </div>
-
 
             <button class="order-forming__form-submit-button" type="submit">Оформить заказ</button>
         </form>

@@ -8,16 +8,16 @@ use Illuminate\Support\Facades\Facade;
 class CartShopping
 {
 
-    public static function addToCart($id)
+    public static function addToCart($request)
     {
-        $product = Product::find($id);
+        $product = Product::find($request->id);
 
         $cart = session()->get('cart', []);
 
-        if (isset($cart[$id])) {
-            $cart[$id]['quantity']++;
+        if (isset($cart[$request->id])) {
+            $cart[$request->id]['quantity']++;
         } else {
-            $cart[$id] = [
+            $cart[$request->id] = [
                 "id" => $product->id,
                 "title" => $product->title,
                 "quantity" => 1,
@@ -32,9 +32,9 @@ class CartShopping
 
     public static function update($request)
     {
-        if ($request->id && $request->quantity) {
+        if ($request->id && $request->qty) {
             $cart = session()->get('cart');
-            $cart[$request->id]["quantity"] = $request->quantity;
+            $cart[$request->id]["quantity"] = $request->qty;
             session()->put('cart', $cart);
         }
     }

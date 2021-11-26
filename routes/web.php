@@ -38,9 +38,9 @@ Route::get('/search/', [HomeController::class, 'search'])->name('search');
 
 Route::get('/categories/{slug}/{subSlug?}', [CategoryControllerAlias::class, 'index']);
 
-Route::post('/addToCart', [OrderController::class, 'addToCart'])->name('add.to.cart');
+Route::post('/addToCart', [OrderController::class, 'addToCart']);
 Route::put('/updateCart', [OrderController::class, 'updateCart']);
-
+Route::delete('/removeCart', [OrderController::class, 'removeCart']);
 
 //ajax
 Route::view('/product','pages.ajax.modal');
