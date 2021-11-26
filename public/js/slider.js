@@ -139,11 +139,46 @@ $(document).ready(() => {
     });
 
 
-
 	$('.bestsellers__block-circle-button-favorite').on('click', function () {
 
+        $(this).toggleClass('active');
 
-		$(this).toggleClass('active');
+        if($(this).hasClass('active')){
+            $.ajax({
+                url: '/addFavorite',
+                method: "POST",
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    id: $(this).parent().parent().find('.bestsellers__block-button-buy').data('id'),
+                },
+                success: function (response) {
+                    $('.header__actions-block__name_favorites').html(response)
+
+                },
+                error: function (message){
+                    console.log(message);
+                }
+            });
+        }else{
+            $.ajax({
+                url: '/removeFavorite',
+                method: "DELETE",
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    id: $(this).parent().parent().find('.bestsellers__block-button-buy').data('id'),
+                },
+                success: function (response) {
+                    if(response == 0){
+                        $('.header__actions-block__name_favorites').html('');
+                    }else{
+                        $('.header__actions-block__name_favorites').html(response)
+                    }
+                },
+                error: function (message){
+                    console.log(message);
+                }
+            });
+        }
 
 	});
 

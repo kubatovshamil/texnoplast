@@ -71,4 +71,9 @@
         <li><a href="/catalog">Каталог</a></li>
         <li>Поиск</li>
     @endif
+
+    @if(request()->segment(1) == 'favorite')
+        <li><a href="/catalog">Каталог</a></li>
+        <li>Избранное</li>
+    @endif
 </ul>

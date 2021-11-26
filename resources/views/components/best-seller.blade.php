@@ -16,7 +16,7 @@
                         <img src="{{ asset("storage/products/" . $hit['img']) }}" alt="" class="bestsellers__block-img">
                         <span class="bestsellers__block-stock">-{{ round(($hit->discount - $hit->price) * 100 / $hit->discount) }}%</span>
                         <div class="bestsellers__block-circle-buttons">
-                            <a href="javascript:void(0)" class="bestsellers__block-circle-button-favorite"></a>
+                            <a href="javascript:void(0)" class="bestsellers__block-circle-button-favorite {{ isset(session()->get('favorite')[$hit->id]) && session()->get('favorite')[$hit->id]['id'] == $hit->id  ? 'active' : '' }}"></a>
                         </div>
 
                         <h2 class="bestsellers__block-title">{{ $hit->title }}</h2>

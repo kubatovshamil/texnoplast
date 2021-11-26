@@ -62,7 +62,11 @@
             </div>
 
             <div class="header__block header__actions-block">
-              <a href="/favorite" class="header__actions-block header__actions-block__name_favorites"><span class="favorites_msg">2</span></a>
+              <a href="/favorite" class="header__actions-block header__actions-block__name_favorites">
+                  @if(session('favorite'))
+                      <span class="favorites_msg">{{ count(session('favorite')) }}</span>
+                  @endif
+              </a>
             </div>
 
             <div class="header__block header__actions-block">

@@ -9,6 +9,7 @@ use App\Http\Controllers\CategoryController as CategoryControllerAlias;
 use App\Http\Controllers\ProductController as ProductControllerAlias;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\AjaxController;
+use App\Http\Controllers\FavoriteController;
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -38,10 +39,19 @@ Route::get('/search/', [HomeController::class, 'search'])->name('search');
 
 Route::get('/categories/{slug}/{subSlug?}', [CategoryControllerAlias::class, 'index']);
 
+//Корзинка
 Route::post('/addToCart', [OrderController::class, 'addToCart']);
 Route::put('/updateCart', [OrderController::class, 'updateCart']);
 Route::delete('/removeCart', [OrderController::class, 'removeCart']);
 Route::get('/clearCart', [OrderController::class, 'destroyed']);
+
+
+//Избранное
+Route::get('/favorite', [FavoriteController::class, 'index']);
+Route::post('/addFavorite', [FavoriteController::class, 'store']);
+Route::delete('/removeFavorite', [FavoriteController::class, 'remove']);
+Route::get('/clearFavorite', [FavoriteController::class, 'destroyed']);
+
 //ajax
 Route::view('/product','pages.ajax.modal');
 Route::view('/order', 'pages.ajax.order');
