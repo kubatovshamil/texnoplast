@@ -6,9 +6,11 @@
         <h1 class="order-forming-title">Оформление заказа</h1>
 
         <span class="order-forming__products-desc">Товары в вашей корзине</span>
+
         <div class="order-forming__products">
-            @foreach($products as $product)
-                <div class="order-forming__products-product">
+            @if(isset($products))
+                @foreach($products as $product)
+                    <div class="order-forming__products-product">
                     <div class="order-forming__product-img"></div>
 
                     <div class="order-forming__product-content">
@@ -28,15 +30,9 @@
 
                     <a href="javascript:void(0)" class="order-forming__product-price-remove"></a>
                 </div>
-            @endforeach
-
-            <div class="order-forming__product-total">
-                <p class="order-forming__product-total-title">Товаров на сумму:</p>
-                <p class="order-forming__product-total-price">12 000<span class="sup_rub-big">₽</span></p>
-            </div>
-
+                @endforeach
+            @endif
         </div>
-
 
         <form action="#" class="order-forming__form">
             <h1 class="order-forming__form-title">Введите ваши данные</h1>

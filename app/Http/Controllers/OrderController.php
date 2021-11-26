@@ -48,5 +48,10 @@ class OrderController
         return ['count' => count((array) session('cart')), 'price' => $total];
     }
 
+    public function destroyed()
+    {
+        CartShopping::destroy();
+    }
+
 }
 

@@ -41,7 +41,7 @@ Route::get('/categories/{slug}/{subSlug?}', [CategoryControllerAlias::class, 'in
 Route::post('/addToCart', [OrderController::class, 'addToCart']);
 Route::put('/updateCart', [OrderController::class, 'updateCart']);
 Route::delete('/removeCart', [OrderController::class, 'removeCart']);
-
+Route::get('/clearCart', [OrderController::class, 'destroyed']);
 //ajax
 Route::view('/product','pages.ajax.modal');
 Route::view('/order', 'pages.ajax.order');
