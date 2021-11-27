@@ -10,7 +10,13 @@
               <a href="/delivery" class="header__menu-link">Доставка</a>
           </div>
           <div class="header__block header__block__name_profile">
-            <a href="#" class="header__profile-link login">Войти</a>
+              @guest
+                  <a href="javascript:void(1)" class="header__profile-link login">Войти</a>
+              @endguest
+
+              @auth
+                  <a href="{{ route('to.logout') }}" class="header__profile-link logout">Выйти</a>
+              @endauth
           </div>
         </div>
         <div class="header__row-bottom">

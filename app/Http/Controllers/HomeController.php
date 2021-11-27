@@ -6,6 +6,7 @@ use App\Http\Filters\CartShopping;
 use App\Http\Filters\Tree;
 use App\Models\Category;
 use App\Models\Product;
+use Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 

@@ -10,8 +10,10 @@ use App\Http\Controllers\ProductController as ProductControllerAlias;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\admin\AdminLoginController;
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 Route::get('/catalog', [HomeController::class, 'catalog']);
 
@@ -33,7 +35,10 @@ Route::view('/question', 'pages.others.question');
 
 Route::get('/basket', [OrderController::class, 'index']);
 
-Route::view('/register', 'pages.register');
+Route::get('/register', [LoginController::class, 'index']);
+Route::post('/signUp', [LoginController::class, 'store'])->name('signup');
+Route::post('/login', [LoginController::class, 'login'])->name('to.login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('to.logout');
 
 Route::get('/search/', [HomeController::class, 'search'])->name('search');
 
@@ -60,7 +65,12 @@ Route::view('/restore-password', 'pages.ajax.restore-password');
 Route::view('/phone', 'pages.ajax.phone-form');
 Route::view('/provider-form', 'pages.ajax.provider');
 
-Route::prefix('admin')->group(function (){
+
+Route::group(['prefix' => 'admin'], function (){
+    Route::view('/login', 'admin.pages.login');
+    Route::post('/toLogin', [AdminLoginController::class, 'login'])->name('to.admin');
+});
+Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function (){
     //Home page
     Route::get('/', function(){
         return view('admin.pages.index');

@@ -17,24 +17,26 @@
         </div>
 
         <div class="registration__form">
-            <form action="" >
+            <form action="{{ route('signup') }}" method="post">
+                @csrf
+                @method('POST')
                 <fieldset class="fieldset">
                     <div class="row">
                         <div class="col-xs-12 col-md-6 col-sm-12 col-12">
                             <div class="registration__form__left">
                                 <div class="form-group">
                                     <label for="email">*Email:</label>
-                                    <input type="email">
+                                    <input type="email" name="email">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="name">*Имя:</label>
-                                    <input type="text">
+                                    <input type="text" name="name">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="surname">*Фамилия:</label>
-                                    <input type="text">
+                                    <input type="text" name="surname">
                                 </div>
                             </div>
                         </div>
@@ -43,12 +45,12 @@
                             <div class="registration__form__right">
                                 <div class="form-group">
                                     <label for="password">*Пароль:</label>
-                                    <input type="email">
+                                    <input type="password" name="password">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="repeatPassword">*Повторите пароль:</label>
-                                    <input type="text" >
+                                    <input type="password" name="password2">
                                 </div>
                             </div>
                         </div>

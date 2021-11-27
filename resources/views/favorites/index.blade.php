@@ -8,7 +8,8 @@
 
     <div id="category1" class="catalog__products catalog__products-active">
         <div class="catalog__products-wrapper">
-            @foreach($products as $product)
+            @if(!empty($products))
+                @foreach($products as $product)
                 <div class="bestsellers__block">
                     <div class="bestsellers__block-wrapper">
                         <img src="{{ asset("storage/products/" . $product['image']) }}" alt="" class="bestsellers__block-img">
@@ -32,6 +33,12 @@
                     </div>
                 </div>
             @endforeach
+            @else
+                <div style="height: 130px">
+                    <h1 class="favorite-title">Избранное</h1>
+                    <span class="favorite-desc">Нету добавленных продуктов</span>
+                </div>
+            @endif
         </div>
     </div>
 

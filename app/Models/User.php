@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Auth;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -18,9 +19,11 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'name',
         'email',
+        'surname',
+        'name',
         'password',
+        'role'
     ];
 
     /**
@@ -41,4 +44,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isAdmin()
+    {
+        if(Auth::user()->role == 'admin'){
+            return true;
+        }
+        return false;
+    }
+
+    public function isUser()
+    {
+        if(Auth::user()->role == 'user'){
+            return true;
+        }
+        return false;
+    }
 }
