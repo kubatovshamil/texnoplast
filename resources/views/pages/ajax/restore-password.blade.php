@@ -2,8 +2,9 @@
 
     <div class="box-modal_close arcticmodal-close">&#10006;</div>
 
-    <form action="#" class="individual-order">
-
+    <form action="{{ route('forget.password.post') }}" method="post" class="individual-order">
+        @csrf
+        @method('post')
         <h1 class="individual__title">Восстановление</h1>
 
         <div class="form-group">
