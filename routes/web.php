@@ -12,6 +12,7 @@ use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\admin\AdminLoginController;
+use App\Http\Controllers\admin\UserController;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
@@ -80,5 +81,6 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     //CategoryFilter route
     Route::post('/categories/parent', [CategoryController::class, 'parentCategory'])->name('categories.parent');
     Route::resource('/categories', CategoryController::class);
+    Route::resource('/users', UserController::class);
 });
 
