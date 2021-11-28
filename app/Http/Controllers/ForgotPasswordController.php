@@ -17,7 +17,6 @@ class ForgotPasswordController
         return view('email.forgetPassword');
     }
 
-
     public function submitForgetPasswordForm(Request $request)
     {
         $request->validate([

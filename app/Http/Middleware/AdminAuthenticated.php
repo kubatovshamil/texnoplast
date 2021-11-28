@@ -15,20 +15,22 @@ class AdminAuthenticated
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next, $guard = null)
     {
         if(Auth::check())
         {
+            if(Auth::user()->isAdmin())
+            {
+                return $next($request);
+            }
             if(Auth::user()->isUser())
             {
-                return redirect("/contact");
+                return redirect("/admin");
             }
-        }
-        if(Auth::user()->isAdmin())
-        {
-            return $next($request);
+        }else{
+            return response()->view('admin.pages.login');
         }
 
-        return abort(404);
+        return redirect('/admin');
     }
 }

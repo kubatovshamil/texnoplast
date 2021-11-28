@@ -23,11 +23,12 @@ class UserAuthenticated
             {
                 return redirect("/admin");
             }
+            if(Auth::user()->isUser())
+            {
+                return $next($request);
+            }
         }
-        elseif (Auth::user()->isUser())
-        {
-            return $next($request);
-        }
+
         abort(404);
     }
 }

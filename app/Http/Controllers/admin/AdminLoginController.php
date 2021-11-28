@@ -13,6 +13,6 @@ class AdminLoginController
         {
             return redirect('/admin');
         }
-        return abort(404);
+        return redirect('/admin');
     }
 }

@@ -14,14 +14,14 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="/admin/login"><b>Админка</b></a>
+        <a href="/admin"><b>Админка</b></a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
             <p class="login-box-msg">Вход в админку</p>
 
-            <form action="{{ route('to.admin') }}" method="post">
+            <form action="{{ route('to.admin.panel') }}" method="post">
                 @csrf
                 @method('post')
                 <div class="input-group mb-3">

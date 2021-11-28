@@ -16,8 +16,6 @@ class CategoryController
     {
         if(!empty($slug) && empty($subSlug)){
 
-
-
             return view('categories.index', [
                 'products' => CategoryFilter::getProducts($slug)
             ]);
