@@ -15,11 +15,15 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            $table->string('fullname');
+            $table->integer('mobile');
+            $table->string('email');
+            $table->string('city');
+            $table->string('street');
+            $table->string('house')->nullable();
+            $table->string('apartament')->nullable();
+            $table->text('note');
             $table->enum('status', [0, 1])->default(0);
-            $table->date('date');
             $table->timestamps();
         });
     }

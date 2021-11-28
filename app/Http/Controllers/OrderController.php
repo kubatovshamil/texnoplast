@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Http\Filters\CartShopping;
+use App\Mail\OrderMail;
+use App\Models\Order;
+use App\Models\OrderProduct;
 use App\Models\Product;
+use http\Env;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController
 {
-
     public function index()
     {
         return view('orders.index', [
@@ -51,6 +55,26 @@ class OrderController
     public function destroyed()
     {
         CartShopping::destroy();
+    }
+
+    public function order(Request $request)
+    {
+        $order = Order::create($request->all());
+
+        $products = session('cart');
+
+        foreach ($products as $product)
+        {
+            OrderProduct::create([
+                'order_id' => $order->id,
+                'product_id' => $product['id'],
+                'quantity' => $product['quantity'],
+                'title' => $product['title'],
+                'price' => $product['price']
+            ]);
+        }
+
+        Mail::to($request->email)->send(new OrderMail($request));
     }
 
 }

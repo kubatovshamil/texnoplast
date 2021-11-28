@@ -34,23 +34,24 @@
             @endif
         </div>
 
-        <form action="#" class="order-forming__form">
+        <form action="{{ route('order') }}" method="post" class="order-forming__form">
+            @csrf
             <h1 class="order-forming__form-title">Введите ваши данные</h1>
             <span class="order-forming__form-small-text">*Поля обязательные для заполнения</span>
 
-            <input class="order-forming__form-input-row" placeholder="*Имя и Фамилия" type="text">
-            <input class="order-forming__form-input-row" placeholder="*Телефон" type="text">
-            <input class="order-forming__form-input-row" placeholder="*Email" type="text">
+            <input class="order-forming__form-input-row" name="fullname" placeholder="*Имя и Фамилия" type="text">
+            <input class="order-forming__form-input-row" name="mobile" placeholder="*Телефон" type="text">
+            <input class="order-forming__form-input-row" name="email" placeholder="*Email" type="text">
 
             <h1 class="order-forming__form-title">Укажите адрес доставки</h1>
 
-            <input class="order-forming__form-input-row" placeholder="*Город" type="text">
-            <input class="order-forming__form-input-row" placeholder="*Улица" type="text">
+            <input class="order-forming__form-input-row" name="city" placeholder="*Город" type="text">
+            <input class="order-forming__form-input-row" name="street" placeholder="*Улица" type="text">
             <div class="order-forming__form-row">
-                <input class="order-forming__form-input-col" placeholder="*Дом/корпус" type="text">
-                <input class="order-forming__form-input-col" placeholder="*Квартира" type="text">
+                <input class="order-forming__form-input-col" name="house" placeholder="*Дом/корпус" type="text">
+                <input class="order-forming__form-input-col" name="apartament" placeholder="*Квартира" type="text">
             </div>
-            <textarea class="order-forming__form-textarea" placeholder="Комментарии"></textarea>
+            <textarea class="order-forming__form-textarea" name="note" placeholder="Комментарии"></textarea>
 
             <h1 class="order-forming__form-title">Способы доставки</h1>
 

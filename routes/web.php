@@ -97,3 +97,5 @@ Route::get('/basket', [OrderController::class, 'index']);
 Route::get('/search/', [HomeController::class, 'search'])->name('search');
 
 Route::get('/categories/{slug}/{subSlug?}', [CategoryControllerAlias::class, 'index']);
+
+Route::post('/orderForm', [OrderController::class, 'order'])->name('order');
