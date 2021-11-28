@@ -74,7 +74,10 @@ class OrderController
             ]);
         }
 
-        Mail::to($request->email)->send(new OrderMail($request));
+        Mail::to(env('MAIL_USERNAME'))->send(new OrderMail($request));
+
+        CartShopping::destroy();
+        return redirect('/');
     }
 
 }
