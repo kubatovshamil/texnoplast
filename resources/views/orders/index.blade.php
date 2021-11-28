@@ -40,7 +40,7 @@
             <span class="order-forming__form-small-text">*Поля обязательные для заполнения</span>
 
             <input class="order-forming__form-input-row" name="fullname" placeholder="*Имя и Фамилия" type="text">
-            <input class="order-forming__form-input-row" name="mobile" placeholder="*Телефон" type="text">
+            <input class="order-forming__form-input-row" name="mobile" id="phone" placeholder="*Телефон" type="text">
             <input class="order-forming__form-input-row" name="email" placeholder="*Email" type="text">
 
             <h1 class="order-forming__form-title">Укажите адрес доставки</h1>
@@ -95,5 +95,11 @@
         </form>
 
     </div>
+
+
+    <script src="{{ asset('libs/maskedinput/jquery.maskedinput.min.js') }}"></script>
+    <script>
+        $("#phone").mask("+7 (999) 999-99-99");
+    </script>
 
 @endsection
