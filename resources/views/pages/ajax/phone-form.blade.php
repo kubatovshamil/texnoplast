@@ -2,9 +2,10 @@
 
     <div class="box-modal_close arcticmodal-close">&#10006;</div>
     <h1 class="individual__title">Заказать звонок</h1>
-    <form action="#" class="individual-order">
+    <form action="{{ route('order.phone') }}" class="individual-order" method="post">
+        @csrf
         <div class="form-group">
-            <input type="text" class="individual-order__inp" name="surname" placeholder="ФИО">
+            <input type="text" class="individual-order__inp" name="fullname" placeholder="ФИО">
         </div>
 
         <div class="form-group">

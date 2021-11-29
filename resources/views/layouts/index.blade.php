@@ -20,6 +20,9 @@
 		<!-- JQuery-Lighter -->
 		<link rel="stylesheet" href="{{ asset('libs/jquery-lighter/jquery.lighter.css') }}">
 		<script src="{{ asset('libs/jquery-lighter/jquery.lighter.js') }}"></script>
+        <!-- JQuery-Validate -->
+        <script src="{{ asset('libs/jquery-validation-1.19.3/dist/jquery.validate.min.js') }}"></script>
+
 		<script src="{{asset('js/slider.js')}}"></script>
 	</head>
 	<body>

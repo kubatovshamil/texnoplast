@@ -99,3 +99,7 @@ Route::get('/search/', [HomeController::class, 'search'])->name('search');
 Route::get('/categories/{slug}/{subSlug?}', [CategoryControllerAlias::class, 'index']);
 
 Route::post('/orderForm', [OrderController::class, 'order'])->name('order');
+
+Route::post('/individualOrder', [HomeController::class, 'invidualOrder'])->name('individual.order');
+Route::post("/orderPhone", [HomeController::class, 'orderPhone'])->name('order.phone');
+Route::post("/orderProvider", [HomeController::class, 'orderProvider'])->name('order.provider');

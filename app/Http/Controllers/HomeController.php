@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Filters\CartShopping;
 use App\Http\Filters\Tree;
+use App\Mail\IndividualOrder;
+use App\Mail\OrderPhone;
+use App\Mail\OrderProvider;
 use App\Models\Category;
 use App\Models\Product;
 use Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController
 {
@@ -42,6 +46,42 @@ class HomeController
             'products' => Product::where('title', 'LIKE', $request->q . '%')->paginate(12),
         ]);
     }
+
+
+    public function invidualOrder(Request $request)
+    {
+        $request->validate([
+            'surname' => 'required',
+            'name' => 'required',
+            'phone' => 'required',
+            'note' => 'required'
+        ]);
+
+        Mail::to(env('MAIL_USERNAME'))->send(new IndividualOrder($request));
+    }
+
+    public function orderPhone(Request $request)
+    {
+        $request->validate([
+            'fullname' => 'required',
+            'phone' => 'required',
+        ]);
+        Mail::to(env('MAIL_USERNAME'))->send(new OrderPhone($request));
+
+    }
+
+    public function orderProvider(Request $request)
+    {
+        $request->validate([
+            'surname' => 'required',
+            'name' => 'required',
+            'phone' => 'required',
+            'note' => 'required'
+        ]);
+
+        Mail::to(env('MAIL_USERNAME'))->send(new OrderProvider($request));
+    }
+
 
 
 }

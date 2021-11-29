@@ -2,8 +2,8 @@
 
     <div class="box-modal_close arcticmodal-close">&#10006;</div>
     <h1 class="individual__title">от Поставщика</h1>
-    <form action="#" class="individual-order">
-
+    <form action="{{route('order.provider')}}" class="individual-order" method="post">
+        @csrf
         <div class="form-group">
             <input type="text" class="individual-order__inp" name="surname" placeholder="Фамилия">
         </div>
@@ -13,11 +13,11 @@
         </div>
 
         <div class="form-group">
-            <input type="tel" class="individual-order__inp" placeholder="Телефон">
+            <input type="tel" class="individual-order__inp" name ="phone" placeholder="Телефон">
         </div>
 
         <div class="form-group">
-            <textarea class="individual-order__inp" name="note" id="" cols="40" rows="30" placeholder="Ваще предложение"></textarea>
+            <textarea class="individual-order__inp" name="note" cols="40" rows="30" placeholder="Ваще предложение"></textarea>
         </div>
 
         <button class="individual-order__btn">Отправить</button>
