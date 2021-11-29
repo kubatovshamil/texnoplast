@@ -2,8 +2,7 @@
 
     <div class="box-modal_close arcticmodal-close">&#10006;</div>
     <h1 class="individual__title">от Поставщика</h1>
-    <form action="{{route('order.provider')}}" class="individual-order" method="post">
-        @csrf
+    <form action="#" class="individual-order">
         <div class="form-group">
             <input type="text" class="individual-order__inp" id="surname" name="surname" placeholder="Фамилия">
         </div>
@@ -65,6 +64,30 @@
             note: {
                 required: "Описание обязателен для ввода",
             },
+        },
+        submitHandler: function(){
+            $.ajax({
+                url: "/orderProvider",
+                method: "POST",
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    surname : $("input[name=surname]").val(),
+                    name : $("input[name=name]").val(),
+                    phone : $("input[name=phone]").val(),
+                    note : $("textarea[name=note]").val()
+                },
+                beforeSend: function() {
+                    $(document).find('.individual-order').remove();
+                    $('.individual__title').css('padding', 70);
+                    $('.individual__title').html('Ваща завяка отправлена ждите пока с вами свяжутся...');
+                },
+                success: function (response) {
+
+                },
+                error: function (message){
+                    console.log(message)
+                }
+            });
         }
     });
 </script>
