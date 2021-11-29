@@ -13,6 +13,7 @@ use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\admin\AdminLoginController;
 use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\admin\OrderController as OrderControllerAlias;
 
 //admin routes
 Route::group(['middleware' => ['web', 'admin'], 'prefix' => 'admin'], function (){
@@ -28,6 +29,10 @@ Route::group(['middleware' => ['web', 'admin'], 'prefix' => 'admin'], function (
     Route::resource('/categories', CategoryController::class);
     //User route
     Route::resource('/users', UserController::class);
+    //Order route
+    Route::resource('/orders', OrderControllerAlias::class);
+
+
 });
 
 Route::post('/toAdminLogin', [AdminLoginController::class, 'login'])->name('to.admin.panel');
