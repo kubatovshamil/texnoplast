@@ -1,11 +1,3 @@
-
-<style>
-    label.error {
-        color: #dc3545;
-        font-size: 14px;
-    }
-</style>
-
 <div class="box-modal individual" id="Modal">
 
     <div class="box-modal_close arcticmodal-close">&#10006;</div>
@@ -37,21 +29,42 @@
 <script src="{{ asset('libs/maskedinput/jquery.maskedinput.min.js') }}"></script>
 <script>
     $(document).find('input[type="tel"]').mask("+7 (999) 999-99-99");
-
     $(document).find('.individual-order').validate({
         rules: {
-            surname: "required",
-            name: "required",
-            phone: "required",
-            note: "required",
+            surname: {
+                required : true,
+                maxlength: 20,
+                minlength : 5,
+            },
+            name: {
+                required : true,
+                maxlength: 20,
+                minlength : 2,
+            },
+            phone: {
+                required: true,
+            },
+            note: {
+                required : true,
+            },
         },
         messages: {
-            surname: "Фамилия обязателен",
-            name: "Имя обязателен",
-            phone: "Номер обязателен",
-            note: "Описание обязателен",
+            surname: {
+                required: "Фамилия обязателен для ввода",
+                maxlength: "Фамилия не может быть больше чем 20 букв",
+                minlength: "Фамилия не должна быть меньше чем 5 букв"
+            },
+            name: {
+                required: "Имя обязателен для ввода",
+                maxlength: "Имя не может быть больше чем 20 букв",
+                minlength: "Имя не должна быть меньше чем 5 букв"
+            },
+            phone: {
+                required: "Номер обязателен для ввода",
+            },
+            note: {
+                required: "Описание обязателен для ввода",
+            },
         }
     });
-
-
 </script>

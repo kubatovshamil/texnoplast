@@ -8,7 +8,7 @@
         <h1 class="individual__title">Восстановление</h1>
 
         <div class="form-group">
-            <input type="email" class="individual-order__inp" name="email" placeholder="E-mail">
+            <input type="email" class="individual-order__inp" id="email" name="email" placeholder="E-mail">
         </div>
         <div class="form-group to-top">
             <a class="to-back" href="#">Назад</a>
@@ -16,3 +16,20 @@
         </div>
     </form>
 </div>
+
+<script>
+    $(document).find('.individual-order').validate({
+        rules: {
+            email: {
+                required : true,
+                email : true,
+            },
+        },
+        messages: {
+            email: {
+                required: "Email обязателен для ввода",
+                email: "Вы должны ввести актуальный email",
+            },
+        }
+    });
+</script>

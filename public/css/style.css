@@ -6460,9 +6460,17 @@ ul.breadcrumb li a:hover {
     height: 45px;
     font-size: 14px;
     background-color: #fff;
-    margin-bottom: 20px;
     border-radius: 4px !important;
     padding: 0 15px;
+}
+
+.individual-order .form-group{
+    margin-bottom: 20px;
+}
+
+label.error {
+    color: #fc0b21;
+    font-size: 14px;
 }
 
 .individual-order__btn{
