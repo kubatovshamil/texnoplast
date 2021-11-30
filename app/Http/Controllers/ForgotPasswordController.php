@@ -23,20 +23,32 @@ class ForgotPasswordController
             'email' => 'required|email',
         ]);
 
-        $token = Str::random(64);
+        $email = User::where('email', $request->email)->first();
 
-        DB::table('password_resets')->insert([
-            'email' => $request->email,
-            'token' => $token,
-            'created_at' => Carbon::now()
-        ]);
+        if($email)
+        {
+            $token = Str::random(64);
 
-        Mail::send('email.forgetPassword', ['token' => $token], function($message) use($request){
-            $message->to($request->email);
-            $message->subject('Reset Password');
-        });
+            DB::table('password_resets')->insert([
+                'email' => $request->email,
+                'token' => $token,
+                'created_at' => Carbon::now()
+            ]);
 
-        return back();
+            Mail::send('email.forgetPassword', ['token' => $token], function($message) use($request){
+                $message->to($request->email);
+                $message->subject('Reset Password');
+            });
+
+            return back();
+        }else{
+
+            return response()->json([
+                'error' => [
+                    'email' => 'Такой пользователь не найден'
+                ]
+            ]);
+        }
     }
 
     public function showResetPasswordForm($token) {

@@ -1,7 +1,7 @@
 <div class="box-modal individual register-form-content" id="Modal">
 
     <div class="box-modal_close arcticmodal-close">&#10006;</div>
-    <form action="{{ route('to.login') }}" method="post" class="individual-order">
+    <form action="{{ route('to.login') }}" method="post" id="login" class="individual-order">
         @csrf
         @method('post')
         <h1 class="individual__title">Войти</h1>
@@ -21,7 +21,8 @@
     </form>
 </div>
 <script>
-    $(document).find('.individual-order').validate({
+
+    $(document).find('#login').validate({
         rules: {
             email: {
                 required : true,
