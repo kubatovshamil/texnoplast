@@ -39,6 +39,31 @@
             password: {
                 required: "Пароль обязателен для ввода",
             },
+        },
+        submitHandler: function(){
+            $.ajax({
+                url: "/login",
+                method: "POST",
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    email : $("input[name=email]").val(),
+                    password : $("input[name=password]").val(),
+                },
+                beforeSend: function() {
+
+                },
+                success: function (data) {
+                    if ($.isEmptyObject(data.error)) {
+                        location.reload();
+                    } else {
+                        elem = "<label id='email-error' class='error' for='email'>" + data.error.email + "</label>";
+                        $("#email").after(elem);
+                    }
+                },
+                error: function (message){
+                    console.log(message)
+                }
+            });
         }
     });
 </script>

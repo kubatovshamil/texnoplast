@@ -38,11 +38,23 @@ class LoginController
 
     public function login(Request $request)
     {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
         if(auth()->attempt(request(['email', 'password'])))
         {
             return redirect('/');
+
+        }else{
+            return response()->json([
+                'error' => [
+                    'email' => 'логин или пароль не верный'
+                ]
+            ]);
         }
-        return abort(404);
+
     }
 
     public function logout(Request $request)
