@@ -23,7 +23,6 @@
         <!-- JQuery-Validate -->
         <script src="{{ asset('libs/jquery-validation-1.19.3/dist/jquery.validate.min.js') }}"></script>
         <script src="{{ asset('libs/jquery-validation-1.19.3/dist/localization/messages_ru.js') }}"></script>
-
         <script src="{{asset('js/slider.js')}}"></script>
 	</head>
 	<body>
