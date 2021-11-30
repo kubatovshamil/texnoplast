@@ -32,15 +32,6 @@
                 required : true,
             },
         },
-        messages: {
-            email: {
-                required: "Email обязателен для ввода",
-                email: "Вы должны ввести актуальный email",
-            },
-            password: {
-                required: "Пароль обязателен для ввода",
-            },
-        },
         submitHandler: function(){
             $.ajax({
                 url: "/login",

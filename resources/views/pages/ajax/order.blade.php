@@ -47,24 +47,6 @@
                 required : true,
             },
         },
-        messages: {
-            surname: {
-                required: "Фамилия обязателен для ввода",
-                maxlength: "Фамилия не может быть больше чем 20 букв",
-                minlength: "Фамилия не должна быть меньше чем 5 букв"
-            },
-            name: {
-                required: "Имя обязателен для ввода",
-                maxlength: "Имя не может быть больше чем 20 букв",
-                minlength: "Имя не должна быть меньше чем 5 букв"
-            },
-            phone: {
-                required: "Номер обязателен для ввода",
-            },
-            note: {
-                required: "Описание обязателен для ввода",
-            },
-        },
         submitHandler: function(){
             $.ajax({
                 url: "/individualOrder",

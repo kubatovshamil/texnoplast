@@ -6121,11 +6121,13 @@ button[type=submit]:hover {
     border: 1px solid #ebebeb;
     border-radius: 4px;
 }
-
 .fieldset .form-group{
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
     padding: .5em;
+    align-content: center;
+    justify-content: center;
+    height: 75px;
 }
 .registration__form__left label,
 .registration__form__right label
@@ -6146,7 +6148,6 @@ button[type=submit]:hover {
 .registration__form__right input
 {
     border: 1px solid #ddd;
-    margin: 0 0 15px;
     outline: 0;
     zoom: 1;
     -webkit-transition: all .2s ease;
@@ -6158,6 +6159,7 @@ button[type=submit]:hover {
     flex: 2;
     border-radius: 4px;
     background: none;
+    width: 65%;
 }
 
 .registration__form__checkbox .form-group{
@@ -6768,6 +6770,10 @@ label.error {
 
 
 @media screen and (max-width: 1170px) {
+
+    .registration__form__left input, .registration__form__right input{
+        width: 80%;
+    }
 
 	.header__block__name_menu {
 		width: 60%;
@@ -8713,6 +8719,10 @@ label.error {
 	.bestsellers__block {
 		width: 310px;
 	}
+
+    .registration__form__left input, .registration__form__right input{
+        width: 100%;
+    }
 
 	.bestsellers__blocks-wrapper {
 		margin-bottom: 0;

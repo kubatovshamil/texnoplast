@@ -31,16 +31,6 @@
                 required : true,
             },
         },
-        messages: {
-            fullname: {
-                required: "ФИО обязателен для ввода",
-                maxlength: "ФИО не может быть больше чем 40 букв",
-                minlength: "ФИО не должна быть меньше чем 12 букв"
-            },
-            phone: {
-                required: "Имя обязателен для ввода",
-            },
-        },
         submitHandler : function(){
             $.ajax({
                 url: "/orderPhone",

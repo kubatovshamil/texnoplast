@@ -26,12 +26,6 @@
                 email : true,
             },
         },
-        messages: {
-            email: {
-                required: "Email обязателен для ввода",
-                email: "Вы должны ввести актуальный email",
-            },
-        },
         submitHandler: function (){
             $.ajax({
                 url: "/forget-password",
@@ -42,7 +36,7 @@
                 },
                 success: function (data) {
                     if ($.isEmptyObject(data.error)) {
-                        location.reload();
+                        $('.individual-order').html('Успешно отправлен');
                     } else {
                         elem = "<label id='email-error' class='error' for='email'>" + data.error.email + "</label>";
                         $("#email").after(elem);
