@@ -63,10 +63,6 @@ class LoginController
 
         $request->session()->invalidate();
 
-        $request->session()->invalidate();
-
-        $request->session()->invalidate();
-
         return redirect('/');
     }
 

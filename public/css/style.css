@@ -4752,7 +4752,7 @@ button[type=submit]:hover {
 	font-family: 'AvenirNextCyr-Medium';
 	font-size: 36px;
 	color: #313840;
-	margin: 70px 0 40px;
+	margin: 20px 0 40px;
 }
 
 
@@ -4792,9 +4792,6 @@ button[type=submit]:hover {
 	width: 140px;
 	height: 140px;
 	margin-left: 15px;
-
-	background: url('../img/order_product_img.jpg') no-repeat center;
-	background-size: contain;
 }
 
 
@@ -5042,7 +5039,10 @@ button[type=submit]:hover {
 	font-size: 14px;
 	padding: 0 30px;
 	background-color: #fff;
-	margin-bottom: 20px;
+}
+
+.order-forming__form .form-group{
+    margin-bottom: 20px;
 }
 
 .order-forming__form-row {
@@ -5055,7 +5055,7 @@ button[type=submit]:hover {
 	display: inline-block;
 	vertical-align: top;
 
-	width: 175px;
+	width: 100%;
 	height: 45px;
 	font-size: 14px;
 	padding: 0 30px;
@@ -6384,6 +6384,10 @@ button[type=submit]:hover {
     top: -2px;
     left: -25px;
     content: "\2022";
+}
+
+.provider .btn-provider{
+    width: 100%;
 }
 /*Конец стили Provider*/
 .btn-provider{
@@ -8129,9 +8133,6 @@ label.error {
 		width: 280px;
 	}
 
-	.order-forming__form-input-col:first-child {
-		margin-bottom: 20px;
-	}
 
 	.order-forming__form-input-col {
 		display: block;
@@ -9121,7 +9122,7 @@ label.error {
 	}
 
 	.order-forming__product-count {
-		width: 85px;
+		width: 95px;
 		height: 30px;
 	}
 
@@ -9538,6 +9539,10 @@ label.error {
 
 @media screen and (max-width: 481px) {
 
+    .individual__title{
+        font-size: 20px;
+    }
+
 	.instagram-photos__block {
 		min-width: unset;
 		max-width: unset;
@@ -9641,6 +9646,16 @@ label.error {
     .individual-order .form-group{
         width: 73%;
     }
+    .modal__desc{
+        font-size: 18px;
+        padding: 60px 20px;
+    }
+    .modal__button{
+        font-size: 13px;
+        margin: 0 5px;
+        padding: 10px 15px;
+    }
+
 
 }
 
@@ -9740,7 +9755,7 @@ label.error {
         width: 70%;
     }
     .individual-order__btn{
-        width: 100%;
+        width: 80%;
     }
     .to-register-form,
     .forgot-pw{
@@ -10146,7 +10161,7 @@ label.error {
     }
 
     .box-modal{
-        width: 240px;
+        width: 260px;
     }
 
     .individual-order .form-group{
