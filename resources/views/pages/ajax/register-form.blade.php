@@ -13,7 +13,7 @@
             <input type="password" name="password" id="password" class="individual-order__inp" placeholder="Пароль">
         </div>
         <div class="form-group">
-            <button class="individual-order__btn">Войти</button>
+            <button class="login__btn">Войти</button>
             <a class="to-register-form" href="/register">Зарегистрироваться</a>
             <a class="forgot-pw" href="#">Забыли пароль</a>
         </div>

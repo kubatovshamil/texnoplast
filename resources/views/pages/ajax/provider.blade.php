@@ -19,7 +19,9 @@
             <textarea class="individual-order__inp" name="note" id="note" cols="40" rows="30" placeholder="Ваще предложение"></textarea>
         </div>
 
-        <button class="individual-order__btn">Отправить</button>
+        <div class="form-group">
+            <button class="individual-order__btn">Отправить</button>
+        </div>
 
     </form>
 

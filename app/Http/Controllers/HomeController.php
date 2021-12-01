@@ -43,7 +43,7 @@ class HomeController
     public function search(Request $request)
     {
         return view('pages.search', [
-            'products' => Product::where('title', 'LIKE', $request->q . '%')->paginate(12),
+            'products' => Product::where('keywords', 'LIKE', $request->q . '%')->paginate(12),
         ]);
     }
 

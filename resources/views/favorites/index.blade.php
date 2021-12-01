@@ -6,6 +6,8 @@
 
     <x-bread-crumbs />
 
+    <h1 class="order-forming-title">Избранное</h1>
+
     <div id="category1" class="catalog__products catalog__products-active">
         <div class="catalog__products-wrapper">
             @if(!empty($products))
@@ -35,8 +37,7 @@
             @endforeach
             @else
                 <div style="height: 130px">
-                    <h1 class="favorite-title">Избранное</h1>
-                    <span class="favorite-desc">Нету добавленных продуктов</span>
+                    <span class="order-forming__products-desc">У вас нет добавленных продуктов</span>
                 </div>
             @endif
         </div>

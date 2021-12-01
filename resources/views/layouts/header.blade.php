@@ -15,7 +15,7 @@
               @endguest
 
               @auth
-                  <a href="{{ route('to.logout') }}" class="header__profile-link logout">Выйти</a>
+                  <a href="{{ route('to.logout') }}" class="header__profile-link logout-before">Выйти</a>
               @endauth
           </div>
         </div>
@@ -55,8 +55,8 @@
               <a href="javascript:void(0)" class="header__actions-block header__actions-block__name_search"></a>
               <div class="modal__modal-box">
                 <div class="search-modal" id="Search">
-                  <form class="header__search header__search-mobile">
-                    <input autofocus type="text" class="header__search-input" placeholder="Поиск"/>
+                  <form action="{{ route('search') }}" class="header__search header__search-mobile">
+                    <input autofocus type="text" name="q" class="header__search-input" placeholder="Поиск"/>
                     <input type="submit" class="header__search-button" value=""/>
                   </form>
                 </div>
@@ -64,7 +64,15 @@
             </div>
 
             <div class="header__block header__actions-block mobile_profile">
-              <a href="javascript:void(1)" class="header__actions-block header__actions-block__name_profile login"></a>
+
+                @guest
+                    <a href="javascript:void(1)" class="header__actions-block header__actions-block__name_profile login"></a>
+                @endguest
+
+                @auth
+                    <a href="{{ route('to.logout') }}" class="header__actions-block header__actions-block__name_profile logout"></a>
+                @endauth
+
             </div>
 
             <div class="header__block header__actions-block">
