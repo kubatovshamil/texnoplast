@@ -1,6 +1,7 @@
 
 @extends('layouts.index')
 
+@section('title', 'MaksPrm - страница политика безопастности')
 
 @section('content')
 <div class="police">

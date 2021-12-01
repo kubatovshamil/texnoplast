@@ -1,6 +1,7 @@
 
 @extends('layouts.index')
 
+@section('title', 'MaksPrm - страница доставки')
 
 @section('content')
 

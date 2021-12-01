@@ -1,5 +1,8 @@
 @extends('layouts.index')
 
+@section('title', 'MaksPrm - старница распрадажа')
+
+
 @section('content')
     <div class="sale container">
 

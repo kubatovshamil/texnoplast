@@ -17,12 +17,14 @@ class CategoryController
         if(!empty($slug) && empty($subSlug)){
 
             return view('categories.index', [
-                'products' => CategoryFilter::getProducts($slug)
+                'products' => CategoryFilter::getProducts($slug),
+                'meta' => Category::where('slug', $slug)->first()
             ]);
         }else{
             $category = Category::where('slug', $subSlug)->first();
             return view('categories.index', [
-                'products' => Product::where('category_id', $category->id)->paginate(12)
+                'products' => Product::where('category_id', $category->id)->paginate(12),
+                'meta' => Category::where('slug', $subSlug)->first()
             ]);
         }
     }

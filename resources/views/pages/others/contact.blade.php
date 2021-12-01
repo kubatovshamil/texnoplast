@@ -1,5 +1,6 @@
 @extends('layouts.index')
 
+@section('title', 'MaksPrm - страница контакт')
 
 @section('content')
 

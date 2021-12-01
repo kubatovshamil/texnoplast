@@ -1,5 +1,7 @@
 @extends('layouts.index')
 
+@section('title', 'MaksPrm - страница задать вопрос')
+
 
 @section('content')
 

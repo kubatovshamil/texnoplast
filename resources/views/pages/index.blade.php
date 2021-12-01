@@ -1,4 +1,9 @@
 @extends('layouts.index')
+
+@section('description', 'MaksPrm - описание')
+@section('keywords', 'MaksPrm - ключевые слова')
+@section('title', 'MaksPrm - интернет магазин')
+
 @section('content')
 
 	<div class="main-slider">

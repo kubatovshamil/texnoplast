@@ -1,11 +1,17 @@
 @extends('layouts.index')
 
 
+@section('description', $meta->descriptions)
+
+@section('keywords', $meta->keywords)
+
+@section('title', 'MaksPrm - ' . $meta->title)
+
+
 @section('content')
     <div class="catalog container">
 
         <x-bread-crumbs />
-
 
         <div id="category1" class="catalog__products catalog__products-active">
             <div class="catalog__products-wrapper">

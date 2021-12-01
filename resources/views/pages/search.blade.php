@@ -1,5 +1,7 @@
 @extends('layouts.index')
 
+@section('title', 'MaksPrm - страница поиска')
+
 @section('content')
 
     <div class="search container">

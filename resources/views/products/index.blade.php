@@ -1,5 +1,8 @@
 @extends('layouts.index')
 
+@section('description', $product->descriptions)
+@section('keywords', $product->keywords)
+@section('title', $product->title)
 
 @section('content')
 
