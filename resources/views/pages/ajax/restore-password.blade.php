@@ -36,8 +36,9 @@
                 },
                 success: function (data) {
                     if ($.isEmptyObject(data.error)) {
-                        $('.individual-order').html('Успешно отправлен');
-                    } else {
+                        $('.individual-order').remove();
+                        $('.arcticmodal-close').after("<h1 class='individual__title'>На вашу почту было отправлено письмо</h1>");
+                        $('.individual__title').css('padding', "50px 15px");} else {
                         elem = "<label id='email-error' class='error' for='email'>" + data.error.email + "</label>";
                         $("#email").after(elem);
                     }

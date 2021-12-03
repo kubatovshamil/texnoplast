@@ -3,7 +3,8 @@
 
 @section('content')
     <main class="login-form">
-        <div class="cotainer">
+        <div class="container">
+            <h1 class="order-forming-title">Восстановления пароля</h1>
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
@@ -46,7 +47,7 @@
                                             </div>
 
 
-                                            <div class="col-md-6 offset-md-4">
+                                            <div class="col-md-12 offset-md-12">
                                                 <button type="submit" class="btn btn-primary">
                                                     Сбросить пароль
                                                 </button>
