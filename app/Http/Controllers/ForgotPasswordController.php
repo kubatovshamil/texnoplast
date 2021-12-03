@@ -37,7 +37,7 @@ class ForgotPasswordController
 
             Mail::send('email.forgetPassword', ['token' => $token], function($message) use($request){
                 $message->to($request->email);
-                $message->subject('Reset Password');
+                $message->subject('Сброс пароля');
             });
 
             return back();
@@ -72,7 +72,7 @@ class ForgotPasswordController
             ->first();
 
         if(!$updatePassword){
-            return back()->withInput()->with('error', 'Invalid token!');
+            return back()->withInput()->with('error', 'Не правильный токен!');
         }
 
         $user = User::where('email', $request->email)

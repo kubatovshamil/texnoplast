@@ -42,7 +42,7 @@
                 },
                 beforeSend: function() {
                     $(document).find('.individual-order').remove();
-                    $('.individual__title').css('padding', 70);
+                    $('.individual__title').css('padding', "50px 15px");
                     $('.individual__title').html('Ваша заявка отправлена ждите пока с вами свяжутся...');
                 },
                 success: function (response) {

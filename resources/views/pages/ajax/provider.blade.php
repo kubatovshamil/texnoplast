@@ -62,7 +62,7 @@
                 },
                 beforeSend: function() {
                     $(document).find('.individual-order').remove();
-                    $('.individual__title').css('padding', 70);
+                    $('.individual__title').css('padding', "50px 15px");
                     $('.individual__title').html('Ваща завяка отправлена ждите пока с вами свяжутся...');
                 },
                 success: function (response) {

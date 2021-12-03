@@ -18,7 +18,7 @@
         <div class="form-group">
             <textarea class="individual-order__inp" name="note" id="note" cols="40" rows="30" placeholder="Описание"></textarea>
         </div>
-        
+
         <div class="form-group">
             <button class="individual-order__btn">Отправить</button>
         </div>
@@ -62,7 +62,7 @@
                 },
                 beforeSend: function() {
                     $(document).find('.individual-order').remove();
-                    $('.individual__title').css('padding', 70);
+                    $('.individual__title').css('padding', "50px 15px");
                     $('.individual__title').html('Индивидуальный заказ отправлен');
                 },
                 success: function (response) {

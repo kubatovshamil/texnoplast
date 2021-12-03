@@ -252,6 +252,7 @@ $(document).ready(() => {
 
 
     $('#burger-menu').on('click', function (event){
+        $(this).toggleClass('burger-active');
         $('.mobile-menu').toggleClass('transform-menu');
         $('body').toggleClass('block');
 

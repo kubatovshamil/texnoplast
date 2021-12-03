@@ -226,6 +226,10 @@ button[type=submit]:hover {
 	background: url('../img/icons/burger_icon.svg') no-repeat center;
 }
 
+.burger-active:before {
+    background: url('../img/icons/icons8-close.svg') no-repeat center;
+
+}
 
 .header__actions-block__name_burger-menu::after {
 	content: '\043c\0435\043d\044e';
@@ -6185,26 +6189,16 @@ button[type=submit]:hover {
 }
 
 .registration__form__checkbox .btn button{
+    display: block;
+    padding: 15px 65px;
+    color: #ebebeb;
+    font-size: 14px;
+    font-weight: bold;
     background-color: #FA7916;
-    color: #ffffff;
-    margin-bottom: 0;
-    font-weight: 400;
-    text-align: center;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    white-space: nowrap;
-    padding: 9px 30px 11px;
-    font-size: 13px;
-    line-height: 1.398;
-    border-radius: 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    margin: 15px 0;
+
+    border: none;
+    outline: none;
 }
 
 /*Конец*/
@@ -8045,6 +8039,16 @@ label.error {
 	.product-card__characteristics-article {
 		text-align: center;
 	}
+
+    .product_card__big-image-wrapper {
+        height: 400px;
+        width: 420px;
+        margin: auto;
+    }
+
+    .product-card__characteristics-title{
+        font-size: 24px;
+    }
 }
 
 
@@ -8564,7 +8568,7 @@ label.error {
 		width: 90%;
 	}
 
-	.product_card__big-image-wrapper,
+
 	.product-card__characteristics {
 		width: 100%;
 	}
@@ -9324,8 +9328,13 @@ label.error {
 	}
 
 	.product_card__big-image-wrapper {
-		height: 565px;
+        height: 330px;
+        width: 320px;
+        margin: auto;
 	}
+    .product-card__characteristics-title{
+        font-size: 20px;
+    }
 
 	.product_card__image-carousel, .product_card__model {
 		height: 160px;
@@ -9452,10 +9461,9 @@ label.error {
 	.order-forming__product-price-new {
 		font-size: 18px;
 	}
-
-	.order-forming__product-img {
-		display: none;
-	}
+    .order-forming__product-title{
+        font-size: 14px;
+    }
 
 	.order-forming__form-button-col.deliver, .order-forming__form-button-col.shipping, .order-forming__form-button-col.cash, .order-forming__form-button-col.card,
 	.order-forming__form-button-row.plane, .order-forming__form-button-col.courier {
@@ -9538,6 +9546,14 @@ label.error {
     .individual-order .form-group{
         width: 70%;
     }
+    .product_card__big-image-wrapper{
+        height: 260px;
+        width: 260px;
+        margin: auto;
+    }
+    .product-card__characteristics-title{
+        font-size: 18px;
+    }
 
 }
 
@@ -9551,9 +9567,6 @@ label.error {
 		display: none;
 	}
 
-	.order-forming__product-price {
-		display: none;
-	}
 
 	.order-forming__product-count {
 		margin-left: 20px;
@@ -9634,6 +9647,13 @@ label.error {
         padding: 10px 15px;
     }
 
+    .bestsellers__block-img{
+        height: 200px;
+    }
+
+    .bestsellers__block-title{
+        font-size: 14px;
+    }
 
 }
 
@@ -9733,7 +9753,7 @@ label.error {
         width: 70%;
     }
     .individual-order__btn{
-        width: 80%;
+        width: 100%;
     }
     .to-register-form,
     .forgot-pw{
@@ -10038,6 +10058,29 @@ label.error {
         margin-left: 50px;
     }
 
+    .header__block.header__block__name_actions:last-child{
+        margin-right: 15px;
+    }
+
+    .individual-order .form-group{
+        width: 90% !important;
+    }
+    .login__btn{
+        width: 100%;
+    }
+
+    .registration__top__title{
+        font-size: 24px;
+    }
+
+    .product_card__big-image-wrapper{
+        height: 220px;
+        width: 220px;
+        margin: auto;
+    }
+    .product-card__characteristics-title{
+        font-size: 14px;
+    }
 
 }
 
@@ -10083,7 +10126,7 @@ label.error {
         width: 100%;
     }
     .registration__form__checkbox{
-        align-items: flex-end;
+        align-items: center;
     }
 
     .custom-checkbox+label:before{
@@ -10146,6 +10189,30 @@ label.error {
         width: 80%;
     }
 
+    .header__block.header__block__name_actions:last-child{
+        margin-right: 10px;
+    }
+    .popular-category__products-title{
+        font-size: 20px;
+    }
+
+    .order-forming-title{
+        font-size: 24px;
+    }
+
 }
+@media screen and (max-width: 319px) {
+    .header__block.header__block__name_actions:last-child{
+        margin-right: 15px;
+    }
+
+    .header .col-xs-7, .header .col-sm-9, .header .col-lg-10, .header .col-lg-10{
+         padding-left: 0px;
+         padding-right: 0px;
+    }
+
+}
+
+
 
 /* END Media */

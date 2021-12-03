@@ -76,6 +76,8 @@ class ProductController extends Controller
     public function update(Request $request, Product $product, ProductService $productService)
     {
 
+
+
         $productService->updateProduct($request, $product);
 
         $productService->updateAttributes($request, $product->id);

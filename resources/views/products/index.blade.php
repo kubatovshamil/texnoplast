@@ -20,7 +20,6 @@
 
                 <a href="#" class="product-card__functions-in_stock">В наличии!</a>
 
-                <a href="#" class="product-card__functions-warranty">Гарантия</a>
             </div>
         </div>
 

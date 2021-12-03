@@ -55,49 +55,62 @@ class ProductService
     {
         if($request->hasFile('img'))
         {
-            $file = $request->file('img');
-
-            $request = $request->except('attr_name', 'attr_val');
-
-            $destinationPath = public_path('/storage/products/');
-
             $imgName = '/products/' . Product::find($product->id)->img;
-
-            $productImage = date('YmdHis') . "." . $file->getClientOriginalExtension();
 
             if(Storage::disk('public')->exists($imgName))
             {
                 Storage::disk('public')->delete($imgName);
             }
 
-            $gallery = Gallery::where('product_id', $product->id);
+            $gallery = Gallery::where('product_id', $product->id)->get();
+            foreach ($gallery as $item){
 
-            foreach ($gallery as $item)
-            {
                 $galleryImg = '/products/' . $item->img;
 
                 if(Storage::disk('public')->exists($galleryImg))
                 {
                     Storage::disk('public')->delete($galleryImg);
                 }
+
+                Gallery::destroy($item->id);
             }
 
-            $file->move($destinationPath, $productImage);
 
-            $input =  $request;
+            $files = $request->file('img');
+            $request = $request->except('attr_name', 'attr_val');
+            $destinationPath = public_path('/storage/products/');
 
-            $input['img'] = $productImage;
+            $productImage = date('YmdHis') . "." . $files[0]->getClientOriginalExtension();
 
-            return $product->update($input);
+            $request['img'] = $productImage;
+
+            $files[0]->move($destinationPath, $productImage);
+
+            if(!isset($request['hit'])){
+                $request['hit'] = "0";
+            }
+            $product->update($request);
+
+
+            foreach (array_slice($files, 1) as $k => $file)
+            {
+
+                $productImage = date('YmdHis') . $k  ."." . $file->getClientOriginalExtension();
+
+                $file->move($destinationPath, $productImage);
+                Gallery::create([
+                    'product_id' => $product->id,
+                    'img' => $productImage
+                ]);
+            }
+
+        }else{
+            $request = $request->except('attr_name', 'attr_val');
+            if(!isset($request['hit'])){
+                $request['hit'] = "0";
+            }
+            return $product->update($request);
         }
-
-        $request = $request->except('attr_name', 'attr_val');
-
-        if(!isset($request['hit'])){
-            $request['hit'] = "0";
-        }
-
-        return $product->update($request);
 
     }
 
