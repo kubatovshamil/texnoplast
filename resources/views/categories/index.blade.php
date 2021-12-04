@@ -33,7 +33,7 @@
 
                             <div class="bestsellers__block-buttons">
                                 <a href="{{ url('/product/' . $product->slug) }}" class="bestsellers__block-button-buy-click">Подробнее</a>
-                                <a href="javascript:void(0)" class="bestsellers__block-button-buy">Купить</a>
+                                <a href="javascript:void(0)" data-id="{{ $product->id }}" class="bestsellers__block-button-buy">Купить</a>
                             </div>
 
                         </div>

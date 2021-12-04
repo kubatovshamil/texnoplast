@@ -73,7 +73,7 @@
                 </div>
 
                 <div class="product-card__buttons">
-                    <a href="#" class="product-card__buttons-buy">Купить</a>
+                    <a href="javascript:void(1)" data-id="{{ $product->id }}" class="product-card__buttons-buy bestsellers__block-button-buy">Купить</a>
                 </div>
             </div>
 

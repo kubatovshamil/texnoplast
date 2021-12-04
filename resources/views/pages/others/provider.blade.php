@@ -80,7 +80,11 @@
 
                     <p><strong>Здесь вы можете отправить коммерческое предложение, заполнив форму.</strong></p>
                     <p>Компания "ЛЕНТА" рассмотрит предложения о сотрудничестве с производителями и поставщиками продукции</p>
-                    <button class="btn-provider">Оставить Заявку</button>
+                    <div class="row">
+                        <div class="col-12 col-lg-3 col-sm-5 col-md-4">
+                            <button class="btn-provider">Оставить Заявку</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

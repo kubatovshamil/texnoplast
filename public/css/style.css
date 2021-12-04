@@ -6325,7 +6325,7 @@ button[type=submit]:hover {
 }
 
 .provider .btn-provider{
-    width: 20%;
+    width: 100%;
 }
 /*Конец стили Provider*/
 .btn-provider{
@@ -10124,6 +10124,7 @@ label.error {
     .fieldset{
         width: 100%;
     }
+
 
     .registration__form__checkbox .btn,
     .registration__form__checkbox .btn button
