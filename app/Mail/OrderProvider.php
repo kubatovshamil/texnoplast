@@ -29,6 +29,9 @@ class OrderProvider extends Mailable
      */
     public function build()
     {
-        return $this->subject('от Поставщика')->view('email.provider-mail');
+        return $this->subject('от Поставщика')->view('email.provider-mail')
+            ->attach($this->order['file']->getPathname(), [
+                'as' => $this->order['file']->getClientOriginalName()
+            ]);
     }
 }

@@ -2,7 +2,7 @@
 
     <div class="box-modal_close arcticmodal-close">&#10006;</div>
     <h1 class="individual__title">от Поставщика</h1>
-    <form action="#" class="individual-order">
+    <form action="" method="post" class="individual-order" enctype="multipart/form-data">
         <div class="form-group">
             <input type="text" class="individual-order__inp" id="surname" name="surname" placeholder="Фамилия">
         </div>
@@ -20,7 +20,7 @@
         </div>
 
         <div class="form-group">
-            <input type="file" name="file">
+            <input type="file" name="file" id="file">
         </div>
 
         <div class="form-group">
@@ -52,30 +52,38 @@
             note: {
                 required : true,
             },
-        },
-        submitHandler: function(){
-            $.ajax({
-                url: "/orderProvider",
-                method: "POST",
-                data: {
-                    _token: $('meta[name="csrf-token"]').attr('content'),
-                    surname : $("input[name=surname]").val(),
-                    name : $("input[name=name]").val(),
-                    phone : $("input[name=phone]").val(),
-                    note : $("textarea[name=note]").val()
-                },
-                beforeSend: function() {
-                    $(document).find('.individual-order').remove();
-                    $('.individual__title').css('padding', "50px 15px");
-                    $('.individual__title').html('Ваща завяка отправлена ждите пока с вами свяжутся...');
-                },
-                success: function (response) {
-
-                },
-                error: function (message){
-                    console.log(message)
-                }
-            });
+            file : {
+                required : true
+            }
         }
+    });
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $(document).find('.individual-order').on('submit', function(event){
+        event.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            type: "POST",
+            url : "/orderProvider",
+            data : formData,
+            cache:false,
+            contentType: false,
+            processData: false,
+            beforeSend: function()
+            {
+
+            },
+            success: function(response){
+                $(document).find('.individual-order').remove();
+                $('.individual__title').css('padding', "50px 15px");
+                $('.individual__title').html('Ваща завяка отправлена ждите пока с вами свяжутся...');
+            },
+            error: function(message){
+                console.log(message);
+            }
+        })
     });
 </script>
