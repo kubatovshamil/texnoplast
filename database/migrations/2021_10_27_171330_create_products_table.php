@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->float('price');
             $table->text('specification');
             $table->enum('status', [0, 1])->default(1);
-            $table->integer('discount');
+            $table->integer('discount')->nullable();
             $table->string('img');
             $table->string('slug');
             $table->string('keywords', 255)->change();
