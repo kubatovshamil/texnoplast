@@ -6359,7 +6359,7 @@ ul.breadcrumb {
 }
 ul.breadcrumb li {
     display: inline;
-    font-size: 18px;
+    font-size: 15px;
 }
 ul.breadcrumb li+li:before {
     padding: 8px;
