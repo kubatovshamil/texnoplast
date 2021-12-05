@@ -25,8 +25,8 @@ class CreateProductsTable extends Migration
             $table->integer('discount');
             $table->string('img');
             $table->string('slug');
-            $table->string('keywords');
-            $table->string('descriptions');
+            $table->string('keywords', 255)->change();
+            $table->string('descriptions', 255)->change();
             $table->enum('hit', [0, 1])->default(0);
             $table->timestamps();
         });

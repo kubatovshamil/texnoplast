@@ -136,21 +136,21 @@ class ProductService
         foreach ($attributes as $k => $attribute) {
 
             if(isset($attribute['attr_id'])){
-
                 if(isset($attribute['attr_name'])){
-                    $this->attributeValue->updateAttributes($attribute, $id);
+                    if(is_numeric($attribute['attr_name']))
+                    {
+                        $this->attributeValue->updateAttributes($attribute, $id);
+                    }
                 }
                 else{
                     $this->attributeValue->destroyAttribute($attribute['attr_id']);
                 }
-            }
-            if(!isset($attribute['attr_id']))
-            {
-                if(is_numeric($attribute['attr_name'])){
+            }else{
+                if(is_string($attribute['attr_name'])){
+                    $this->attributeValue->createAttributes($attribute, $id);
+                }elseif (is_numeric($attribute['attr_name']))
+                {
                     $this->attributeValue->createAttribute($attribute, $id);
-                }
-                else{
-                    $this->attributeValue->updateAttributes($attribute, $id);
                 }
             }
 

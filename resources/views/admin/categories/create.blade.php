@@ -47,10 +47,10 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInput1">Наименования подкатегории </label>
-                                        <input type="text" class="form-control" name="title" id="exampleInput1" placeholder="Введите название категории">
+                                        <input type="text" class="form-control" name="title" id="exampleInput1" placeholder="Введите название подкатегории">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Категория:</label>
+                                        <label for="exampleInputPassword1">Родительская категория:</label>
                                         <select name="parent_id" class="form-control" id="sel1">
                                             @foreach($categories as $category)
                                                 <option value="{{$category->id}}">{{ $category->title }}</option>
@@ -64,10 +64,9 @@
                                     </div>
 
 
-
                                     <div class="form-group">
                                         <label for="exampleInput1">Ссылка подкатегории</label>
-                                        <input type="text" class="form-control" name="slug" id="exampleInput1" placeholder="Введите ссылку категории">
+                                        <input type="text" class="form-control" name="slug" id="exampleInput1" placeholder="Введите ссылку подкатегории">
                                     </div>
 
                                     <div class="form-group">

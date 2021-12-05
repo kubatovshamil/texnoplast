@@ -13,7 +13,7 @@
       <div class="footer__menu">
         <ul class="footer__vertical-menu">
           <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/catalog">Каталог</a></li>
-          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/hits">Распрадажа</a></li>
+          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/sale">Распрадажа</a></li>
           <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/provider">Поставщикам</a></li>
           <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/police">Политика безопастности</a></li>
         </ul>

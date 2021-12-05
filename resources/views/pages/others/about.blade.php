@@ -8,7 +8,7 @@
     <div class="container">
 
         <x-bread-crumbs />
-        <img src="img/about_img.jpg" class="about-us__block about-us__img" alt="">
+        <img src="{{ asset("img/about_img.jpg") }}" class="about-us__block about-us__img" alt="">
 
         <div class="about-us__block about-us__text">
             <div class="about-us__content">

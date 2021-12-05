@@ -198,7 +198,7 @@ $(document).ready(() => {
         getTemplate('/product', 'ajax');
 	});
 
-    $('.order-forming__product-count-input').on('change', function(event){
+    $('.order-forming__product-count-input').on('input', function(event){
         updateCart('/updateCart', 'PUT', $(this).data('id'), $(this).val())
     });
 

@@ -20,6 +20,10 @@
         </div>
 
         <div class="form-group">
+            <input type="file" name="file">
+        </div>
+
+        <div class="form-group">
             <button class="individual-order__btn">Отправить</button>
         </div>
 

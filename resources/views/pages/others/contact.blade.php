@@ -16,7 +16,7 @@
     <div class="contacts__address">
         <ul class="contacts__address-address">
             <li class="contacts__address-block location">248926, г. Калуга, Аэропортовский переулок д.11</li>
-            <li class="contacts__address-block phone"><a href="tel:+78003008993">+7 (800) 300-89-93</a></li>
+            <li class="contacts__address-block phone"><a href="tel:+79807153571">+7 (980) 715-35-71</a></li>
             <li class="contacts__address-block whatsapp"><a target="_blank" href="https://wa.me/79807153571">+7 (980) 715-35-71</a></li>
             <li class="contacts__address-block email"><a class="contacts__address-block-bordered" href="malito:info@maksprom.ru">info@maksprom.ru</a></li>
             <li class="contacts__address-block site"><a class="contacts__address-block-bordered" href="/">maksprom.ru</a></li>
