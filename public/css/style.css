@@ -6120,41 +6120,47 @@ button[type=submit]:hover {
     align-items: center;
     flex-direction: column;
 }
+/* Исправить */
+/*.custom-checkbox{*/
+/*    position: absolute;*/
+/*    z-index: -1;*/
+/*    opacity: 0;*/
+/*}*/
 
-.custom-checkbox{
+/*.custom-checkbox+label:before {*/
+/*    content: " ";*/
+/*    background: #fff;*/
+/*    border: 1px solid #ddd;*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    width: 15px;*/
+/*    height: 15px;*/
+/*    width: 24px;*/
+/*    height: 24px;*/
+/*    left: -40px;*/
+/*    bottom: -1px;*/
+/*    background: 0;*/
+/*}*/
+
+/*.custom-checkbox+label {*/
+/*    display: inline-flex;*/
+/*    align-items: center;*/
+/*    user-select: none;*/
+/*}*/
+
+/*.custom-checkbox:checked+label::before {*/
+/*    content: "\2713";*/
+/*    color: #FA7916;*/
+/*    border-color: #FA7916;*/
+/*    font-size: 18px;*/
+/*    font-weight: 900;*/
+/*    text-align: center;*/
+/*}*/
+
+
+.registration__form__checkbox #agree-error{
     position: absolute;
-    z-index: -1;
-    opacity: 0;
-}
-
-.custom-checkbox+label:before {
-    content: " ";
-    background: #fff;
-    border: 1px solid #ddd;
-    position: absolute;
-    left: 0;
-    width: 15px;
-    height: 15px;
-    width: 24px;
-    height: 24px;
-    left: -40px;
-    bottom: -1px;
-    background: 0;
-}
-
-.custom-checkbox+label {
-    display: inline-flex;
-    align-items: center;
-    user-select: none;
-}
-
-.custom-checkbox:checked+label::before {
-    content: "\2713";
-    color: #FA7916;
-    border-color: #FA7916;
-    font-size: 18px;
-    font-weight: 900;
-    text-align: center;
+    top: 20px;
 }
 
 .green-link{

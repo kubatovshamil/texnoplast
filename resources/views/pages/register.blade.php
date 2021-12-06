@@ -106,6 +106,9 @@
                 required : true,
                 minlength: 2,
                 equalTo: "#password"
+            },
+            agree : {
+                required : true,
             }
         },
     });
