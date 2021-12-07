@@ -22,7 +22,9 @@
                     <div class="bestsellers__block">
                     <div class="bestsellers__block-wrapper">
                         <img src="{{ asset("storage/products/" . $product->img) }}" alt="" class="bestsellers__block-img">
-                        <span class="bestsellers__block-stock">-{{ round(($product->discount - $product->price) * 100 / $product->discount) }}%</span>
+                        @if(isset($product->discount))
+                            <span class="bestsellers__block-stock">-{{ round(($product->discount - $product->price) * 100 / $product->discount) }}%</span>
+                        @endif
                         <div class="bestsellers__block-circle-buttons">
                             <a href="javascript:void(0)" class="bestsellers__block-circle-button-favorite"></a>
                         </div>
