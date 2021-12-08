@@ -707,7 +707,14 @@ button[type=submit]:hover {
 	text-align: center;
 	margin-left: 150px;
 }
-
+.btn-more{
+    padding: 10px 10px;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #FA7916;
+}
 
 .footer__contacts-phone {
 	color: #f7f7f7;

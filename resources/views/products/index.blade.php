@@ -84,12 +84,24 @@
 
 
             <div class="product-card__characteristics-characts charact_char">
-                @foreach($attributes as $attribute)
-                    <div class="product-card__characts-block">
-                        <p class="product-card__characts-thead">{{ $attribute->name }}</p>
-                        <p class="product-card__characts-tbody">{{ $attribute->value }}</p>
-                    </div>
+                @foreach($attributes as $k => $attribute)
+                    @if($k > 7)
+                        <div class="product-card__characts-block hide-char" style="display: none">
+                            <p class="product-card__characts-thead">{{ $attribute->name }}</p>
+                            <p class="product-card__characts-tbody">{{ $attribute->value }}</p>
+                        </div>
+                    @else
+                        <div class="product-card__characts-block">
+                            <p class="product-card__characts-thead">{{ $attribute->name }}</p>
+                            <p class="product-card__characts-tbody">{{ $attribute->value }}</p>
+                        </div>
+                    @endif
                 @endforeach
+                @if(count($attributes) > 7)
+                        <div class="show-more">
+                            <a href="#" class="btn-more">Показать больше</a>
+                        </div>
+                    @endif
 
             </div>
 
