@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductsTable extends Migration
+class qCreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -25,8 +25,8 @@ class CreateProductsTable extends Migration
             $table->integer('discount')->nullable();
             $table->string('img');
             $table->string('slug');
-            $table->string('keywords', 255)->change();
-            $table->string('descriptions', 255)->change();
+            $table->text('keywords');
+            $table->text('descriptions');
             $table->enum('hit', [0, 1])->default(0);
             $table->timestamps();
         });
