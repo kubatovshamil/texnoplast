@@ -23,7 +23,7 @@ class LoginController
             'surname' => 'required',
             'name' => 'required',
             'password' => 'required',
-            'password2' => 'required'
+            'confirm_password' => 'required'
         ]);
         $user = User::create([
             'surname' => $request->surname,
