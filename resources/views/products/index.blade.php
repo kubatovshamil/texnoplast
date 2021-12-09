@@ -79,13 +79,10 @@
                 </div>
             </div>
 
-            <input id="show_charact" name="characts-tab" class="product-card__characts-open charact_char hide" type="radio">
-            <label for="show_charact" class="product-card__characts-title charact_char">Характеристики</label>
 
-
-            <div class="product-card__characteristics-characts charact_char">
+            <div class="product-card__characteristics-characts">
                 @foreach($attributes as $k => $attribute)
-                    @if($k > 7)
+                    @if($k > 4)
                         <div class="product-card__characts-block hide-char" style="display: none">
                             <p class="product-card__characts-thead">{{ $attribute->name }}</p>
                             <p class="product-card__characts-tbody">{{ $attribute->value }}</p>
@@ -97,9 +94,9 @@
                         </div>
                     @endif
                 @endforeach
-                @if(count($attributes) > 7)
+                @if(count($attributes) > 4)
                         <div class="show-more">
-                            <a href="#" class="btn-more">Показать больше</a>
+                            <button class="btn-more"><svg viewBox="0 0 14 9" fill="none" xmlns="https://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 1.6L12.4 0 7 5.4 1.6 0 0 1.6l7 7 7-7z" fill="#333"></path></svg></button>
                         </div>
                     @endif
 

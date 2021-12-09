@@ -379,15 +379,10 @@ $(document).ready(() => {
         });
     }
 
-    $(".show-more a").on("click", function() {
-        var currentText = $(this).text();
-        if(currentText === "Показать больше"){
-            $('.hide-char').show();
-            $(this).text("Показать меньше");
-        } else {
-            $('.hide-char').hide();
-            $(this).text("Показать больше");
-        };
+    $(".btn-more").on("click", function() {
+        $(".btn-more").toggleClass("btn-more__active");
+        $('.hide-char').toggle();
+
     });
 
 });

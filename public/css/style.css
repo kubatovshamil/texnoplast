@@ -708,12 +708,32 @@ button[type=submit]:hover {
 	margin-left: 150px;
 }
 .btn-more{
-    padding: 10px 10px;
-    display: inline-block;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: bold;
-    background-color: #FA7916;
+    width: 130px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -20px;
+    border-radius: 21px;
+    border: none;
+    background-color: rgb(240, 241, 242);
+    cursor: pointer;
+}
+.btn-more:hover{
+    background-color: rgb(225, 226, 229);
+}
+
+.btn-more > svg{
+    width: 14px;
+    height: 9px;
+    fill: rgb(51, 51, 51);
+    transition: transform 0.35s ease 0s;
+}
+
+.btn-more__active > svg{
+    transform: rotate(180deg);
 }
 
 .footer__contacts-phone {
