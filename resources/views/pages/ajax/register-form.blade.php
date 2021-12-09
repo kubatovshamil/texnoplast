@@ -6,7 +6,7 @@
         @method('post')
         <h1 class="individual__title">Войти</h1>
         <div class="form-group">
-            <input type="email" name="email" id="email log-id" class="individual-order__inp" placeholder="Логин">
+            <input type="email" name="email" id="email" class="individual-order__inp" placeholder="Логин">
         </div>
 
         <div class="form-group">
@@ -33,15 +33,16 @@
                 required : true,
             },
         },
-        submitHandler: function(event){
+        submitHandler: function(){
             $.ajax({
                 url: "/login",
                 method: "POST",
                 data: {
                     _token: $('meta[name="csrf-token"]').attr('content'),
+                    email : $("#login").find("#email").val(),
+                    password : $("#login").find("#password").val(),
                 },
                 beforeSend: function() {
-                    $($(event))[0].find('input[name=email]');
                 },
                 success: function (data) {
                     if ($.isEmptyObject(data.error)) {
