@@ -12,11 +12,12 @@ $(document).ready(() => {
             loop: true,
             rewind: false,
             navContainer: '.main-slider__navigation',
-            speed: 1200,
+            speed: 1500,
 
             responsive: {
                 300: {
-                    mouseDrag: true
+                    mouseDrag: true,
+                    arrowKeys: true,
                 }
             }
         });

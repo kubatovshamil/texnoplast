@@ -10,32 +10,33 @@
 
 		<div class="main-slider__wrapper">
 
-			<div class="main-slider__wrapper-item">
+			<div class="main-slider__wrapper-item-1">
 				<div class="container">
-					<h1 class="main-slider__title">ОТКРЫВАЕМ СЕЗОН<br>ПОДАРКОВ 1</h1>
+					<h1 class="main-slider__title">Деревянная тара</h1>
 					<p class="main-slider__text">Расшифровка предлождения, одно<br>предложение из нескольких слов</p>
 
-					<a href="#" class="main-slider__button">Подробнее</a>
+					<a href="/categories/derevyannaya-tara.php" class="main-slider__button">Подробнее</a>
 				</div>
 			</div>
 
-			<div class="main-slider__wrapper-item">
+			<div class="main-slider__wrapper-item-2">
 				<div class="container">
-					<h1 class="main-slider__title">ОТКРЫВАЕМ СЕЗОН<br>ПОДАРКОВ 2</h1>
+					<h1 class="main-slider__title">Пиломатериалы</h1>
 					<p class="main-slider__text">Расшифровка предлождения, одно<br>предложение из нескольких слов</p>
 
-					<a href="#" class="main-slider__button">Подробнее</a>
+					<a href="/categories/pilomaterialy.php" class="main-slider__button">Подробнее</a>
 				</div>
 			</div>
 
-			<div class="main-slider__wrapper-item">
+			<div class="main-slider__wrapper-item-3">
 				<div class="container">
-					<h1 class="main-slider__title">ОТКРЫВАЕМ СЕЗОН<br>ПОДАРКОВ 3</h1>
+					<h1 class="main-slider__title">Древесно-плитные <br>материалы</h1>
 					<p class="main-slider__text">Расшифровка предлождения, одно<br>предложение из нескольких слов</p>
 
-					<a href="#" class="main-slider__button">Подробнее</a>
+					<a href="/categories/drevesno-plitnye-materialy.php" class="main-slider__button">Подробнее</a>
 				</div>
 			</div>
+
 
 		</div>
 
