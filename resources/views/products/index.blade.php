@@ -57,7 +57,7 @@
                 <h1 class="product-card__characteristics-title">{{ $product->title }}</h1>
 
                 <div class="product-card__characteristics-functions">
-                    <a href="#" class="product-card__functions-favorite">В избранное</a>
+                    <a href="javascript:void(1)" data-id="{{ $product->id }}" class="product-card__functions-favorite {{ isset(session()->get('favorite')[$product->id]) && session()->get('favorite')[$product->id]['id'] == $product->id  ? 'active-fav' : '' }}">В избранное</a>
 
                     <a href="#" class="product-card__functions-in_stock">В наличии!</a>
 

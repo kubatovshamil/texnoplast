@@ -50,7 +50,6 @@
 	<div class="popular-category container">
 		<div class="popular-category__header">
 			<h1 class="popular-category__header-title">Популярные категории</h1>
-			<span class="popular-category__header-count">{{ $productQuantity }} товаров</span>
 		</div>
 
 		<div class="popular-category__products">
@@ -75,6 +74,5 @@
 	</div>
 
     <x-best-seller />
-
 
 @endsection
