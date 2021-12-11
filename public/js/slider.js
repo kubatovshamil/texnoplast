@@ -140,6 +140,10 @@ $(document).ready(() => {
 
         $(this).toggleClass('active');
 
+        if($('.product-favorite').data('id') == $(this).data('id')){
+            $(".product-card__functions-favorite").toggleClass('active-fav');
+        }
+
         if($(this).hasClass('active')){
             $.ajax({
                 url: '/addFavorite',
@@ -385,48 +389,12 @@ $(document).ready(() => {
 
     });
 
-    $('.product-card__functions-favorite').on('click', function(){
-        $(this).toggleClass('active-fav');
-        $(".bestsellers__block-circle-button-favorite").toggleClass('active');
 
-        if($(this).hasClass('active-fav')){
-            $.ajax({
-                url: '/addFavorite',
-                method: "POST",
-                data: {
-                    _token: $('meta[name="csrf-token"]').attr('content'),
-                    id: $(this).data('id'),
-                },
-                success: function (response) {
-                    $('.header__actions-block__name_favorites').html(response)
-
-                },
-                error: function (message){
-                    console.log(message);
-                }
-            });
-        }else{
-            $.ajax({
-                url: '/removeFavorite',
-                method: "DELETE",
-                data: {
-                    _token: $('meta[name="csrf-token"]').attr('content'),
-                    id: $(this).data('id'),
-                },
-                success: function (response) {
-                    if(response == 0){
-                        $('.header__actions-block__name_favorites').html('');
-                    }else{
-                        $('.header__actions-block__name_favorites').html(response)
-                    }
-                },
-                error: function (message){
-                    console.log(message);
-                }
-            });
+    $('.popular-category__products-block').hover(function(){
+        var elems = $(this).find('.popular-category__products-categories');
+        if(elems.length > 4){
+            $(this).addClass('active');
         }
-
-
     });
 
 });

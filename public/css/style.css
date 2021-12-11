@@ -1567,11 +1567,14 @@ button[type=submit]:hover {
 	transition: 0.5s ease all;
 	display: inline-block;
 	vertical-align: top;
-	padding: 20px 26px;
+	padding: 20px 26px 75px;
 	margin-right: 22px;
 	margin-bottom: 20px;
 }
 
+.popular-category__products .active:hover{
+    height: auto;
+}
 
 .popular-category__products-block-wrapper {
 	position: absolute;
