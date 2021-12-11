@@ -47,7 +47,7 @@
                                             <label for="exampleInputPassword1">Категория:</label>
                                             <select name="category_id" class="form-control" id="sel1">
                                                 @foreach($categories as $item)
-                                                    <option value="{{$item->id}}">{{ $item->title }}</option>
+                                                    <option value="{{$item->id}}" {{ $product->category_id == $item->id? "selected" : '' }}>{{ $item->title }}</option>
                                                 @endforeach
                                             </select>
                                         </div>

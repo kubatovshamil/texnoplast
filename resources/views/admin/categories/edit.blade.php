@@ -38,7 +38,7 @@
                                             <label for="exampleInputPassword1">Родительская категория:</label>
                                             <select name="parent_id" class="form-control" id="sel1">
                                                 @foreach($categories as $item)
-                                                    <option value="{{$item->id}}">{{ $item->title }}</option>
+                                                    <option value="{{$item->id}}" {{ $category->parent_id == $item->id? 'selected' : '' }}>{{ $item->title }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -52,7 +52,7 @@
 
 
                                     <div class="form-group">
-                                        <label for="exampleFormControlFile1">Изображения товара</label>
+                                        <label for="exampleFormControlFile1">Изображения</label>
                                         <input type="file" class="form-control-file" name="img" id="exampleFormControlFile1">
                                     </div>
 

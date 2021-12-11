@@ -50,8 +50,9 @@
                                         <input type="text" class="form-control" name="title" id="exampleInput1" placeholder="Введите название подкатегории">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Родительская категория:</label>
+                                        <label for="exampleInputPassword1">Родительская подкатегория:</label>
                                         <select name="parent_id" class="form-control" id="sel1">
+                                            <option selected></option>
                                             @foreach($categories as $category)
                                                 <option value="{{$category->id}}">{{ $category->title }}</option>
                                             @endforeach

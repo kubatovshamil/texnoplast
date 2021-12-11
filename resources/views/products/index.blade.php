@@ -68,9 +68,9 @@
             <div class="product-card__characteristics-ordering">
                 <div class="product-card__price">
                     @if(isset($product->discount))
-                        <span class="product-card__block-stock">-{{ round(($product->discount - $product->price) * 100 / $product->discount) }}%</span>
+                        <span class="product-card__block-stock">-{{ $product->discount }}%</span>
                     @endif
-                    <p class="product-card__prices-old">{{ $product->discount }}₽</p>
+                    <p class="product-card__prices-old">₽</p>
                     <p class="product-card__prices-new">{{ $product->price }}<span class="price_rub">₽</span></p>
                 </div>
 

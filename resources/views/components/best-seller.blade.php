@@ -15,7 +15,7 @@
                     <div class="bestsellers__block-wrapper">
                         <img src="{{ asset("storage/products/" . $hit['img']) }}" alt="" class="bestsellers__block-img">
                         @if(isset($hit->discount))
-                            <span class="bestsellers__block-stock">-{{ round(($hit->discount - $hit->price) * 100 / $hit->discount) }}%</span>
+                            <span class="bestsellers__block-stock">-{{$hit->discount }}%</span>
                         @endif
                         <div class="bestsellers__block-circle-buttons">
                             <a href="javascript:void(0)" class="bestsellers__block-circle-button-favorite {{ isset(session()->get('favorite')[$hit->id]) && session()->get('favorite')[$hit->id]['id'] == $hit->id  ? 'active' : '' }}"></a>
@@ -24,8 +24,7 @@
                         <h2 class="bestsellers__block-title">{{ $hit->title }}</h2>
 
                         <div class="bestsellers__block-prices">
-                            <p class="bestsellers__block-price-old">{{ $hit->discount }}₽</p>
-                            <p class="bestsellers__block-price-new">от <strong class="price-new_strong">{{ $hit->price }}</strong><span class="price-new_rub">₽</span></p>
+                            <p class="bestsellers__block-price-new"><strong class="price-new_strong">{{ $hit->price }}</strong><span class="price-new_rub">₽</span></p>
                         </div>
 
                         <div class="bestsellers__block-buttons">

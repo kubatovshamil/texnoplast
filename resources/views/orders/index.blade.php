@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="order-forming__product-price">
-                        <p class="order-forming__product-price-old">{{ $product['discount'] }}₽</p>
+                        <p class="order-forming__product-price-old">₽</p>
                         <p class="order-forming__product-price-new">{{ $product['price'] }}<span class="sup_rub">₽</span></p>
                     </div>
 
