@@ -1,7 +1,7 @@
 <div class="box-modal individual" id="Modal">
 
     <div class="box-modal_close arcticmodal-close">&#10006;</div>
-    <h1 class="individual__title">от Поставщика</h1>
+    <h1 class="individual__title">от Поставшика</h1>
     <form action="" method="post" class="individual-order" enctype="multipart/form-data">
         <div class="form-group">
             <input type="text" class="individual-order__inp" id="surname" name="surname" placeholder="Фамилия">
@@ -16,7 +16,7 @@
         </div>
 
         <div class="form-group">
-            <textarea class="individual-order__inp" name="note" id="note" cols="40" rows="30" placeholder="Ваще предложение"></textarea>
+            <textarea class="individual-order__inp" name="note" id="note" cols="40" rows="30" placeholder="Ваше предложение"></textarea>
         </div>
 
         <div class="form-group">
@@ -79,7 +79,7 @@
             success: function(response){
                 $(document).find('.individual-order').remove();
                 $('.individual__title').css('padding', "50px 15px");
-                $('.individual__title').html('Ваща завяка отправлена ждите пока с вами свяжутся...');
+                $('.individual__title').html('Ваша завяка отправлена ждите пока с вами свяжутся...');
             },
             error: function(message){
                 console.log(message);

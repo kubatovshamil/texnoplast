@@ -3,6 +3,12 @@
 @section('title', 'MaksPrm - страница задать вопрос')
 
 
+@section('description', 'Вы можете задать вопрос: 
+в WhatsApp по номеру телефона +7 (980) 715-35-71 либо написав нам на электронную почту makspromi@yandex.ru')
+@section('keywords', 'задать вопрос, +7 (980) 715-35-71, электронная почта, makspromi@yandex.ru')
+
+@section("canonical", url("/question.php"))
+
 @section('content')
 
 <div class="question">
@@ -30,7 +36,7 @@
 
                 <li class="question-links-list__item mailer">
                     Написав нам на электронную почту
-                    <a class="question-links-list__item__link" href="malito:info@maksprom.ru">info@maksprom.ru</a>
+                    <a class="question-links-list__item__link" href="mailto:makspromi@yandex.ru">makspromi@yandex.ru</a>
                 </li>
 
             </ul>

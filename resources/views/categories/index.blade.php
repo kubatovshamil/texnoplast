@@ -4,8 +4,8 @@
 @section('description', $meta->descriptions)
 
 @section('keywords', $meta->keywords)
-
-@section('title', 'MaksPrm - ' . $meta->title)
+@section("canonical", url("/" . $meta->slug . ".php"))
+@section('title', 'MaksProm - ' . $meta->title)
 
 
 @section('content')
@@ -23,7 +23,7 @@
                                 <span class="bestsellers__block-stock">-{{ $product->discount }}%</span>
                             @endif
                             <div class="bestsellers__block-circle-buttons">
-                                <a href="javascript:void(0)" class="bestsellers__block-circle-button-favorite"></a>
+                                <a href="javascript:void(0)" class="bestsellers__block-circle-button-favorite {{ isset(session()->get('favorite')[$product->id]) && session()->get('favorite')[$product->id]['id'] == $product->id  ? 'active' : '' }}"></a>
                             </div>
 
                             <h2 class="bestsellers__block-title">{{ $product->title }}</h2>

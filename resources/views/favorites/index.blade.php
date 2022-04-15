@@ -1,5 +1,10 @@
 @extends('layouts.index')
 
+@section("title", "MaksProm - страница Избранное")
+@section("description", "Избранное")
+@section("keywords", "избронное")
+@section("canonical", url("/favorite.php"))
+
 @section('content')
 
 <div class="favorite container">

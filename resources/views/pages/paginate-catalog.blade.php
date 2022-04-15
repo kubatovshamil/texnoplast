@@ -29,7 +29,7 @@
                 @if(request()->segment(1) == 'search')
                     <a href="{{ url()->full() . '&page=' . $paginator->lastPage() }}" class="catalog__pages-end">В конец</a>
                 @else
-                    <a href="{{ url()->current() . '?page' . $paginator->lastPage() }}" class="catalog__pages-end">В конец</a>
+                    <a href="{{ url()->current() . '?page=' . $paginator->lastPage() }}" class="catalog__pages-end">В конец</a>
                 @endif
             @endif
     </div>

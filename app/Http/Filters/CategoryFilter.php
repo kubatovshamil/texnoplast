@@ -12,7 +12,7 @@ class CategoryFilter
     public static function getProducts($slug)
     {
         $categories = Category::getCategoriesBySlug($slug);
-
+        
         self::setIds($categories);
 
         self::$ids = explode(",", rtrim(self::$ids, ','));

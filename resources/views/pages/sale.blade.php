@@ -1,7 +1,10 @@
 @extends('layouts.index')
 
 @section('title', 'MaksPrm - старница распрадажа')
+@section('description', 'Распрадажа')
+@section('keywords', 'распрадажа, товары')
 
+@section("canonical", url("/sale.php"))
 
 @section('content')
     <div class="sale container">
@@ -21,7 +24,7 @@
                                     <span class="bestsellers__block-stock">-{{  $product->discount }}%</span>
                                 @endif
                                 <div class="bestsellers__block-circle-buttons">
-                                    <a href="javascript:void(0)" class="bestsellers__block-circle-button-favorite"></a>
+                                    <a href="javascript:void(0)" class="bestsellers__block-circle-button-favorite {{ isset(session()->get('favorite')[$product->id]) && session()->get('favorite')[$product->id]['id'] == $product->id  ? 'active' : '' }}"></a>
                                 </div>
 
                                 <h2 class="bestsellers__block-title">{{ $product->title }}</h2>

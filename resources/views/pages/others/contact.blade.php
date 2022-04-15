@@ -2,6 +2,12 @@
 
 @section('title', 'MaksPrm - страница контакт')
 
+@section('description', '248926, г. Калуга, Аэропортовский переулок д.11 +7 (980) 715-35-71.
+Почта для связи makspromi@yandex.ru, svetlanakomarikova@yandex.ru ')
+@section('keywords', 'телефон +7 (980) 715-35-71, svetlanakomarikova@yandex.ru, makspromi@yandex.ru')
+
+@section("canonical", url("/contact.php"))
+
 @section('content')
 
 <div class="contacts container">
@@ -18,7 +24,8 @@
             <li class="contacts__address-block location">248926, г. Калуга, Аэропортовский переулок д.11</li>
             <li class="contacts__address-block phone"><a href="tel:+79807153571">+7 (980) 715-35-71</a></li>
             <li class="contacts__address-block whatsapp"><a target="_blank" href="https://wa.me/79807153571">+7 (980) 715-35-71</a></li>
-            <li class="contacts__address-block email"><a class="contacts__address-block-bordered" href="malito:info@maksprom.ru">info@maksprom.ru</a></li>
+            <li class="contacts__address-block email"><a class="contacts__address-block-bordered" href="mailto:makspromi@yandex.ru">makspromi@yandex.ru</a></li>
+            <li class="contacts__address-block email"><a class="contacts__address-block-bordered" href="mailto:svetlanakomarikova@yandex.ru">svetlanakomarikova@yandex.ru</a></li>
             <li class="contacts__address-block site"><a class="contacts__address-block-bordered" href="/">maksprom.ru</a></li>
         </ul>
 

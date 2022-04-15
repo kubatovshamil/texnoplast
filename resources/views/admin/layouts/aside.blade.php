@@ -2,7 +2,7 @@
 
     <a href="/admin" class="brand-link">
         <img src="{{asset('styles/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light">Админка</span>
     </a>
 
     <div class="sidebar">
@@ -12,7 +12,7 @@
                 <img src="{{asset('styles/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="/admin" class="d-block">Kubatov Shamil</a>
+                <a href="/admin" class="d-block">{{ Auth::user()->surname . " " . Auth::user()->name  }}</a>
             </div>
         </div>
 

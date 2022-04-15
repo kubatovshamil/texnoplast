@@ -59,7 +59,7 @@
                                             <td><a href="{{route('users.edit', [$user->id])}}" class="btn btn-success">Edit</a></td>
                                             <td><a href="{{route('users.show', [$user->id])}}" class="btn btn-info">Show</a></td>
                                             <td>
-                                                <form action="{{route('products.destroy', $user->id)}}" method="post">
+                                                <form action="{{route('users.destroy', $user->id)}}" method="post">
                                                     @csrf
                                                     @method('DELETE')
                                                     <div class="form-group">

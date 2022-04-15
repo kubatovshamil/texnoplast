@@ -12,6 +12,10 @@ class LoginController
 
     public function index()
     {
+        if(auth()->check()){
+            return redirect()->back();
+        }
+        
         return view('pages.register');
     }
 
