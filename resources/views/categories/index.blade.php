@@ -15,7 +15,7 @@
 
         <div id="category1" class="catalog__products catalog__products-active">
             <div class="catalog__products-wrapper">
-                @foreach($products as $product)
+                @forelse($products as $product)
                     <div class="bestsellers__block">
                         <div class="bestsellers__block-wrapper">
                             <img src="{{ asset("storage/products/" . $product->img) }}" alt="" class="bestsellers__block-img">
@@ -39,7 +39,11 @@
 
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <div style="height: 130px">
+                        <span class="order-forming__products-desc">У данной категории нет продуктов</span>
+                    </div>
+                @endforelse
             </div>
 
             {{ $products->links('pages.paginate-catalog') }}

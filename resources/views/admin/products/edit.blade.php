@@ -42,6 +42,11 @@
                                         <label for="exampleInput1">Наименования товара </label>
                                         <input type="text" class="form-control" value="{{$product->title}}" name="title" id="exampleInput1" placeholder="Введите название категории">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="exampleInput1">Артикул номер товара </label>
+                                        <input type="text" class="form-control" value="{{$product->article_number}}" name="article_number" id="exampleInput1" placeholder="Введите номер артикула">
+                                    </div>
+
                                     @if($product->category_id)
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Категория:</label>

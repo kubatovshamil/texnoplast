@@ -36,6 +36,10 @@
                         </div>
 
                         <div>
+                            <label>Артикул номер товара: </label>
+                            <p>{{$product->article_number}}</p>
+                        </div>
+                        <div>
                             <label>category_id: </label>
                             <p>{{$product->category_id}}</p>
                         </div>

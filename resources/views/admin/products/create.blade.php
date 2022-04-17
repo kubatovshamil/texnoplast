@@ -35,8 +35,8 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleInput1">Артикул товара</label>
-                                        <input type="text" class="form-control" name="article_number" id="exampleInput1" placeholder="Введите Артикул товара">
+                                        <label for="exampleInput1">Артикул номер</label>
+                                        <input type="text" class="form-control" name="article_number" id="exampleInput1" placeholder="Введите номер артикула товара">
                                     </div>
 
                                     <div class="form-group">

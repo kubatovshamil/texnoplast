@@ -118,4 +118,15 @@ class ProductController extends Controller
             ->with('message', 'Продукт успешно удален');
 
     }
+
+    public function searchProducts(Request $request){
+
+        if(empty($request->q)){
+            return redirect()->back();
+        }
+        return view('admin.products.index',[
+            'products' =>   Product::where('article_number', 'LIKE', '%' . $request->q . '%')
+                ->orderBy("id", "desc")->paginate(5),
+        ]);
+    }
 }

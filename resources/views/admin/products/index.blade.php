@@ -33,7 +33,22 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Таблица Товаров</h3>
+                                <h3 class="card-title">Таблица товаров</h3>
+
+                                <div class="card-tools">
+                                    <form action="{{route('products.search')}}">
+
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" name="q" class="form-control float-right" placeholder="Поиск">
+                                            <div class="input-group-append">
+                                                <button type="submit" class="btn btn-default">
+                                                    <i class="fas fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
                             </div>
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
@@ -41,6 +56,7 @@
                                     <tr>
                                         <th>id</th>
                                         <th>Наименование</th>
+                                        <th>Артикул номер</th>
                                         <th>category_id</th>
                                         <th>slug</th>
                                         <th>img</th>
@@ -56,6 +72,7 @@
                                         <tr>
                                             <td>{{ $product->id }}</td>
                                             <td>{{\Illuminate\Support\Str::limit($product->title, 10) }}</td>
+                                            <td>{{ $product->article_number }}</td>
                                             <td>{{ $product->category_id }}</td>
                                             <td>{{ \Illuminate\Support\Str::limit($product->slug, 10) }}</td>
                                             <td>{{ \Illuminate\Support\Str::limit($product->img, 10) }}</td>

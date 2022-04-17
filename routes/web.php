@@ -23,6 +23,7 @@ Route::group(['middleware' => ['web', 'admin'], 'prefix' => 'admin'], function (
     });
 
     //Product route
+    Route::get('/products/search', [ProductController::class, 'searchProducts'])->name('products.search');
     Route::resource('/products', ProductController::class);
     //CategoryFilter route
     Route::post('/categories/parent', [CategoryController::class, 'parentCategory'])->name('categories.parent');
