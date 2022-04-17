@@ -9,7 +9,6 @@
 <body>
 <h5>Имя и Фамилия : {{ $order->fullname }} <br></h5>
 <p>E-mail: <a href="{{ $order->email }}">{{ $order->email }}</a></p>
-<p>Страна : {{ $order->country }}</p>
 <p>По адресу : {{ $order->city }} {{ $order->street }} {{ $order->house?? '' }} {{ $order->apartment?? '' }}</p>
 <p>Номер телефона :{{ $order->mobile }}</p>
 

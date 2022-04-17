@@ -13,7 +13,7 @@ class OrderController extends Controller
     public function index()
     {
         return view('admin.orders.index', [
-            'orders' => Order::paginate(6),
+            'orders' => Order::orderBy("id", "desc")->paginate(6),
         ]);
     }
 

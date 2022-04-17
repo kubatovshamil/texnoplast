@@ -1,5 +1,13 @@
 @extends('layouts.index')
 
+
+@section("title", "MaksProm - страница Оформление заказа")
+@section("description", "Оформление заказа")
+@section("keywords", "Товары в корзине")
+
+
+@section("canonical", url("/basket.php"))
+
 @section('content')
     <div class="order-forming container">
         <x-bread-crumbs />

@@ -12,6 +12,9 @@ class ProductController
     public function index($slug, AttributeName $attributeName)
     {
         $product = Product::where('slug', $slug)->first();
+        if(!$product){
+            abort(404);
+        }
         return view('products.index', [
             'product' => $product,
             'attributes' => $attributeName->getElements($product->id),

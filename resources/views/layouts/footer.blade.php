@@ -4,7 +4,7 @@
       <div class="footer__logo">
         <a href="/"><img class="footer__logo-img" src="{{ asset('/img/white-logo.png') }}" alt="footer logo"></a>
 
-        <p class="footer__copyright">© Интернет-магазин MaksProm, 2021</p>
+        <p class="footer__copyright">© Интернет-магазин MaksProm, {{ date('Y') }}</p>
 
       </div>
     </div>
@@ -12,17 +12,17 @@
     <div class="footer__block footer__block-margin">
       <div class="footer__menu">
         <ul class="footer__vertical-menu">
-          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/catalog">Каталог</a></li>
-          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/sale">Распрадажа</a></li>
-          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/provider">Поставщикам</a></li>
-          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/police">Политика безопастности</a></li>
+          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link armchair" href="javascript:void(1)">Индивидуальный заказ</a></li>
+          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/sale.php">Распрадажа</a></li>
+          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/provider.php">Поставщикам</a></li>
+          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/police.php">Политика безопастности</a></li>
         </ul>
 
         <ul class="footer__vertical-menu">
-          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/contact">Контакты</a></li>
-          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/about">О нас</a></li>
-          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/question">Задать Вопрос</a></li>
-          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/delivery">Доставка</a></li>
+          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/contact.php">Контакты</a></li>
+          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/about.php">О нас</a></li>
+          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/question.php">Задать Вопрос</a></li>
+          <li class="footer__vertical-menu__item"><a class="footer__vertical-menu__link" href="/delivery.php">Доставка</a></li>
         </ul>
 
         <div class="footer__contacts">

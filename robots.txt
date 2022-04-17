@@ -1,0 +1,27 @@
+User-Agent: *
+Disallow: /?
+Disallow: /admin/
+Disallow: /search.php/
+Disallow: /uobject/
+Disallow: /upage/
+Disallow: /utype/
+Disallow: /ufs/
+Disallow: /usel/
+Disallow: /umap/
+Disallow: /uhttp/
+Disallow: /ulang/
+Disallow: /umess/
+
+Allow: /catalog.php
+Allow: /contact.php
+Allow : /about.php
+Allow : /sale.php
+Allow : /categories/*/*
+
+Allow: *.jpg
+Allow: *.css
+Allow: *.js
+Allow: *.png
+Allow: *.jpeg
+
+Sitemap: https://maksprom.ru/sitemap.xml

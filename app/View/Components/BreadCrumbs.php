@@ -17,23 +17,25 @@ class BreadCrumbs extends Component
 
     public function render()
     {
-        $slug = request()->segment(count(request()->segments()));
-
-        $category = Category::where('slug', $slug)->first();
-
+        $categorySlug = str_replace(".php", "", request()->segment(count(request()->segments())));
+        
+        $category = Category::where('slug', $categorySlug)->first();
+ 
         if(isset($category->parent_id))
         {
             return view('components.bread-crumbs', [
-                'last' => Category::where('slug', $slug)->first(),
-                'category' => Category::find($category->parent_id)->first()
+                'last' => Category::where('slug', $categorySlug)->first(),
+                'category' => Category::where("id", $category->parent_id)->first()
             ]);
         }
-
-        if($product = Product::where('slug', $slug)->first())
+        
+        $productSlug =  request()->segment(count(request()->segments()));
+        
+        if($product = Product::where('slug', $productSlug)->first())
         {
             $category = Category::find($product->category_id);
             return view('components.bread-crumbs', [
-                'last' => Category::where('slug', $slug)->first(),
+                'last' => Category::where('slug', $productSlug)->first(),
                 'product' => $product,
                 'subcat' => $category
             ]);
@@ -41,7 +43,7 @@ class BreadCrumbs extends Component
 
 
         return view('components.bread-crumbs', [
-            'last' => Category::where('slug', $slug)->first(),
+            'last' => Category::where('slug', $categorySlug)->first(),
             'current' => $category
         ]);
 

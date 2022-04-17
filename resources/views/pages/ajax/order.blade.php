@@ -66,7 +66,7 @@
                     $('.individual__title').html('Индивидуальный заказ отправлен');
                 },
                 success: function (response) {
-
+                    //
                 },
                 error: function (message){
                     console.log(message)

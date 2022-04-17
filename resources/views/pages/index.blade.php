@@ -1,8 +1,9 @@
 @extends('layouts.index')
 
-@section('description', 'MaksPrm - описание')
-@section('keywords', 'MaksPrm - ключевые слова')
-@section('title', 'MaksPrm - интернет магазин')
+@section('description', 'MaksProm - Интернет-магазины для дома и сада, бытовой техники, инструментов, товаров для дома и многого другого.')
+@section('keywords', ' макспром, пиломатериалы, древесно-плитные материалы, деревянная тара, поддоны, деревянные поддоны ')
+@section("canonical", url("/"))
+@section('title', 'MaksProm - интернет магазин')
 
 @section('content')
 
@@ -63,11 +64,11 @@
                     @if(isset($category['_children']))
                         @foreach($category['_children'] as $child)
                             <div class="popular-category__products-categories">
-                                <a href="{{ url('categories', $child['slug']) }}" class="popular-category__products-category">{{$child['title']}}</a>
+                                <a href="{{ url('categories/'. $category['slug'] . '/' . $child['slug'] . '.php') }}" class="popular-category__products-category">{{$child['title']}}</a>
                             </div>
                         @endforeach
                     @endif
-                    <a href="{{ url('categories', $category['slug']) }}" class="popular-category__products-all">Все товары</a>
+                    <a href="{{ url('categories', $category['slug'] . '.php') }}" class="popular-category__products-all">Все товары</a>
                 </div>
             @endforeach
 

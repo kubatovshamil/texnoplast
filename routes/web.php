@@ -47,7 +47,7 @@ Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPass
 //end routes restore
 
 //Registration routes
-Route::get('/register', [LoginController::class, 'index']);
+Route::get('/register.php', [LoginController::class, 'index']);
 Route::post('/signUp', [LoginController::class, 'store'])->name('signup');
 Route::post('/login', [LoginController::class, 'login'])->name('to.login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('to.logout');
@@ -61,7 +61,7 @@ Route::get('/clearCart', [OrderController::class, 'destroyed']);
 //end baucket routes
 
 //favorites routes
-Route::get('/favorite', [FavoriteController::class, 'index']);
+Route::get('/favorite.php', [FavoriteController::class, 'index']);
 Route::post('/addFavorite', [FavoriteController::class, 'store']);
 Route::delete('/removeFavorite', [FavoriteController::class, 'remove']);
 Route::get('/clearFavorite', [FavoriteController::class, 'destroyed']);
@@ -79,32 +79,39 @@ Route::view('/provider-form', 'pages.ajax.provider');
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
-Route::get('/catalog', [HomeController::class, 'catalog']);
+Route::get('/catalog.php', [HomeController::class, 'catalog']);
 
-Route::get('/sale', [HomeController::class, 'sale']);
+Route::get('/sale.php', [HomeController::class, 'sale']);
 
 Route::get('/product/{slug}', [ProductControllerAlias::class, 'index']);
 
-Route::view('/contact', 'pages.others.contact');
+Route::view('/contact.php', 'pages.others.contact');
 
-Route::view('/about', 'pages.others.about');
+Route::view('/about.php', 'pages.others.about');
 
-Route::view('/provider', 'pages.others.provider');
+Route::view('/provider.php', 'pages.others.provider');
 
-Route::view('/police', 'pages.others.personal');
+Route::view('/police.php', 'pages.others.personal');
 
-Route::view('/delivery', 'pages.others.delivery');
+Route::view('/delivery.php', 'pages.others.delivery');
 
-Route::view('/question', 'pages.others.question');
+Route::view('/question.php', 'pages.others.question');
 
-Route::get('/basket', [OrderController::class, 'index']);
+Route::get('/basket.php', [OrderController::class, 'index']);
 
-Route::get('/search/', [HomeController::class, 'search'])->name('search');
+Route::get('/search.php/', [HomeController::class, 'search'])->name('search');
 
-Route::get('/categories/{slug}/{subSlug?}', [CategoryControllerAlias::class, 'index']);
+Route::get('/categories/{slug}.php', [CategoryControllerAlias::class, 'getCategory']);
+Route::get('/categories/{slug}/{subSlug}.php',[CategoryControllerAlias::class, 'getSubCategory']);
 
 Route::post('/orderForm', [OrderController::class, 'order'])->name('order');
 
 Route::post('/individualOrder', [HomeController::class, 'invidualOrder'])->name('individual.order');
 Route::post("/orderPhone", [HomeController::class, 'orderPhone'])->name('order.phone');
 Route::post("/orderProvider", [HomeController::class, 'orderProvider'])->name('order.provider');
+
+
+
+Route::fallback(function () {
+    abort(404);
+});

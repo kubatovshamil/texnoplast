@@ -12,21 +12,33 @@ use Illuminate\Support\Facades\DB;
 class CategoryController
 {
 
-    public function index($slug, $subSlug = '')
+    public function getCategory($slug)
     {
-        if(!empty($slug) && empty($subSlug)){
-
             return view('categories.index', [
                 'products' => CategoryFilter::getProducts($slug),
                 'meta' => Category::where('slug', $slug)->first()
             ]);
-        }else{
-            $category = Category::where('slug', $subSlug)->first();
-            return view('categories.index', [
-                'products' => Product::where('category_id', $category->id)->paginate(12),
-                'meta' => Category::where('slug', $subSlug)->first()
-            ]);
+    }
+
+
+    public function getSubCategory($slug, $subSlug)
+    {
+        $parentCategory = Category::where('slug', $slug)->first();
+        
+        if(!$parentCategory){
+            abort(404);
         }
+        
+        $category = Category::where('slug', $subSlug)->first();
+        
+        if(!$category){
+            abort(404);
+        }
+        
+        return view('categories.index', [
+            'products' => Product::where('category_id', $category->id)->paginate(12),
+            'meta' => Category::where('slug', $subSlug)->first()
+        ]);
     }
 
 

@@ -2,6 +2,10 @@
 
 @section('title', 'MaksPrm - страница регистрации')
 
+@section('description', 'Регистрация в интернет-магазине МаксПром')
+@section('keywords', 'регистрация')
+
+@section("canonical", url("/register.php"))
 @section('content')
 
 <div class="registration">

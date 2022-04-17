@@ -14,7 +14,7 @@
         </div>
         <div class="form-group">
             <button class="login__btn">Войти</button>
-            <a class="to-register-form" href="/register">Зарегистрироваться</a>
+            <a class="to-register-form" href="/register.php">Зарегистрироваться</a>
             <a class="forgot-pw" href="javascript:void(1)">Забыли пароль</a>
         </div>
 
