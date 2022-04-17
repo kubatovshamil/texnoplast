@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->string('title');
+            $table->string('article_number');
             $table->float('price');
             $table->text('specification');
             $table->enum('status', [0, 1])->default(1);

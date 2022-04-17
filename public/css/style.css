@@ -1787,7 +1787,7 @@ button[type=submit]:hover {
 	display: inline-block;
 	vertical-align: top;
 
-	width: 300px;
+	width: 280px;
 	height: 540px;
 	margin-bottom: 10px;
 	z-index: 1;
@@ -6122,15 +6122,15 @@ button[type=submit]:hover {
 .registration__form__right label
 {
     color: #333;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
     text-align: left;
     padding-left: 10px;
-    padding-right: 10px;
-    text-transform: uppercase;
-    padding-top: 7px;
-    padding: .5em 1em .5em 0;
     flex: 1;
+}
+
+.registration__form .form-group .label{
+    text-transform: uppercase;
 }
 
 .registration__form__left input,
@@ -6161,47 +6161,48 @@ button[type=submit]:hover {
     align-items: center;
     flex-direction: column;
 }
-/* Исправить */
-/*.custom-checkbox{*/
-/*    position: absolute;*/
-/*    z-index: -1;*/
-/*    opacity: 0;*/
-/*}*/
+ /*Исправить */
+.custom-checkbox{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
 
-/*.custom-checkbox+label:before {*/
-/*    content: " ";*/
-/*    background: #fff;*/
-/*    border: 1px solid #ddd;*/
-/*    position: absolute;*/
-/*    left: 0;*/
-/*    width: 15px;*/
-/*    height: 15px;*/
-/*    width: 24px;*/
-/*    height: 24px;*/
-/*    left: -40px;*/
-/*    bottom: -1px;*/
-/*    background: 0;*/
-/*}*/
+.custom-checkbox + #custom-label:before {
+    content: " ";
+    background: #fff;
+    border: 1px solid #ddd;
+    position: absolute;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    width: 24px;
+    height: 24px;
+    left: -40px;
+    bottom: -1px;
+    background: 0;
+}
 
-/*.custom-checkbox+label {*/
-/*    display: inline-flex;*/
-/*    align-items: center;*/
-/*    user-select: none;*/
-/*}*/
+.custom-checkbox+#custom-label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
 
-/*.custom-checkbox:checked+label::before {*/
-/*    content: "\2713";*/
-/*    color: #FA7916;*/
-/*    border-color: #FA7916;*/
-/*    font-size: 18px;*/
-/*    font-weight: 900;*/
-/*    text-align: center;*/
-/*}*/
+.custom-checkbox:checked+#custom-label::before {
+    content: "\2713";
+    color: #FA7916;
+    border-color: #FA7916;
+    font-size: 18px;
+    font-weight: 900;
+    text-align: center;
+}
 
 
 .registration__form__checkbox #agree-error{
     position: absolute;
     top: 20px;
+    left: 0;
 }
 
 .green-link{
@@ -6461,7 +6462,11 @@ ul.breadcrumb li a:hover {
 
 label.error {
     color: #fc0b21;
-    font-size: 14px;
+    font-size: 13px;
+}
+
+#agree-error{
+    font-size: 13px;
 }
 
 .individual-order__btn{
@@ -6825,6 +6830,10 @@ label.error {
 	.header__profile-link {
 		font-size: 12px;
 	}
+
+    .bestsellers__block{
+        width: 300px;
+    }
 
 	.header__row-top {
 		padding-bottom: 5px;
@@ -7988,10 +7997,6 @@ label.error {
 
 @media screen and (max-width: 959px) {
 
-	.catalog__products-wrapper .bestsellers__block {
-		width: 310px;
-		margin: 0 39px 60px;
-	}
 
 	.header__logo_image {
 		margin-top: 10px;
@@ -8735,7 +8740,7 @@ label.error {
 	}
 
     .fieldset{
-        width: 80%;
+        width: 100%;
     }
 
 
@@ -9536,7 +9541,7 @@ label.error {
     .individual-order .form-group{
         width: 58%;
     }
-    
+
     .bestsellers__blocks-wrapper{
         height: 650px;
     }
@@ -9574,7 +9579,7 @@ label.error {
     .product-card__characteristics-title{
         font-size: 18px;
     }
-    
+
     .bestsellers__blocks-wrapper{
         height: 500px;
     }
@@ -9684,7 +9689,18 @@ label.error {
 
 
 @media screen and (max-width: 415px) {
-    
+
+    .registration__form__checkbox .btn,
+    .registration__form__checkbox .btn button
+    {
+        width: 100%;
+    }
+    .registration__form__checkbox{
+        align-items: center;
+    }
+
+
+
     .header__actions-block__name_burger-menu{
         margin-left: -10px;
     }
@@ -10146,16 +10162,6 @@ label.error {
         width: 100%;
     }
 
-
-    .registration__form__checkbox .btn,
-    .registration__form__checkbox .btn button
-    {
-        width: 100%;
-    }
-    .registration__form__checkbox{
-        align-items: center;
-    }
-
     .custom-checkbox+label:before{
         left: -30px;
     }
@@ -10228,6 +10234,11 @@ label.error {
     }
 
 }
+@media screen and (max-width: 340px) {
+    .custom-checkbox + #custom-label:before{
+        left: -25px;
+    }
+}
 @media screen and (max-width: 319px) {
     .header__block.header__block__name_actions:last-child{
         margin-right: 15px;
@@ -10237,7 +10248,6 @@ label.error {
          padding-left: 0px;
          padding-right: 0px;
     }
-
 }
 
 

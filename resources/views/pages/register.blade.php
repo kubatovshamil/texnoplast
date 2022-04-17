@@ -30,17 +30,17 @@
                         <div class="col-xs-12 col-md-6 col-sm-12 col-12">
                             <div class="registration__form__left">
                                 <div class="form-group">
-                                    <label for="email">*Email:</label>
+                                    <label for="email" class="label">*Почта:</label>
                                     <input type="email" id="email" name="email">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="name">*Имя:</label>
+                                    <label for="name" class="label">*Имя:</label>
                                     <input type="text" id="name" name="name">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="surname">*Фамилия:</label>
+                                    <label for="surname" class="label">*Фамилия:</label>
                                     <input type="text" id="surname" name="surname">
                                 </div>
                             </div>
@@ -49,12 +49,12 @@
                         <div class="col-xs-12 col-md-6 col-sm-12 col-12">
                             <div class="registration__form__right">
                                 <div class="form-group">
-                                    <label for="password">*Пароль:</label>
+                                    <label for="password" class="label"> *Пароль:</label>
                                     <input type="password" id="password" name="password">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="repeatPassword">*Повторите пароль:</label>
+                                    <label for="repeatPassword" class="label">*Повторите пароль:</label>
                                     <input type="password" id="confirm_password" name="confirm_password">
                                 </div>
                             </div>
@@ -66,11 +66,12 @@
                 <div class="registration__form__checkbox">
                     <div class="form-group">
                         <input type="checkbox" id="cbPersonalData" id="agree" name="agree" value="agree" class="custom-checkbox">
-                        <label for="cbPersonalData">
+                        <label for="cbPersonalData" id="custom-label">
                             Я согласен на
-                            <a class="green-link" target="_blank" href="/police">
+                            <a class="green-link" target="_blank" href="/police.php">
                                 обработку моих данных<span class="green-label">*</span></a>
                         </label>
+                        <label id="agree-error" class="error" for="agree"></label>
                     </div>
 
                     <div class="form-group btn">

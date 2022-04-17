@@ -289,7 +289,7 @@ $(document).ready(() => {
 
         $(event.currentTarget).parent().remove();
 
-        if(!$('.order-forming__products-products').length) {
+        if(!$('.order-forming__products-product').length) {
             $('.order-forming__products-desc').text('Корзина пуста');
             $('.order-forming__form').remove();
             $('.order-forming__product-total').remove();

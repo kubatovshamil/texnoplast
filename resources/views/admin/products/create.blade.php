@@ -35,6 +35,11 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="exampleInput1">Артикул товара</label>
+                                        <input type="text" class="form-control" name="article_number" id="exampleInput1" placeholder="Введите Артикул товара">
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="exampleInputPassword1">Родительская категория:</label>
                                         <select name="category_id" name="category" class="form-control" id="sel1">
                                             @foreach($categories as $category)

@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\Component;
 
 class BestSeller extends Component
