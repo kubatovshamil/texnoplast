@@ -4552,12 +4552,12 @@ button[type=submit]:hover {
 	display: inline-block;
 	vertical-align: top;
 
-	width: 115px;
-	height: 60px;
-	line-height: 58px;
+	width: 80px;
+	height: 45px;
+	line-height: 45px;
 	text-align: center;
 	margin-right: 10px;
-
+    font-size: 15px;
 	background-color: #fff;
 	border: 1px solid #E7E7E7;
 }
@@ -4567,10 +4567,10 @@ button[type=submit]:hover {
 	display: inline-block;
 	vertical-align: top;
 
-	width: 60px;
-	height: 60px;
+	width: 45px;
+	height: 45px;
 	text-align: center;
-	line-height: 56px;
+	line-height: 45px;
 	background-color: #fff;
 	font-family: 'AvenirNextCyr-Medium';
 	font-weight: bold;
@@ -4602,9 +4602,9 @@ button[type=submit]:hover {
 	display: inline-block;
 	vertical-align: top;
 
-	width: 60px;
-	height: 60px;
-	line-height: 58px;
+	width: 45px;
+	height: 45px;
+	line-height: 45px;
 	text-align: center;
 	margin-right: 10px;
 
