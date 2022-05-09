@@ -14,7 +14,7 @@ class ProductController
     public function index($slug, AttributeName $attributeName)
     {
         $product = Product::where('slug', $slug)->first();
-        $reviews = Review::all();
+        $reviews = Review::where('product_id', $product->id)->get();
         if(!$product){
             abort(404);
         }
