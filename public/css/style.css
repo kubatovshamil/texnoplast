@@ -435,6 +435,7 @@ button[type=submit]:hover {
     z-index: 999;
     transform: translateX(-300%);
     transition-duration: 0.2s;
+    overflow: scroll;
 }
 
 .arrow {
