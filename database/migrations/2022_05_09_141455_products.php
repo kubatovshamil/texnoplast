@@ -13,7 +13,7 @@ class Products extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::table('products', function (Blueprint $table) {
             $table->string('article_number');
         });
     }
