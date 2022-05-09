@@ -146,7 +146,7 @@
                                     @endfor
                                 </div>
 
-                                <span class="product_card__reviews-date">{{ $review->created_at->format('d-m-Y') }}</span>
+                                <span class="product_card__reviews-date">{{ $review->created_at->format('d-m-Y h:i') }}</span>
 
                                 <p class="product_card__reviews-text">{{ $review->message }}</p>
                             </div>
