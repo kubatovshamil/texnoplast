@@ -18,8 +18,11 @@ class Reviews extends Migration
             $table->foreignId('product_id')->constrained('products')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->string('name');
             $table->text('message');
             $table->text('rating');
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('created_at')->nullable();
         });
     }
 

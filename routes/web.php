@@ -111,7 +111,7 @@ Route::post('/orderForm', [OrderController::class, 'order'])->name('order');
 Route::post('/individualOrder', [HomeController::class, 'invidualOrder'])->name('individual.order');
 Route::post("/orderPhone", [HomeController::class, 'orderPhone'])->name('order.phone');
 Route::post("/orderProvider", [HomeController::class, 'orderProvider'])->name('order.provider');
-
+Route::post('/review', [ProductControllerAlias::class, 'storeReview']);
 
 
 Route::fallback(function () {

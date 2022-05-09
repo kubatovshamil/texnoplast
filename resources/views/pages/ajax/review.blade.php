@@ -42,4 +42,39 @@
         $(this).toggleClass("product_card__star-fill");
         $(this).prevAll().toggleClass("product_card__star-fill");
     });
+
+    $(document).find('.individual-order').validate({
+        rules: {
+            name: {
+                required : true,
+            },
+            message: {
+                required : true,
+            },
+        },
+        submitHandler : function(){
+            $.ajax({
+                url: "/review",
+                method: "POST",
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    name : $("input[name=name]").val(),
+                    rating : $(".form-group .product_card__reviews-stars .product_card__star-fill").length,
+                    message : $("textarea[name=message]").val(),
+                    url : window.location.pathname.split("/").pop()
+                },
+                beforeSend: function() {
+                    $(document).find('.individual-order').remove();
+                    $('.individual__title').css('padding', "50px 15px");
+                    $('.individual__title').html('Ваша Отзыв был отправлен...');
+                },
+                success: function (response) {
+                    console.log(response);
+                },
+                error: function (message){
+                    console.log(message)
+                }
+            });
+        }
+    });
 </script>
