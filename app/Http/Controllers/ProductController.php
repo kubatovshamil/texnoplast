@@ -22,4 +22,8 @@ class ProductController
         ]);
     }
 
+    public function storeReview(){
+        //Закидывать отзывы пользователей
+    }
+
 }

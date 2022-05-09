@@ -112,6 +112,121 @@
             <p class="product_card__description-content">{{ $product->specification }}</p>
         </div>
 
+        <div class="product_card__reviews">
+            <div class="product_card__reviews__header-wrapper">
+                <div class="product_card__reviews__header-text">
+                    <h1 class="product_card__reviews__header-title">Отзывы</h1>
+                </div>
+
+                <div class="product_card__reviews__header-slider">
+                    <div class="product_card__reviews__sliders">
+                        <a href="javascript:void(0)" class="product_card__reviews__sliders-arrow product_card__reviews__sliders-arrow-left"></a>
+                        <a href="javascrip`t:void(0)" class="product_card__reviews__sliders-arrow product_card__reviews__sliders-arrow-right"></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product_card__reviews-wrapper">
+                <div class="product_card__reviews-slide">
+                    <div class="product_card__reviews-block">
+                        <div class="product_card__reviews-content">
+                            <h1 class="product_card__reviews-name">Ольга</h1>
+                            <div class="product_card__reviews-stars">
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star"></div>
+                            </div>
+
+                            <span class="product_card__reviews-date">26 декабря 2019</span>
+
+                            <p class="product_card__reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product_card__reviews-slide">
+                    <div class="product_card__reviews-block">
+                        <div class="product_card__reviews-content">
+                            <h1 class="product_card__reviews-name">Ольга</h1>
+                            <div class="product_card__reviews-stars">
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star"></div>
+                            </div>
+
+                            <span class="product_card__reviews-date">26 декабря 2019</span>
+
+                            <p class="product_card__reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product_card__reviews-slide">
+                    <div class="product_card__reviews-block">
+                        <div class="product_card__reviews-content">
+                            <h1 class="product_card__reviews-name">Ольга</h1>
+                            <div class="product_card__reviews-stars">
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star"></div>
+                            </div>
+
+                            <span class="product_card__reviews-date">26 декабря 2019</span>
+
+                            <p class="product_card__reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product_card__reviews-slide">
+                    <div class="product_card__reviews-block">
+                        <div class="product_card__reviews-content">
+                            <h1 class="product_card__reviews-name">Ольга</h1>
+                            <div class="product_card__reviews-stars">
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star"></div>
+                            </div>
+
+                            <span class="product_card__reviews-date">26 декабря 2019</span>
+
+                            <p class="product_card__reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product_card__reviews-slide">
+                    <div class="product_card__reviews-block">
+                        <div class="product_card__reviews-content">
+                            <h1 class="product_card__reviews-name">Ольга</h1>
+                            <div class="product_card__reviews-stars">
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star-fill"></div>
+                                <div class="product_card__star"></div>
+                            </div>
+
+                            <span class="product_card__reviews-date">26 декабря 2019</span>
+
+                            <p class="product_card__reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="product_card__reviews-send-button">Оставить отзыв</a>
+        </div>
+
         <x-best-seller />
 
     </div>

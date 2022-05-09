@@ -398,4 +398,49 @@ $(document).ready(() => {
         }
     });
 
+
+    var rewiew_slider = tns({
+        container: '.product_card__reviews-wrapper',
+        controlsContainer: '.product_card__reviews__sliders',
+        nav: false,
+        gutter: 15,
+        swipeAngle: false,
+        rewind: false,
+        arrowKeys: false,
+        autoplayButtonOutput: false,
+        autoplayTimeout: 10000,
+        autoplay: true,
+        gutter: 10,
+        loop: true,
+        speed: 1200,
+        mouseDrag: true,
+
+        responsive: {
+            1: {
+                items: 1,
+                gutter: 5,
+                mouseDrag: true
+            },
+
+            700: {
+                items: 2
+            },
+
+            959: {
+                items: 2
+            },
+
+            1169: {
+                items: 2
+            }
+        }
+    });
+
+    $('.product_card__reviews-send-button').on('click', function (event){
+        event.preventDefault();
+        getTemplate('/modal-review', 'ajax');
+    });
+
+
+
 });

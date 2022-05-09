@@ -75,6 +75,7 @@ Route::view('/form', 'pages.ajax.register-form');
 Route::view('/restore-password', 'pages.ajax.restore-password');
 Route::view('/phone', 'pages.ajax.phone-form');
 Route::view('/provider-form', 'pages.ajax.provider');
+Route::view('/modal-review', 'pages.ajax.review');
 //end ajax routes
 
 

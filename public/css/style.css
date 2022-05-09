@@ -3997,13 +3997,17 @@ button[type=submit]:hover {
 
 
 .product_card__star-fill {
-	display: inline-block;
-	vertical-align: top;
+	display: inline-block !important;
+	vertical-align: top !important;
 
-	width: 20px;
-	height: 20px;
+	width: 20px !important;
+	height: 20px !important;
 
-	background: url('../img/icons/review_star_fill.svg') no-repeat center;
+	background: url('../img/icons/review_star_fill.svg') no-repeat center !important;
+}
+
+.form-group .product_card__reviews-stars{
+    margin-left: 0px;
 }
 
 
