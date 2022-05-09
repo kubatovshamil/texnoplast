@@ -29,7 +29,7 @@ class HomeController
         return view('pages.catalog', [
             'productQuantity' => Product::all()->count(),
             'categories' => Tree::buildTree(Category::all()->toArray()),
-            'products' => Product::paginate(12),
+            'products' => Product::paginate(8),
         ]);
     }
 
