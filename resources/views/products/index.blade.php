@@ -112,19 +112,20 @@
             <p class="product_card__description-content">{{ $product->specification }}</p>
         </div>
 
-        @if(count($reviews) > 0)
-            <div class="product_card__reviews">
+        <div class="product_card__reviews">
             <div class="product_card__reviews__header-wrapper">
-                <div class="product_card__reviews__header-text">
-                    <h1 class="product_card__reviews__header-title">Отзывы</h1>
-                </div>
-
-                <div class="product_card__reviews__header-slider">
-                    <div class="product_card__reviews__sliders">
-                        <a href="javascript:void(0)" class="product_card__reviews__sliders-arrow product_card__reviews__sliders-arrow-left"></a>
-                        <a href="javascrip`t:void(0)" class="product_card__reviews__sliders-arrow product_card__reviews__sliders-arrow-right"></a>
+                @if(count($reviews) > 0)
+                    <div class="product_card__reviews__header-text">
+                        <h1 class="product_card__reviews__header-title">Отзывы</h1>
                     </div>
-                </div>
+
+                    <div class="product_card__reviews__header-slider">
+                        <div class="product_card__reviews__sliders">
+                            <a href="javascript:void(0)" class="product_card__reviews__sliders-arrow product_card__reviews__sliders-arrow-left"></a>
+                            <a href="javascript:void(0)" class="product_card__reviews__sliders-arrow product_card__reviews__sliders-arrow-right"></a>
+                        </div>
+                    </div>
+                @endif
             </div>
 
 
@@ -157,7 +158,6 @@
 
             <a href="javascript:void(1)" data-item="{{ $product->id }}" class="product_card__reviews-send-button">Оставить отзыв</a>
         </div>
-        @endif
 
         <x-best-seller />
 
