@@ -9,7 +9,7 @@
         <div class="catalog__pages-dots-wrapper-prev">
             @foreach ($elements as $element)
                 @if (is_string($element))
-                    <a href="javascript:void(0)" class="catalog__pages-num-wrapper">{{ $element }}</a>
+                    <a href="javascript:void(0)" class="catalog__pages-num">{{ $element }}</a>
                 @endif
 
                 @if (is_array($element))
