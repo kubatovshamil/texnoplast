@@ -13,11 +13,11 @@
         <div class="form-group">
             <label for="rewiew">Оценка: </label> <br>
             <div class="product_card__reviews-stars">
-                <div class="product_card__star" data-item="1"></div>
-                <div class="product_card__star" data-item="2"></div>
-                <div class="product_card__star" data-item="3"></div>
-                <div class="product_card__star" data-item="4"></div>
-                <div class="product_card__star" data-item="5"></div>
+                <div class="product_card__star"></div>
+                <div class="product_card__star"></div>
+                <div class="product_card__star"></div>
+                <div class="product_card__star"></div>
+                <div class="product_card__star"></div>
             </div>
         </div>
 

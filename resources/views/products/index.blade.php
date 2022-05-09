@@ -135,7 +135,12 @@
                                 <h1 class="product_card__reviews-name">{{ $review->name }}</h1>
                                 <div class="product_card__reviews-stars">
                                     @for($i = 0; $i < 5; $i++)
-                                        <div class="product_card__star"></div>
+                                        @if($review->rating > $i)
+                                            <div class="product_card__star-fill"></div>
+                                        @else
+                                            <div class="product_card__star"></div>
+                                        @endif
+
                                     @endfor
                                 </div>
 
@@ -149,7 +154,7 @@
 
             </div>
 
-            <a href="#" class="product_card__reviews-send-button">Оставить отзыв</a>
+            <a href="javascript:void(1)" class="product_card__reviews-send-button">Оставить отзыв</a>
         </div>
 
         <x-best-seller />
