@@ -61,7 +61,7 @@
                     name : $("input[name=name]").val(),
                     rating : $(".form-group .product_card__reviews-stars .product_card__star-fill").length,
                     message : $("textarea[name=message]").val(),
-                    url : window.location.pathname.split("/").pop()
+                    product_id : $('.product_card__reviews-send-button').data('item')
                 },
                 beforeSend: function() {
                     $(document).find('.individual-order').remove();

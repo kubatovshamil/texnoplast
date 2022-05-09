@@ -27,13 +27,7 @@ class ProductController
     }
 
     public function storeReview(Request $request){
-        $product = Product::where('slug', $request->url)->first();
-        Review::create([
-            'product_id' => $product->id,
-            'name' => $request->name,
-            'message' => $request->message,
-            'rating' => $request->rating
-        ]);
+        Review::create($request->all());
     }
 
 }

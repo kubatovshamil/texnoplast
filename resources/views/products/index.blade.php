@@ -144,7 +144,7 @@
                                     @endfor
                                 </div>
 
-                                <span class="product_card__reviews-date">{{ $review->created_at->format('d-m-Y h:i') }}</span>
+                                <span class="product_card__reviews-date">{{ $review->created_at->format('d-m-Y') }}</span>
 
                                 <p class="product_card__reviews-text">{{ $review->message }}</p>
                             </div>
@@ -154,7 +154,7 @@
 
             </div>
 
-            <a href="javascript:void(1)" class="product_card__reviews-send-button">Оставить отзыв</a>
+            <a href="javascript:void(1)" data-item="{{ $product->id }}" class="product_card__reviews-send-button">Оставить отзыв</a>
         </div>
 
         <x-best-seller />

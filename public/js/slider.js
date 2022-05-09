@@ -441,6 +441,4 @@ $(document).ready(() => {
         getTemplate('/modal-review', 'ajax');
     });
 
-
-
 });
