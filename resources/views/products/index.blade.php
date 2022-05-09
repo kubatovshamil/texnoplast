@@ -14,6 +14,7 @@
 
 
         <div class="product-card__characteristics-mobile">
+            <span class="product-card__characteristics-article">{{ $product->article_number }}</span>
             <h1 class="product-card__characteristics-title">{{ $product->title }}</h1>
 
             <div class="product-card__characteristics-functions">
